@@ -24,7 +24,7 @@
         <!--Item 2-->
         <scene sceneID="Mtc-yi-fI8">
             <objects>
-                <viewController id="X2f-Ap-eMi" sceneMemberID="viewController">
+                <viewController id="X2f-Ap-eMi" customClass="CalendarioViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gyh-M4-SMZ"/>
                         <viewControllerLayoutGuide type="bottom" id="YLF-vj-kOk"/>
@@ -36,6 +36,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="lVi-Si-uNS"/>
                     <navigationItem key="navigationItem" id="CnA-kT-R8U"/>
+                    <connections>
+                        <outlet property="calendario" destination="sF8-hb-uIb" id="M7d-ho-yXe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wby-fV-kPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
