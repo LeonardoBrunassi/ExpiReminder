@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = @"Produtos";
+    UIBarButtonItem *add = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(adicionarProduto:)];
+    self.navigationItem.rightBarButtonItem = add;
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -36,7 +40,7 @@
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
     [cell.textLabel setText:@"Oi"];
     
-    //comentarioooooooo
+    
     return cell;
 }
 

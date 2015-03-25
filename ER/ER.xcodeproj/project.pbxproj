@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B29660761AC33D2B0070C7A5 /* SingletonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B29660751AC33D2B0070C7A5 /* SingletonView.m */; };
+		B29660781AC341EA0070C7A5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B29660771AC341EA0070C7A5 /* Realm.framework */; };
+		B296607A1AC342110070C7A5 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B29660791AC342110070C7A5 /* libc++.dylib */; };
+		B296607D1AC3426D0070C7A5 /* Produto.m in Sources */ = {isa = PBXBuildFile; fileRef = B296607C1AC3426D0070C7A5 /* Produto.m */; };
 		B303F24D1AC33233000879FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F24C1AC33233000879FA /* main.m */; };
 		B303F2501AC33233000879FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F24F1AC33233000879FA /* AppDelegate.m */; };
 		B303F2531AC33233000879FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F2521AC33233000879FA /* ViewController.m */; };
@@ -30,6 +33,10 @@
 /* Begin PBXFileReference section */
 		B29660741AC33D2B0070C7A5 /* SingletonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonView.h; sourceTree = "<group>"; };
 		B29660751AC33D2B0070C7A5 /* SingletonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonView.m; sourceTree = "<group>"; };
+		B29660771AC341EA0070C7A5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		B29660791AC342110070C7A5 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		B296607B1AC3426D0070C7A5 /* Produto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Produto.h; sourceTree = "<group>"; };
+		B296607C1AC3426D0070C7A5 /* Produto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Produto.m; sourceTree = "<group>"; };
 		B303F2471AC33233000879FA /* ER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B303F24B1AC33233000879FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B303F24C1AC33233000879FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -50,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B296607A1AC342110070C7A5 /* libc++.dylib in Frameworks */,
+				B29660781AC341EA0070C7A5 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +75,8 @@
 		B303F23E1AC33233000879FA = {
 			isa = PBXGroup;
 			children = (
+				B29660791AC342110070C7A5 /* libc++.dylib */,
+				B29660771AC341EA0070C7A5 /* Realm.framework */,
 				B303F2491AC33233000879FA /* ER */,
 				B303F2631AC33233000879FA /* ERTests */,
 				B303F2481AC33233000879FA /* Products */,
@@ -90,6 +101,8 @@
 				B303F2521AC33233000879FA /* ViewController.m */,
 				B29660741AC33D2B0070C7A5 /* SingletonView.h */,
 				B29660751AC33D2B0070C7A5 /* SingletonView.m */,
+				B296607B1AC3426D0070C7A5 /* Produto.h */,
+				B296607C1AC3426D0070C7A5 /* Produto.m */,
 				B303F2541AC33233000879FA /* Main.storyboard */,
 				B303F2571AC33233000879FA /* Images.xcassets */,
 				B303F2591AC33233000879FA /* LaunchScreen.xib */,
@@ -228,6 +241,7 @@
 				B303F2531AC33233000879FA /* ViewController.m in Sources */,
 				B303F2501AC33233000879FA /* AppDelegate.m in Sources */,
 				B303F24D1AC33233000879FA /* main.m in Sources */,
+				B296607D1AC3426D0070C7A5 /* Produto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +363,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ER/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +377,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ER/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -9,7 +9,7 @@
 #import "SingletonView.h"
 
 @implementation SingletonView
-@synthesize produtos;
+@synthesize realm,results;
 static SingletonView *instancia = nil;
 
 +(SingletonView *) instance {
@@ -22,9 +22,21 @@ static SingletonView *instancia = nil;
 -(instancetype) init {
     self = [super init];
     if (self) {
-        produtos = [[NSMutableArray alloc] initWithObjects:@"leo", nil];
+        realm = [RLMRealm defaultRealm];
     }
     return self;
+}
+
+-(void) adicionarProd: (Produto*) produto {
+    realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm addObject:produto];
+    [realm commitWriteTransaction];
+}
+
+-(RLMResults*) retornoProd {
+    RLMResults *resultado = [Produto allObjects];
+    return resultado;
 }
 
 @end
