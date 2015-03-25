@@ -4,11 +4,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--CalendarioNav-->
         <scene sceneID="q05-nz-9z8">
             <objects>
-                <navigationController id="Zcf-P2-bxR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7W9-Q6-diJ"/>
+                <navigationController title="CalendarioNav" id="Zcf-P2-bxR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calendário" id="7W9-Q6-diJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Flr-cv-Jm8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="235.5" y="1197"/>
         </scene>
-        <!--Item 2-->
+        <!--Calendario-->
         <scene sceneID="Mtc-yi-fI8">
             <objects>
-                <viewController id="X2f-Ap-eMi" customClass="CalendarioViewController" sceneMemberID="viewController">
+                <viewController title="Calendario" id="X2f-Ap-eMi" customClass="CalendarioViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gyh-M4-SMZ"/>
                         <viewControllerLayoutGuide type="bottom" id="YLF-vj-kOk"/>
@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="1162.5" y="1197"/>
         </scene>
-        <!--Item 1-->
+        <!--Produtos-->
         <scene sceneID="ZLs-Ly-zdu">
             <objects>
-                <viewController id="3oW-x8-29i" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Produtos" id="3oW-x8-29i" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cri-7S-5Or"/>
                         <viewControllerLayoutGuide type="bottom" id="jAe-G3-fpp"/>
@@ -80,11 +80,11 @@
             </objects>
             <point key="canvasLocation" x="1162.5" y="452.25"/>
         </scene>
-        <!--ExpiReminder-->
+        <!--ProdutosNav-->
         <scene sceneID="iIf-dn-yfa">
             <objects>
-                <navigationController title="ExpiReminder" id="Apg-ZT-rzP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fge-RG-UMF"/>
+                <navigationController title="ProdutosNav" id="Apg-ZT-rzP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Produtos" id="fge-RG-UMF"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mxy-Bm-k3d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -116,13 +116,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaP-OD-FmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-762" y="747"/>
+            <point key="canvasLocation" x="-770" y="745"/>
         </scene>
-        <!--Item-->
+        <!--ConfigNav-->
         <scene sceneID="QAJ-1C-XEO">
             <objects>
-                <navigationController id="sO1-Is-LHD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="rQz-9P-80Z"/>
+                <navigationController title="ConfigNav" id="sO1-Is-LHD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Configurações" id="rQz-9P-80Z"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mcx-8b-S8b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -133,17 +133,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wce-jA-lqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1986" y="1513.5"/>
+            <point key="canvasLocation" x="235" y="1977"/>
         </scene>
-        <!--View Controller-->
+        <!--Config-->
         <scene sceneID="T5a-VM-ohZ">
             <objects>
-                <viewController id="RAg-Ot-JdL" sceneMemberID="viewController">
+                <viewController title="Config" id="RAg-Ot-JdL" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jZs-Wg-Oxq"/>
                         <viewControllerLayoutGuide type="bottom" id="Dj4-u7-lw3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eKM-Kg-YEQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="6oc-Wi-hYe">
@@ -170,7 +171,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83Z-rR-JTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1165.5" y="1518"/>
+            <point key="canvasLocation" x="1162" y="1977"/>
         </scene>
     </scenes>
 </document>
