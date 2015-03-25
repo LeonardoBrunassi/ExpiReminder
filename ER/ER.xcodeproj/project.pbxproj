@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B29660761AC33D2B0070C7A5 /* SingletonView.m in Sources */ = {isa = PBXBuildFile; fileRef = B29660751AC33D2B0070C7A5 /* SingletonView.m */; };
 		B303F24D1AC33233000879FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F24C1AC33233000879FA /* main.m */; };
 		B303F2501AC33233000879FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F24F1AC33233000879FA /* AppDelegate.m */; };
 		B303F2531AC33233000879FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F2521AC33233000879FA /* ViewController.m */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B29660741AC33D2B0070C7A5 /* SingletonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonView.h; sourceTree = "<group>"; };
+		B29660751AC33D2B0070C7A5 /* SingletonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonView.m; sourceTree = "<group>"; };
 		B303F2471AC33233000879FA /* ER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B303F24B1AC33233000879FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B303F24C1AC33233000879FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				B303F24F1AC33233000879FA /* AppDelegate.m */,
 				B303F2511AC33233000879FA /* ViewController.h */,
 				B303F2521AC33233000879FA /* ViewController.m */,
+				B29660741AC33D2B0070C7A5 /* SingletonView.h */,
+				B29660751AC33D2B0070C7A5 /* SingletonView.m */,
 				B303F2541AC33233000879FA /* Main.storyboard */,
 				B303F2571AC33233000879FA /* Images.xcassets */,
 				B303F2591AC33233000879FA /* LaunchScreen.xib */,
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B29660761AC33D2B0070C7A5 /* SingletonView.m in Sources */,
 				B303F2531AC33233000879FA /* ViewController.m in Sources */,
 				B303F2501AC33233000879FA /* AppDelegate.m in Sources */,
 				B303F24D1AC33233000879FA /* main.m in Sources */,
@@ -412,6 +418,7 @@
 				B303F26C1AC33233000879FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B303F26D1AC33233000879FA /* Build configuration list for PBXNativeTarget "ERTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				B303F26F1AC33233000879FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
