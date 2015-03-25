@@ -34,9 +34,32 @@ static SingletonView *instancia = nil;
     [realm commitWriteTransaction];
 }
 
+//retornar todos produtos
 -(RLMResults*) retornoProd {
     RLMResults *resultado = [Produto allObjects];
     return resultado;
 }
+
+-(void)removeProduto:(Produto *)produto
+{
+    [realm beginWriteTransaction];
+    
+    [realm delete:produto];
+    
+    [realm commitWriteTransaction];
+}
+
+-(void)atualizarProduto:(NSString *)nomeProduto barCode:(NSString *)barCode dataValidade:(NSDate *)dataValidade dataInsercao:(NSDate *)dataInsercao
+{
+    [realm beginWriteTransaction];
+    _prod.nome = nomeProduto;
+    _prod.numCodigoDeBarras = barCode;
+    _prod.dataCompraInsercao = dataInsercao;
+    _prod.validadeRestante = dataValidade;
+    [realm commitWriteTransaction];
+    
+}
+
+
 
 @end

@@ -13,8 +13,11 @@
 
 +(SingletonView*) instance;
 
+-(void)atualizarProduto:(NSString *)nomeProduto barCode:(NSString *)barCode dataValidade:(NSDate *)dataValidade dataInsercao:(NSDate *)dataInsercao;
+
 
 @property RLMRealm *realm;
 @property RLMResults *results; //SELECT
+@property Produto *prod;
 
 @end
