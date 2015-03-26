@@ -13,12 +13,21 @@
 @end
 
 @implementation addProdViewController
-
+@synthesize datePicker, tableView;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"Oi");
+//    [self.datePicker addTarget:self action:@selector(dataPickerMudada:)forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view.
 }
+//
+//-(void) dataPickerMudada: (UIDatePicker*) datePicker {
+//    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
+//    [dateFormater setDateFormat:@"dd-MM-yyyy HH:mm"];
+//    NSString *strDate = [dateFormater stringFromDate:datePicker.date];
+//    //self.selectedDate.text = strDate;
+//}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -30,14 +39,18 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 1;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    [cell.textLabel setText:@"Leo"];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"dataPicker"];
+    
+    
+    [cell addSubview:datePicker];
+//    [cell.textLabel setText:@"Leo"];
     return cell;
 }
+
 /*
 #pragma mark - Navigation
 
