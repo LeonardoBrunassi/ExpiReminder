@@ -71,8 +71,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="DQg-Ff-Hrm"/>
-                    <navigationItem key="navigationItem" id="8Ud-CM-R8l"/>
+                    <navigationItem key="navigationItem" id="8Ud-CM-R8l">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fAb-TX-jg8">
+                            <connections>
+                                <segue destination="eOk-9P-0re" kind="show" id="NFJ-7n-3RC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addProdutos" destination="fAb-TX-jg8" id="Dko-G7-lTf"/>
                         <outlet property="tableView" destination="U43-oL-P6s" id="EB7-E9-LNk"/>
                     </connections>
                 </viewController>
@@ -116,7 +123,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaP-OD-FmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-770" y="745"/>
+            <point key="canvasLocation" x="-921" y="1197"/>
         </scene>
         <!--ConfigNav-->
         <scene sceneID="QAJ-1C-XEO">
@@ -134,6 +141,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wce-jA-lqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="235" y="1977"/>
+        </scene>
+        <!--Add Prod View Controller-->
+        <scene sceneID="yBl-i4-qf7">
+            <objects>
+                <viewController id="eOk-9P-0re" customClass="addProdViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iqd-IM-zZX"/>
+                        <viewControllerLayoutGuide type="bottom" id="BZo-Hw-PD0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AFw-2k-7RH">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xKe-vq-gyh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="693"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="eOk-9P-0re" id="pdC-tz-pDm"/>
+                                    <outlet property="delegate" destination="eOk-9P-0re" id="Pff-X4-tcf"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="xKe-vq-gyh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="xKe-vq-gyh"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="xKe-vq-gyh" id="dA7-gW-shv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y9v-L8-P2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1917" y="452.25"/>
         </scene>
         <!--Config-->
         <scene sceneID="T5a-VM-ohZ">

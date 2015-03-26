@@ -12,6 +12,7 @@
 		B296607A1AC342110070C7A5 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B29660791AC342110070C7A5 /* libc++.dylib */; };
 		B296607D1AC3426D0070C7A5 /* Produto.m in Sources */ = {isa = PBXBuildFile; fileRef = B296607C1AC3426D0070C7A5 /* Produto.m */; };
 		B29660801AC351270070C7A5 /* CalendarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B296607F1AC351270070C7A5 /* CalendarioViewController.m */; };
+		B29660831AC4756F0070C7A5 /* addProdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29660821AC4756F0070C7A5 /* addProdViewController.m */; };
 		B303F24D1AC33233000879FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F24C1AC33233000879FA /* main.m */; };
 		B303F2501AC33233000879FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F24F1AC33233000879FA /* AppDelegate.m */; };
 		B303F2531AC33233000879FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F2521AC33233000879FA /* ViewController.m */; };
@@ -40,6 +41,8 @@
 		B296607C1AC3426D0070C7A5 /* Produto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Produto.m; sourceTree = "<group>"; };
 		B296607E1AC351270070C7A5 /* CalendarioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarioViewController.h; sourceTree = "<group>"; };
 		B296607F1AC351270070C7A5 /* CalendarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarioViewController.m; sourceTree = "<group>"; };
+		B29660811AC4756F0070C7A5 /* addProdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addProdViewController.h; sourceTree = "<group>"; };
+		B29660821AC4756F0070C7A5 /* addProdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addProdViewController.m; sourceTree = "<group>"; };
 		B303F2471AC33233000879FA /* ER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B303F24B1AC33233000879FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B303F24C1AC33233000879FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 				B303F24F1AC33233000879FA /* AppDelegate.m */,
 				B303F2511AC33233000879FA /* ViewController.h */,
 				B303F2521AC33233000879FA /* ViewController.m */,
+				B29660811AC4756F0070C7A5 /* addProdViewController.h */,
+				B29660821AC4756F0070C7A5 /* addProdViewController.m */,
 				B296607E1AC351270070C7A5 /* CalendarioViewController.h */,
 				B296607F1AC351270070C7A5 /* CalendarioViewController.m */,
 				B29660741AC33D2B0070C7A5 /* SingletonView.h */,
@@ -247,6 +252,7 @@
 				B303F2531AC33233000879FA /* ViewController.m in Sources */,
 				B303F2501AC33233000879FA /* AppDelegate.m in Sources */,
 				B303F24D1AC33233000879FA /* main.m in Sources */,
+				B29660831AC4756F0070C7A5 /* addProdViewController.m in Sources */,
 				B296607D1AC3426D0070C7A5 /* Produto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
