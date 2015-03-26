@@ -1,5 +1,5 @@
 //
-//  SingletonView.h
+//  ProdutoSingleton.h
 //  ER
 //
 //  Created by Leonardo Rodrigues de Morais Brunassi on 25/03/15.
@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <Realm/Realm.h>
-#import "Produto.h"
-@interface SingletonView : NSObject
 
-+(SingletonView*) instance;
+@interface ProdutoSingleton : NSObject
+
++(ProdutoSingleton*) instance;
 
 -(void)atualizarProduto:(NSString *)nomeProduto barCode:(NSString *)barCode dataValidade:(NSDate *)dataValidade dataInsercao:(NSDate *)dataInsercao;
 

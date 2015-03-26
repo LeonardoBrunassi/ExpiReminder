@@ -1,18 +1,18 @@
 //
-//  SingletonView.m
+//  ProdutoSingleton.m
 //  ER
 //
 //  Created by Leonardo Rodrigues de Morais Brunassi on 25/03/15.
 //  Copyright (c) 2015 Vivian Chiodo Dias. All rights reserved.
 //
 
-#import "SingletonView.h"
-
-@implementation SingletonView
+#import "ProdutoSingleton.h"
+#import "Produto.h"
+@implementation ProdutoSingleton
 @synthesize realm,results;
-static SingletonView *instancia = nil;
+static ProdutoSingleton *instancia = nil;
 
-+(SingletonView *) instance {
++(ProdutoSingleton *) instance {
     if(!instancia) {
         instancia = [[super alloc] init];
     }
