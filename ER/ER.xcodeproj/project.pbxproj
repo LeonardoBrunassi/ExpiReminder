@@ -13,6 +13,10 @@
 		B296607D1AC3426D0070C7A5 /* Produto.m in Sources */ = {isa = PBXBuildFile; fileRef = B296607C1AC3426D0070C7A5 /* Produto.m */; };
 		B29660801AC351270070C7A5 /* CalendarioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B296607F1AC351270070C7A5 /* CalendarioViewController.m */; };
 		B29660831AC4756F0070C7A5 /* addProdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B29660821AC4756F0070C7A5 /* addProdViewController.m */; };
+		B29660861AC49DE00070C7A5 /* DatePickerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B29660851AC49DE00070C7A5 /* DatePickerTableViewCell.m */; };
+		B29660891AC49DF70070C7A5 /* ProdutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B29660881AC49DF70070C7A5 /* ProdutoTableViewCell.m */; };
+		B296608C1AC49E080070C7A5 /* ImagemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B296608B1AC49E080070C7A5 /* ImagemTableViewCell.m */; };
+		B296608F1AC49EF20070C7A5 /* DataValidadeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B296608E1AC49EF20070C7A5 /* DataValidadeTableViewCell.m */; };
 		B303F24D1AC33233000879FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F24C1AC33233000879FA /* main.m */; };
 		B303F2501AC33233000879FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F24F1AC33233000879FA /* AppDelegate.m */; };
 		B303F2531AC33233000879FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F2521AC33233000879FA /* ViewController.m */; };
@@ -49,6 +53,14 @@
 		B296607F1AC351270070C7A5 /* CalendarioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarioViewController.m; sourceTree = "<group>"; };
 		B29660811AC4756F0070C7A5 /* addProdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addProdViewController.h; sourceTree = "<group>"; };
 		B29660821AC4756F0070C7A5 /* addProdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addProdViewController.m; sourceTree = "<group>"; };
+		B29660841AC49DE00070C7A5 /* DatePickerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DatePickerTableViewCell.h; path = ../DatePickerTableViewCell.h; sourceTree = "<group>"; };
+		B29660851AC49DE00070C7A5 /* DatePickerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DatePickerTableViewCell.m; path = ../DatePickerTableViewCell.m; sourceTree = "<group>"; };
+		B29660871AC49DF70070C7A5 /* ProdutoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProdutoTableViewCell.h; path = ../ProdutoTableViewCell.h; sourceTree = "<group>"; };
+		B29660881AC49DF70070C7A5 /* ProdutoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProdutoTableViewCell.m; path = ../ProdutoTableViewCell.m; sourceTree = "<group>"; };
+		B296608A1AC49E080070C7A5 /* ImagemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagemTableViewCell.h; path = ../ImagemTableViewCell.h; sourceTree = "<group>"; };
+		B296608B1AC49E080070C7A5 /* ImagemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagemTableViewCell.m; path = ../ImagemTableViewCell.m; sourceTree = "<group>"; };
+		B296608D1AC49EF20070C7A5 /* DataValidadeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataValidadeTableViewCell.h; sourceTree = "<group>"; };
+		B296608E1AC49EF20070C7A5 /* DataValidadeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataValidadeTableViewCell.m; sourceTree = "<group>"; };
 		B303F2471AC33233000879FA /* ER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B303F24B1AC33233000879FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B303F24C1AC33233000879FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -128,6 +140,14 @@
 				B303F24F1AC33233000879FA /* AppDelegate.m */,
 				B303F2511AC33233000879FA /* ViewController.h */,
 				B303F2521AC33233000879FA /* ViewController.m */,
+				B296608A1AC49E080070C7A5 /* ImagemTableViewCell.h */,
+				B296608B1AC49E080070C7A5 /* ImagemTableViewCell.m */,
+				B29660871AC49DF70070C7A5 /* ProdutoTableViewCell.h */,
+				B29660881AC49DF70070C7A5 /* ProdutoTableViewCell.m */,
+				B296608D1AC49EF20070C7A5 /* DataValidadeTableViewCell.h */,
+				B296608E1AC49EF20070C7A5 /* DataValidadeTableViewCell.m */,
+				B29660841AC49DE00070C7A5 /* DatePickerTableViewCell.h */,
+				B29660851AC49DE00070C7A5 /* DatePickerTableViewCell.m */,
 				B29660811AC4756F0070C7A5 /* addProdViewController.h */,
 				B29660821AC4756F0070C7A5 /* addProdViewController.m */,
 				B296607E1AC351270070C7A5 /* CalendarioViewController.h */,
@@ -273,10 +293,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B29660801AC351270070C7A5 /* CalendarioViewController.m in Sources */,
+				B29660891AC49DF70070C7A5 /* ProdutoTableViewCell.m in Sources */,
 				E39F42821AC480760010195E /* BarCodeViewController.m in Sources */,
 				B29660761AC33D2B0070C7A5 /* ProdutoSingleton.m in Sources */,
 				B303F2531AC33233000879FA /* ViewController.m in Sources */,
+				B296608F1AC49EF20070C7A5 /* DataValidadeTableViewCell.m in Sources */,
+				B29660861AC49DE00070C7A5 /* DatePickerTableViewCell.m in Sources */,
 				B303F2501AC33233000879FA /* AppDelegate.m in Sources */,
+				B296608C1AC49E080070C7A5 /* ImagemTableViewCell.m in Sources */,
 				B303F24D1AC33233000879FA /* main.m in Sources */,
 				B29660831AC4756F0070C7A5 /* addProdViewController.m in Sources */,
 				B296607D1AC3426D0070C7A5 /* Produto.m in Sources */,

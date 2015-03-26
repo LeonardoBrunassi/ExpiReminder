@@ -13,7 +13,7 @@
 @end
 
 @implementation addProdViewController
-@synthesize datePicker, tableView;
+@synthesize tableView;
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self.datePicker addTarget:self action:@selector(dataPickerMudada:)forControlEvents:UIControlEventValueChanged];
@@ -39,14 +39,14 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 5;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"dataPicker"];
     
     
-    [cell addSubview:datePicker];
+   // [cell addSubview:datePicker];
 //    [cell.textLabel setText:@"Leo"];
     return cell;
 }
