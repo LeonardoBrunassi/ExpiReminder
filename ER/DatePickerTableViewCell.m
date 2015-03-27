@@ -11,6 +11,7 @@
 @implementation DatePickerTableViewCell
 
 - (void)awakeFromNib {
+    [_datePicker setDatePickerMode:UIDatePickerModeDate];
     // Initialization code
 }
 

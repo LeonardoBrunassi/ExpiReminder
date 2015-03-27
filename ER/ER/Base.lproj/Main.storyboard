@@ -151,13 +151,14 @@
                         <viewControllerLayoutGuide type="bottom" id="BZo-Hw-PD0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AFw-2k-7RH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="17i-Nt-SIb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="183" id="pu2-9N-K5O" customClass="DatePickerTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="datePicker" rowHeight="183" id="pu2-9N-K5O" customClass="DatePickerTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pu2-9N-K5O" id="wHx-LT-0CQ">
@@ -188,7 +189,7 @@
                                             <outlet property="datePicker" destination="mxV-Aa-0Fr" id="40U-YW-9H5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FR0-Q2-SbQ" customClass="DataValidadeTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="validade" id="FR0-Q2-SbQ" customClass="DataValidadeTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FR0-Q2-SbQ" id="6hH-5k-OCL">
@@ -216,7 +217,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ckG-v4-w6n" customClass="ProdutoTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nome" id="ckG-v4-w6n" customClass="ProdutoTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ckG-v4-w6n" id="ed8-5d-Qqk">
@@ -258,7 +259,7 @@
                                             <outlet property="registroProdTF" destination="JBu-pq-huo" id="pGt-nz-i7c"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="202" id="GYy-RQ-f31" customClass="ImagemTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="imagem" rowHeight="206" id="GYy-RQ-f31" customClass="ImagemTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GYy-RQ-f31" id="COm-ZS-qXG">
@@ -267,7 +268,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ill-XZ-arH">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="84" y="15" width="233" height="172"/>
+                                                        <rect key="frame" x="84" y="26" width="233" height="172"/>
                                                     </variation>
                                                 </imageView>
                                             </subviews>
@@ -308,13 +309,32 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="tableView" destination="17i-Nt-SIb" id="rR7-9Y-AlC"/>
+                        <outlet property="cadastroTableView" destination="17i-Nt-SIb" id="BVo-aE-Rix"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9v-L8-P2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1945.5" y="449.25"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CgU-nX-CDI">
+            <objects>
+                <viewController id="Wqa-p5-cLS" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1sb-Az-D3F"/>
+                        <viewControllerLayoutGuide type="bottom" id="AdO-vp-5qx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UHs-QD-a24">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1f-dB-1Ay" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2716.5" y="665.25"/>
         </scene>
         <!--Config-->
         <scene sceneID="T5a-VM-ohZ">

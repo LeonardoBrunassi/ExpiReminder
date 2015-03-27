@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProdutoTableViewCell : UITableViewCell
+@interface ProdutoTableViewCell : UITableViewCell <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *prodLabel;
 @property (weak, nonatomic) IBOutlet UITextField *registroProdTF;
 

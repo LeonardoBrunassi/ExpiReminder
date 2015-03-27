@@ -9,8 +9,11 @@
 #import "ProdutoTableViewCell.h"
 
 @implementation ProdutoTableViewCell
+@synthesize registroProdTF;
 
 - (void)awakeFromNib {
+    registroProdTF.delegate = self;
+    [registroProdTF setReturnKeyType:UIReturnKeyDone];
     // Initialization code
 }
 
@@ -20,4 +23,14 @@
     // Configure the view for the selected state
 }
 
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    NSLog(@"deveria sumir");
+   [textField resignFirstResponder];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 @end

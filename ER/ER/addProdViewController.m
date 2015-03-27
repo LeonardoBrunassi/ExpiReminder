@@ -7,15 +7,28 @@
 //
 
 #import "addProdViewController.h"
+#import "DataValidadeTableViewCell.h"
+#import "DatePickerTableViewCell.h"
+#import "ImagemTableViewCell.h"
+#import "ProdutoTableViewCell.h"
 
 @interface addProdViewController ()
 
 @end
 
 @implementation addProdViewController
-@synthesize tableView;
+@synthesize cadastroTableView;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.tabBarController setHidesBottomBarWhenPushed:YES];
+    self.tabBarController.tabBar.hidden = YES;
+    
+    
+//    UIBarButtonItem *camera = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:nil];
+//    self.navigationItem.rightBarButtonItem = camera;
+    
+    //self.tabBarController
 //    [self.datePicker addTarget:self action:@selector(dataPickerMudada:)forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view.
 }
@@ -27,8 +40,6 @@
 //    //self.selectedDate.text = strDate;
 //}
 
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -39,17 +50,74 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    NSLog(@"Vai por favor");
+    return 6;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"dataPicker"];
+    NSLog(@"Entro");
     
+    if(indexPath.row == 0){
+        DatePickerTableViewCell *datePicker = [tableView dequeueReusableCellWithIdentifier:@"datePicker"];
+        return datePicker;
+    }
     
-   // [cell addSubview:datePicker];
-//    [cell.textLabel setText:@"Leo"];
+    if(indexPath.row == 1){
+        DataValidadeTableViewCell *dataValidade = [tableView dequeueReusableCellWithIdentifier:@"validade"];
+        
+        return dataValidade;
+    }
+    
+    if (indexPath.row == 2) {
+        UITableViewCell *celula = [[UITableViewCell alloc] init];
+        celula.backgroundColor = [UIColor lightGrayColor];
+        return celula;
+    }
+    
+    if (indexPath.row == 3) {
+        ProdutoTableViewCell *produto = [tableView dequeueReusableCellWithIdentifier:@"nome"];
+        return produto;
+    }
+    
+    if (indexPath.row == 4) {
+        UITableViewCell *celula = [[UITableViewCell alloc] init];
+        celula.backgroundColor = [UIColor lightGrayColor];
+        return celula;
+    }
+    
+    if (indexPath.row == 5) {
+        ImagemTableViewCell *imagem = [tableView dequeueReusableCellWithIdentifier:@"imagem"];
+        return imagem;
+    }
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:UITableViewCellStyleDefault];
+    
     return cell;
 }
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row == 0)
+        return 200;
+    else if (indexPath.row == 1)
+        return 50;
+    else if (indexPath.row == 2)
+        return 35;
+    else if (indexPath.row == 3)
+        return 50;
+    else if (indexPath.row == 4)
+        return 35;
+    else if (indexPath.row == 5)
+        return 200;
+    else
+        return 50;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.tabBarController.tabBar setHidden: NO];
+}
+
 
 /*
 #pragma mark - Navigation
