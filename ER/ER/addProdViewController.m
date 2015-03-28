@@ -74,7 +74,7 @@
         UITableViewCell *celula = [[UITableViewCell alloc] init];
         celula.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
         celula.contentView.layer.borderColor = [[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0] CGColor];
-        celula.contentView.layer.borderWidth = 1.0f;
+        //celula.contentView.layer.borderWidth = 0.0;
         return celula;
     }
     
