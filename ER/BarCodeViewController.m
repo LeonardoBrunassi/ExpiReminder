@@ -52,7 +52,7 @@
 -(void)initialize
 {
     
-    
+    self.tabBarController.tabBar.hidden =  YES;
     _highlightView = [[UIView alloc] init];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
     _highlightView.layer.borderColor = [UIColor greenColor].CGColor;
@@ -132,7 +132,13 @@
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
