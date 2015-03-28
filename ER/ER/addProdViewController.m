@@ -21,6 +21,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"Adicionar Produto";
+    
     [self.tabBarController setHidesBottomBarWhenPushed:YES];
     self.tabBarController.tabBar.hidden = YES;
     
@@ -58,19 +60,21 @@
     NSLog(@"Entro");
     
     if(indexPath.row == 0){
-        DatePickerTableViewCell *datePicker = [tableView dequeueReusableCellWithIdentifier:@"datePicker"];
-        return datePicker;
-    }
-    
-    if(indexPath.row == 1){
         DataValidadeTableViewCell *dataValidade = [tableView dequeueReusableCellWithIdentifier:@"validade"];
         
         return dataValidade;
     }
     
+    if(indexPath.row == 1){
+        DatePickerTableViewCell *datePicker = [tableView dequeueReusableCellWithIdentifier:@"datePicker"];
+        return datePicker;
+    }
+    
     if (indexPath.row == 2) {
         UITableViewCell *celula = [[UITableViewCell alloc] init];
-        celula.backgroundColor = [UIColor lightGrayColor];
+        celula.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
+        celula.contentView.layer.borderColor = [[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0] CGColor];
+        celula.contentView.layer.borderWidth = 1.0f;
         return celula;
     }
     
@@ -81,7 +85,7 @@
     
     if (indexPath.row == 4) {
         UITableViewCell *celula = [[UITableViewCell alloc] init];
-        celula.backgroundColor = [UIColor lightGrayColor];
+        celula.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
         return celula;
     }
     
@@ -98,9 +102,9 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row == 0)
-        return 200;
-    else if (indexPath.row == 1)
         return 50;
+    else if (indexPath.row == 1)
+        return 200;
     else if (indexPath.row == 2)
         return 35;
     else if (indexPath.row == 3)
