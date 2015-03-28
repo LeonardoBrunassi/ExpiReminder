@@ -112,7 +112,7 @@
     else if (indexPath.row == 4)
         return 35;
     else if (indexPath.row == 5)
-        return 200;
+        return 190;
     else
         return 50;
 }
