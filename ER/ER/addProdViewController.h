@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DataValidadeTableViewCell.h"
 
-@interface addProdViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface addProdViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *cadastroTableView;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barCodeCam;

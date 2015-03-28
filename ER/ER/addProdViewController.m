@@ -112,9 +112,9 @@
     else if (indexPath.row == 4)
         return 35;
     else if (indexPath.row == 5)
-        return 190;
+        return 150;
     else
-        return 50;
+        return 0;
 }
 
 -(void)viewWillDisappear:(BOOL)animated
