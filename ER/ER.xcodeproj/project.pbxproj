@@ -138,26 +138,10 @@
 			children = (
 				B303F24E1AC33233000879FA /* AppDelegate.h */,
 				B303F24F1AC33233000879FA /* AppDelegate.m */,
-				B303F2511AC33233000879FA /* ViewController.h */,
-				B303F2521AC33233000879FA /* ViewController.m */,
-				B296608A1AC49E080070C7A5 /* ImagemTableViewCell.h */,
-				B296608B1AC49E080070C7A5 /* ImagemTableViewCell.m */,
-				B29660871AC49DF70070C7A5 /* ProdutoTableViewCell.h */,
-				B29660881AC49DF70070C7A5 /* ProdutoTableViewCell.m */,
-				B296608D1AC49EF20070C7A5 /* DataValidadeTableViewCell.h */,
-				B296608E1AC49EF20070C7A5 /* DataValidadeTableViewCell.m */,
-				B29660841AC49DE00070C7A5 /* DatePickerTableViewCell.h */,
-				B29660851AC49DE00070C7A5 /* DatePickerTableViewCell.m */,
-				B29660811AC4756F0070C7A5 /* addProdViewController.h */,
-				B29660821AC4756F0070C7A5 /* addProdViewController.m */,
-				B296607E1AC351270070C7A5 /* CalendarioViewController.h */,
-				B296607F1AC351270070C7A5 /* CalendarioViewController.m */,
-				B29660741AC33D2B0070C7A5 /* ProdutoSingleton.h */,
-				B29660751AC33D2B0070C7A5 /* ProdutoSingleton.m */,
-				B296607B1AC3426D0070C7A5 /* Produto.h */,
-				B296607C1AC3426D0070C7A5 /* Produto.m */,
-				E39F42801AC480760010195E /* BarCodeViewController.h */,
-				E39F42811AC480760010195E /* BarCodeViewController.m */,
+				E3E22C4C1AC756AB00EE3E8C /* custom cells */,
+				E3E22C4D1AC756BC00EE3E8C /* view controllers */,
+				E3E22C4E1AC756FA00EE3E8C /* model */,
+				E3E22C4F1AC7571100EE3E8C /* singleton */,
 				B303F2541AC33233000879FA /* Main.storyboard */,
 				B303F2571AC33233000879FA /* Images.xcassets */,
 				B303F2591AC33233000879FA /* LaunchScreen.xib */,
@@ -190,6 +174,54 @@
 				B303F2651AC33233000879FA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3E22C4C1AC756AB00EE3E8C /* custom cells */ = {
+			isa = PBXGroup;
+			children = (
+				B296608A1AC49E080070C7A5 /* ImagemTableViewCell.h */,
+				B296608B1AC49E080070C7A5 /* ImagemTableViewCell.m */,
+				B29660871AC49DF70070C7A5 /* ProdutoTableViewCell.h */,
+				B29660881AC49DF70070C7A5 /* ProdutoTableViewCell.m */,
+				B296608D1AC49EF20070C7A5 /* DataValidadeTableViewCell.h */,
+				B296608E1AC49EF20070C7A5 /* DataValidadeTableViewCell.m */,
+				B29660841AC49DE00070C7A5 /* DatePickerTableViewCell.h */,
+				B29660851AC49DE00070C7A5 /* DatePickerTableViewCell.m */,
+			);
+			name = "custom cells";
+			sourceTree = "<group>";
+		};
+		E3E22C4D1AC756BC00EE3E8C /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E39F42801AC480760010195E /* BarCodeViewController.h */,
+				E39F42811AC480760010195E /* BarCodeViewController.m */,
+				B303F2511AC33233000879FA /* ViewController.h */,
+				B303F2521AC33233000879FA /* ViewController.m */,
+				B29660811AC4756F0070C7A5 /* addProdViewController.h */,
+				B29660821AC4756F0070C7A5 /* addProdViewController.m */,
+				B296607E1AC351270070C7A5 /* CalendarioViewController.h */,
+				B296607F1AC351270070C7A5 /* CalendarioViewController.m */,
+			);
+			name = "view controllers";
+			sourceTree = "<group>";
+		};
+		E3E22C4E1AC756FA00EE3E8C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B296607B1AC3426D0070C7A5 /* Produto.h */,
+				B296607C1AC3426D0070C7A5 /* Produto.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		E3E22C4F1AC7571100EE3E8C /* singleton */ = {
+			isa = PBXGroup;
+			children = (
+				B29660751AC33D2B0070C7A5 /* ProdutoSingleton.m */,
+				B29660741AC33D2B0070C7A5 /* ProdutoSingleton.h */,
+			);
+			name = singleton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
