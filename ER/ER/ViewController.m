@@ -18,6 +18,7 @@
     [super viewDidLoad];
     self.title = @"Produtos";
     self.navigationItem.title = @"Produtos";
+    _singleton = [ProdutoSingleton instance];
 //    UIBarButtonItem *add = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(adicionarProduto:)];
 //    self.navigationItem.rightBarButtonItem = add;
     
@@ -39,12 +40,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    NSLog(@"%lu", [[Produto allObjects]count]);
+    return [[Produto allObjects]count];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    [cell.textLabel setText:@"Oi"];
+    
+    cell.textLabel.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]nome];
     
     
     return cell;

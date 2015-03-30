@@ -7,17 +7,13 @@
 //
 
 #import "addProdViewController.h"
-#import "DataValidadeTableViewCell.h"
-#import "DatePickerTableViewCell.h"
-#import "ImagemTableViewCell.h"
-#import "ProdutoTableViewCell.h"
 
 @interface addProdViewController ()
 
 @end
 
 @implementation addProdViewController
-@synthesize cadastroTableView, notificacao, produto;
+@synthesize cadastroTableView, notificacao, produto, produtoCell;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -63,13 +59,13 @@
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     if(indexPath.row == 0){
-        DataValidadeTableViewCell *dataValidade = [tableView dequeueReusableCellWithIdentifier:@"validade"];
-        return dataValidade;
+        _dataValidade = [tableView dequeueReusableCellWithIdentifier:@"validade"];
+                return _dataValidade;
     }
     
     if(indexPath.row == 1){
-        DatePickerTableViewCell *datePicker = [tableView dequeueReusableCellWithIdentifier:@"datePicker"];
-        return datePicker;
+        _datePicker = [tableView dequeueReusableCellWithIdentifier:@"datePicker"];
+        return _datePicker;
     }
     
     if (indexPath.row == 2) {
@@ -81,8 +77,9 @@
     }
     
     if (indexPath.row == 3) {
-        ProdutoTableViewCell *produto = [tableView dequeueReusableCellWithIdentifier:@"nome"];
-        return produto;
+        produtoCell = [tableView dequeueReusableCellWithIdentifier:@"nome"];
+        
+        return produtoCell;
     }
     
     if (indexPath.row == 4) {
@@ -92,8 +89,8 @@
     }
     
     if (indexPath.row == 5) {
-        ImagemTableViewCell *imagem = [tableView dequeueReusableCellWithIdentifier:@"imagem"];
-        return imagem;
+        _imagem = [tableView dequeueReusableCellWithIdentifier:@"imagem"];
+        return _imagem;
     }
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:UITableViewCellStyleDefault];
@@ -142,39 +139,34 @@
     notificacao.soundName = UILocalNotificationDefaultSoundName;
     notificacao.applicationIconBadgeNumber = 1;
     
+    [singleton adicionarProd:produto];
+    NSLog(@"%@", [singleton retornoProd]);
+    if(produto)
+        produto = [[Produto alloc]init];
     
-    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
-}
+//    if(produto){
+//        
+//        
+//    
+//        NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+//    
+//        notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ vai expirar em breve.", nil), produto.nome];
+//        notificacao.alertAction = NSLocalizedString(@"Ver Produto", nil);
+//        notificacao.alertTitle = NSLocalizedString(@"Alerta de Validade", nil);
 //
-
-//Quando adicionar o produto:
-
-//- (void)scheduleNotificationWithItem:(Produto *)produto interval:(int)minutesBefore {
-//    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
-//    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-//    NSCalendar *calendario = [[NSCalendar alloc] init];
+//        notificacao.timeZone = [NSTimeZone defaultTimeZone];
+//        notificacao.fireDate = [produto.dataValidade dateByAddingTimeInterval:-(60*60*24)];
 //    
-//    NSDate *itemDate = [calendario dateFromComponents:dateComps];
+//        notificacao.soundName = UILocalNotificationDefaultSoundName;
+//        notificacao.applicationIconBadgeNumber = 1;
 //    
-//    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-//    if (localNotif == nil)
-//        return;
-//    localNotif.fireDate = [itemDate dateByAddingTimeInterval:-(minutesBefore*1440)];
-//    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+//    
+//        [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+//    }
     
-//    localNotif.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ in %i minutes.", nil),
-//                            produto.nome, minutesBefore];
-//    localNotif.alertAction = NSLocalizedString(@"View Details", nil);
-//    localNotif.alertTitle = NSLocalizedString(@"Item Due", nil);
     
-//    localNotif.soundName = UILocalNotificationDefaultSoundName;
-//    localNotif.applicationIconBadgeNumber = 1;
-    
-//    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:produto.nome forKey:produto];
-//    localNotif.userInfo = infoDict;
-    
-//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
-//}
+}
+
 
 /*
 #pragma mark - Navigation
