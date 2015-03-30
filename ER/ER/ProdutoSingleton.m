@@ -54,7 +54,7 @@ static ProdutoSingleton *instancia = nil;
     [realm beginWriteTransaction];
     _prod.nome = nomeProduto;
     _prod.numCodigoDeBarras = barCode;
-    _prod.dataCompraInsercao = dataInsercao;
+//    _prod.dataCompraInsercao = dataInsercao;
     _prod.dataValidade = dataValidade;
     [realm commitWriteTransaction];
     

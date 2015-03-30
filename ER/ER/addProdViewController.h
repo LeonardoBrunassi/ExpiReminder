@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DataValidadeTableViewCell.h"
+#import "DatePickerTableViewCell.h"
+#import "ImagemTableViewCell.h"
+#import "ProdutoTableViewCell.h"
 #import "Produto.h"
+#import "ProdutoSingleton.h"
+
 
 @class Produto;
 
@@ -19,5 +24,9 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *editToolBar;
 @property(nonatomic, strong) Produto *produto;
 @property (weak, nonatomic) UILocalNotification *notificacao;
-@property (weak, nonatomic) Produto *produto;
+
+@property (nonatomic, weak) ProdutoTableViewCell *produtoCell;
+@property(nonatomic, weak) DataValidadeTableViewCell *dataValidade;
+@property(nonatomic,weak )ImagemTableViewCell *imagem;
+@property (nonatomic, weak) DatePickerTableViewCell *datePicker;
 @end

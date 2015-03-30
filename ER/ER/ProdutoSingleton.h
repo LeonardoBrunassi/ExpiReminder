@@ -16,6 +16,10 @@
 
 -(void)atualizarProduto:(NSString *)nomeProduto barCode:(NSString *)barCode dataValidade:(NSDate *)dataValidade dataInsercao:(NSDate *)dataInsercao;
 
+-(void) adicionarProd: (Produto*) produto;
+-(RLMResults*) retornoProd;
+-(void)removeProduto:(Produto *)produto;
+
 
 @property RLMRealm *realm;
 @property RLMResults *results; //SELECT

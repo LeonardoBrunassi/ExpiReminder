@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Produto.h"
+#import "ProdutoSingleton.h"
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addProdutos;
-
+@property (weak, nonatomic) Produto *produto;
+@property (weak, nonatomic) ProdutoSingleton *singleton;
 @end
 
