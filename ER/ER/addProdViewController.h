@@ -17,5 +17,4 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *editToolBar;
 @property (weak, nonatomic) UILocalNotification *notificacao;
 @property (weak, nonatomic) Produto *produto;
-
 @end

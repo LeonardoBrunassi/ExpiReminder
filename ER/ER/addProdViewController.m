@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _produto = [[Produto alloc]init];
+    produto = [[Produto alloc]init];
     self.navigationItem.title = @"Adicionar Produto";
     
     [self.tabBarController setHidesBottomBarWhenPushed:YES];
@@ -127,19 +127,20 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.tabBarController.tabBar setHidden: YES];
-    NSLog(@"will appear: %@", _produto.numCodigoDeBarras);
+    NSLog(@"will appear: %@", produto.numCodigoDeBarras);
 }
 
 -(void)done:(id)sender{
     
-    notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ vão .", nil), produto.nome];
-    notificacao.alertAction = NSLocalizedString(@"View Details", nil);
-    notificacao.alertTitle = NSLocalizedString(@"Item Due", nil);
-
-    notificacao.timeZone = [NSTimeZone defaultTimeZone];
-    notificacao.fireDate =
     
-    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+//    notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ vão .", nil), produto.nome];
+//    notificacao.alertAction = NSLocalizedString(@"View Details", nil);
+//    notificacao.alertTitle = NSLocalizedString(@"Item Due", nil);
+//
+//    notificacao.timeZone = [NSTimeZone defaultTimeZone];
+//    //xrnotificacao.fireDate =
+//    
+//    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
 }
 //
 

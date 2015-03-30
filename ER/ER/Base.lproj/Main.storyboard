@@ -231,6 +231,9 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataValidade" destination="XAL-s8-6CS" id="j7T-wz-nkE"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="datePicker" rowHeight="183" id="pu2-9N-K5O" customClass="DatePickerTableViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -264,7 +267,7 @@
                                 </accessibility>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
-                                    <outlet property="datePicker" destination="mxV-Aa-0Fr" id="40U-YW-9H5"/>
+                                    <outlet property="datePicker" destination="mxV-Aa-0Fr" id="ro2-gX-HOF"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aXm-ZL-7aU">
@@ -294,7 +297,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="113" y="7" width="253" height="30"/>
+                                                <rect key="frame" x="113" y="10" width="253" height="30"/>
                                             </variation>
                                         </textField>
                                     </subviews>
@@ -313,7 +316,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="prodLabel" destination="iYs-vl-fWe" id="Hed-vx-eBU"/>
-                                    <outlet property="registroProdTF" destination="JBu-pq-huo" id="pGt-nz-i7c"/>
+                                    <outlet property="registroProdTF" destination="JBu-pq-huo" id="JLZ-VM-Vy4"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="m2J-Oe-N7n">
@@ -366,7 +369,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uh6-q1-mY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1929" y="448.5"/>
+            <point key="canvasLocation" x="1935" y="449"/>
         </scene>
         <!--Bar Code View Controller-->
         <scene sceneID="CgU-nX-CDI">
