@@ -127,17 +127,23 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.tabBarController.tabBar setHidden: YES];
-    NSLog(@"will appear: %@", _produto.numCodigoDeBarras);
+    NSLog(@"will appear: %@", produto.numCodigoDeBarras);
 }
 
 -(void)done:(id)sender{
     
-    notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ vão .", nil), produto.nome];
-    notificacao.alertAction = NSLocalizedString(@"View Details", nil);
-    notificacao.alertTitle = NSLocalizedString(@"Item Due", nil);
+    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+    
+    notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ vai expirar em breve.", nil), produto.nome];
+    notificacao.alertAction = NSLocalizedString(@"Ver Produto", nil);
+    notificacao.alertTitle = NSLocalizedString(@"Alerta de Validade", nil);
 
     notificacao.timeZone = [NSTimeZone defaultTimeZone];
-    notificacao.fireDate =
+    notificacao.fireDate = [produto.dataValidade dateByAddingTimeInterval:-(60*60*24)];
+    
+    notificacao.soundName = UILocalNotificationDefaultSoundName;
+    notificacao.applicationIconBadgeNumber = 1;
+    
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
 }
@@ -171,7 +177,6 @@
     
 //    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
 //}
-
 
 /*
 #pragma mark - Navigation
