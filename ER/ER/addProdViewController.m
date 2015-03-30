@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _produto = [[Produto alloc]init];
     self.navigationItem.title = @"Adicionar Produto";
     
     [self.tabBarController setHidesBottomBarWhenPushed:YES];
@@ -120,13 +121,15 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    //[self.tabBarController.tabBar setHidden: NO];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.tabBarController.tabBar setHidden: YES];
+    NSLog(@"will appear: %@", _produto.numCodigoDeBarras);
 }
+
 
 
 /*

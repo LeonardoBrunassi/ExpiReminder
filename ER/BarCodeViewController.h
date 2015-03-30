@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ProdutoSingleton.h"
 
+@class Produto;
 @interface BarCodeViewController : UIViewController
 
 @property ProdutoSingleton *produtoSingleton;
+@property (weak, nonatomic) NSString *barCode;
+@property (nonatomic, strong) Produto *myProduct;
 @end
