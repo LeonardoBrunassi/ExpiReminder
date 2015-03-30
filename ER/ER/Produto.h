@@ -13,7 +13,7 @@
 
 @property NSString *nome;
 @property NSString *categoria;
-@property NSDate *validadeRestante;
+@property NSCalendar *dataValidade;
 @property NSDate *dataCompraInsercao;
 @property NSString *numCodigoDeBarras;
 

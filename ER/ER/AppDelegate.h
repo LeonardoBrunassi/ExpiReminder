@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Produto.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

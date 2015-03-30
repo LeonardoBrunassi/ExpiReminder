@@ -17,7 +17,7 @@
 @end
 
 @implementation addProdViewController
-@synthesize cadastroTableView;
+@synthesize cadastroTableView, notificacao, produto;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,8 +27,8 @@
     self.tabBarController.tabBar.hidden = YES;
     
     
-//    UIBarButtonItem *camera = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:nil];
-//    self.navigationItem.rightBarButtonItem = camera;
+    UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+    self.navigationItem.rightBarButtonItem = done;
     
     //self.tabBarController
 //    [self.datePicker addTarget:self action:@selector(dataPickerMudada:)forControlEvents:UIControlEventValueChanged];
@@ -128,6 +128,47 @@
     [self.tabBarController.tabBar setHidden: YES];
 }
 
+-(void)done:(id)sender{
+    
+    notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ vão .", nil), produto.nome];
+    notificacao.alertAction = NSLocalizedString(@"View Details", nil);
+    notificacao.alertTitle = NSLocalizedString(@"Item Due", nil);
+
+    notificacao.timeZone = [NSTimeZone defaultTimeZone];
+    notificacao.fireDate =
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+}
+//
+
+//Quando adicionar o produto:
+
+//- (void)scheduleNotificationWithItem:(Produto *)produto interval:(int)minutesBefore {
+//    NSCalendar *calendar = [NSCalendar autoupdatingCurrentCalendar];
+//    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+//    NSCalendar *calendario = [[NSCalendar alloc] init];
+//    
+//    NSDate *itemDate = [calendario dateFromComponents:dateComps];
+//    
+//    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+//    if (localNotif == nil)
+//        return;
+//    localNotif.fireDate = [itemDate dateByAddingTimeInterval:-(minutesBefore*1440)];
+//    localNotif.timeZone = [NSTimeZone defaultTimeZone];
+    
+//    localNotif.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ in %i minutes.", nil),
+//                            produto.nome, minutesBefore];
+//    localNotif.alertAction = NSLocalizedString(@"View Details", nil);
+//    localNotif.alertTitle = NSLocalizedString(@"Item Due", nil);
+    
+//    localNotif.soundName = UILocalNotificationDefaultSoundName;
+//    localNotif.applicationIconBadgeNumber = 1;
+    
+//    NSDictionary *infoDict = [NSDictionary dictionaryWithObject:produto.nome forKey:produto];
+//    localNotif.userInfo = infoDict;
+    
+//    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+//}
 
 /*
 #pragma mark - Navigation
