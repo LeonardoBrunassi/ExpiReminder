@@ -59,9 +59,10 @@
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"Entro");
     
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     if(indexPath.row == 0){
         DataValidadeTableViewCell *dataValidade = [tableView dequeueReusableCellWithIdentifier:@"validade"];
-        
         return dataValidade;
     }
     
@@ -72,8 +73,8 @@
     
     if (indexPath.row == 2) {
         UITableViewCell *celula = [[UITableViewCell alloc] init];
-        celula.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
-        celula.contentView.layer.borderColor = [[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0] CGColor];
+        celula.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:0.5];
+        celula.contentView.layer.borderColor = [[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:0.0] CGColor];
         //celula.contentView.layer.borderWidth = 0.0;
         return celula;
     }
@@ -85,7 +86,7 @@
     
     if (indexPath.row == 4) {
         UITableViewCell *celula = [[UITableViewCell alloc] init];
-        celula.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1.0];
+        celula.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:0.5];
         return celula;
     }
     
@@ -112,7 +113,7 @@
     else if (indexPath.row == 4)
         return 35;
     else if (indexPath.row == 5)
-        return 150;
+        return 190;
     else
         return 0;
 }
