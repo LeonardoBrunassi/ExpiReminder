@@ -9,6 +9,7 @@
 #import "BarCodeViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import "Produto.h"
+#import "addProdViewController.h"
 
 @interface BarCodeViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 {
@@ -20,10 +21,10 @@
     
     UIView *_highlightView;
     UILabel *_label;
-    Produto *myProduct;
     
 }
 @end
+
 
 @implementation BarCodeViewController
 
@@ -51,7 +52,7 @@
 
 -(void)initialize
 {
-    
+    _myProduct = [[Produto alloc]init];
     self.tabBarController.tabBar.hidden =  YES;
     _highlightView = [[UIView alloc] init];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -65,7 +66,7 @@
     _label.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.65];
     _label.textColor = [UIColor whiteColor];
     _label.textAlignment = NSTextAlignmentCenter;
-    _label.text = @"(none)";
+    _label.text = @" ";
     [self.view addSubview:_label];
     
     _session = [[AVCaptureSession alloc] init];
@@ -113,8 +114,11 @@
                 highlightViewRect = barCodeObject.bounds;
                 detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
                 
-                [myProduct setNumCodigoDeBarras:detectionString];
+                [_myProduct setNumCodigoDeBarras:detectionString];
+                NSLog(@"detection string: %@", detectionString);
                 
+                addProdViewController *p = (addProdViewController*)[self backViewController];
+                [p setProduto:_myProduct];
                 break;
             }
         }
@@ -125,22 +129,32 @@
             break;
         }
         else
-            _label.text = @"(none)";
+            _label.text = @" ";
     }
     
     _highlightView.frame = highlightViewRect;
     
 }
 
--(void)viewWillDisappear:(BOOL)animated
+//metodo para buscar buscar uma view controller anterior
+- (UIViewController *)backViewController
 {
+    NSInteger myIndex = [self.navigationController.viewControllers indexOfObject:self];
     
+    if ( myIndex != 0 && myIndex != NSNotFound ) {
+        return [self.navigationController.viewControllers objectAtIndex:myIndex-1];
+    } else {
+        return nil;
+    }
 }
+
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 
 
