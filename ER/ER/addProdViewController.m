@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _produto = [[Produto alloc]init];
+    produto = [[Produto alloc]init];
     self.navigationItem.title = @"Adicionar Produto";
     
     [self.tabBarController setHidesBottomBarWhenPushed:YES];
@@ -131,9 +131,7 @@
 }
 
 -(void)done:(id)sender{
-    
-    NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-    
+
     notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ vai expirar em breve.", nil), produto.nome];
     notificacao.alertAction = NSLocalizedString(@"Ver Produto", nil);
     notificacao.alertTitle = NSLocalizedString(@"Alerta de Validade", nil);
