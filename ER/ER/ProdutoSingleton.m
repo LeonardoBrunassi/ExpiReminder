@@ -44,7 +44,7 @@ static ProdutoSingleton *instancia = nil;
 {
     [realm beginWriteTransaction];
     
-    [realm delete:produto];
+    [realm deleteObject:produto];
     
     [realm commitWriteTransaction];
 }
