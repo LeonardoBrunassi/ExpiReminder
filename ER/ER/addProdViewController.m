@@ -152,7 +152,7 @@
           NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
     
           [produto setDataValidade:dateString];
-          NSLog(@"DATA: %@", dateString);
+          NSLog(@"DATA vindo de produto: %@", [produto dataValidade] );
           
           [singleton adicionarProd:produto];
           NSLog(@"%@", [singleton retornoProd]);

@@ -49,9 +49,17 @@
     
 //    NSUInteger unitFlags = NSDayCalendarUnit;
 //    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-//    NSDateComponents *components = [calendar components:unitFlags fromDate:[NSDate date] toDate:_singleton.data options:0];
-    cell.diasFaltando.text = [NSString stringWithFormat:@"%lf", [_singleton.data timeIntervalSinceNow]/ (60 * 60 * 24)];
-    cell.data.text = _produto.dataValidade;
+//    NSDateComponents *components = [calendar components:unitFlags fromDate:[NSDate date] toDate:_singleton.data options:0];//
+
+    
+    NSDate *date = [[NSDate alloc]init];
+    cell.diasFaltando.text = [NSString stringWithFormat:@"%lf", [date timeIntervalSinceNow] * -(60 * 60 * 24)];
+        
+    cell.data.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]
+                      dataValidade];
+    
+    
+    
     
     return cell;
 }
