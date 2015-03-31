@@ -170,7 +170,7 @@
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"dd'/'MM'/'yyyy"];
         NSDate *data = [dateFormatter dateFromString:produto.dataValidade];
-        NSLog(@"%@", data);
+        NSLog(@"minha data: %@", data);
     
         notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
         notificacao.timeZone = [NSTimeZone defaultTimeZone];

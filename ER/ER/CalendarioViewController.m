@@ -14,6 +14,8 @@
 
 @implementation CalendarioViewController
 
+//diaAlerta
+//alerta on/off
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Calendário";
