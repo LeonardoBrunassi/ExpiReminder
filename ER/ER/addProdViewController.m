@@ -141,21 +141,17 @@
 //        [alert show];
 //    }
 //    else{
-        [produto setNome: produtoCell.registroProdTF.text];
-         NSLog(@"nome: %@", produto.nome);
-          
-          //singleton.data = _datePicker.datePicker.date;
-          
-        NSDate *data = _datePicker.datePicker.date;
+    [produto setNome: produtoCell.registroProdTF.text];
+
+    
+    NSDate *data = _datePicker.datePicker.date;
     
           NSDateFormatter *format = [[NSDateFormatter alloc] init];
           [format setDateFormat:@"dd/MM/yyyy"];
           NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
     
-    NSLog(@"datestring: %@", dateString);
     
           [produto setDataValidade:dateString];
-          NSLog(@"DATA vindo de produto: %@", [produto dataValidade] );
           
           [singleton adicionarProd:produto];
           NSLog(@"%@", [singleton retornoProd]);
@@ -165,19 +161,18 @@
     
         
        
-    
+        NSString *nome = (@"% vai expirar em breve.", produtoCell.registroProdTF.text);
  //       NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-        notificacao.alertBody = (@"%@ vai expirar em breve.", produto.nome);
-        notificacao.alertAction = NSLocalizedString(@"Ver Produto", nil);
-        notificacao.alertTitle = NSLocalizedString(@"Alerta de Validade", nil);
+        notificacao.alertBody = nome;
+
+//        notificacao.alertAction = NSLocalizedString(@"Ver Produto", nil);
+//        notificacao.alertTitle = NSLocalizedString(@"Alerta de Validade", nil);
     
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"dd'/'MM'/'yyyy"];
-//        NSDate *data = [dateFormatter dateFromString:produto.dataValidade];
         NSLog(@"minha data: %@", data);
 
     
-        notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
+//        notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
+        notificacao.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
         notificacao.timeZone = [NSTimeZone defaultTimeZone];
     
         notificacao.soundName = UILocalNotificationDefaultSoundName;
