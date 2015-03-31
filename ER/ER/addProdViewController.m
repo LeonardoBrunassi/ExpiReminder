@@ -144,13 +144,16 @@
         [produto setNome: produtoCell.registroProdTF.text];
          NSLog(@"nome: %@", produto.nome);
           
-          singleton.data = _datePicker.datePicker.date;
+          //singleton.data = _datePicker.datePicker.date;
+          
           NSDateFormatter *format = [[NSDateFormatter alloc] init];
           [format setDateFormat:@"dd/MM/yyyy"];
           NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
-          
+    
+    NSLog(@"datestring: %@", dateString);
+    
           [produto setDataValidade:dateString];
-          NSLog(@"DATA: %@", dateString);
+          NSLog(@"DATA vindo de produto: %@", [produto dataValidade] );
           
           [singleton adicionarProd:produto];
           NSLog(@"%@", [singleton retornoProd]);
