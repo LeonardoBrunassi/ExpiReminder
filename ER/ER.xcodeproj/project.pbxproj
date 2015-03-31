@@ -31,6 +31,9 @@
 		E39F42881AC4810D0010195E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39F42871AC4810D0010195E /* QuartzCore.framework */; };
 		E39F428A1AC481190010195E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39F42891AC481190010195E /* CoreGraphics.framework */; };
 		E39F428C1AC4812D0010195E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39F428B1AC4812D0010195E /* UIKit.framework */; };
+		F75A96D31ACB0A80007B2EDC /* ConfigTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75A96D21ACB0A80007B2EDC /* ConfigTableViewController.m */; };
+		F75A96D61ACB0B0E007B2EDC /* AlertaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F75A96D51ACB0B0E007B2EDC /* AlertaTableViewCell.m */; };
+		F75A96D91ACB0C22007B2EDC /* DataAlertaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F75A96D81ACB0C22007B2EDC /* DataAlertaTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,12 @@
 		E39F42871AC4810D0010195E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E39F42891AC481190010195E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		E39F428B1AC4812D0010195E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F75A96D11ACB0A80007B2EDC /* ConfigTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigTableViewController.h; path = ../ConfigTableViewController.h; sourceTree = "<group>"; };
+		F75A96D21ACB0A80007B2EDC /* ConfigTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConfigTableViewController.m; path = ../ConfigTableViewController.m; sourceTree = "<group>"; };
+		F75A96D41ACB0B0E007B2EDC /* AlertaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertaTableViewCell.h; sourceTree = "<group>"; };
+		F75A96D51ACB0B0E007B2EDC /* AlertaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertaTableViewCell.m; sourceTree = "<group>"; };
+		F75A96D71ACB0C22007B2EDC /* DataAlertaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataAlertaTableViewCell.h; path = ../DataAlertaTableViewCell.h; sourceTree = "<group>"; };
+		F75A96D81ACB0C22007B2EDC /* DataAlertaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataAlertaTableViewCell.m; path = ../DataAlertaTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +191,10 @@
 		E3E22C4C1AC756AB00EE3E8C /* custom cells */ = {
 			isa = PBXGroup;
 			children = (
+				F75A96D71ACB0C22007B2EDC /* DataAlertaTableViewCell.h */,
+				F75A96D81ACB0C22007B2EDC /* DataAlertaTableViewCell.m */,
+				F75A96D41ACB0B0E007B2EDC /* AlertaTableViewCell.h */,
+				F75A96D51ACB0B0E007B2EDC /* AlertaTableViewCell.m */,
 				B296608A1AC49E080070C7A5 /* ImagemTableViewCell.h */,
 				B296608B1AC49E080070C7A5 /* ImagemTableViewCell.m */,
 				B29660871AC49DF70070C7A5 /* ProdutoTableViewCell.h */,
@@ -199,6 +212,8 @@
 		E3E22C4D1AC756BC00EE3E8C /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F75A96D11ACB0A80007B2EDC /* ConfigTableViewController.h */,
+				F75A96D21ACB0A80007B2EDC /* ConfigTableViewController.m */,
 				E39F42801AC480760010195E /* BarCodeViewController.h */,
 				E39F42811AC480760010195E /* BarCodeViewController.m */,
 				B303F2511AC33233000879FA /* ViewController.h */,
@@ -338,9 +353,12 @@
 				B296608F1AC49EF20070C7A5 /* DataValidadeTableViewCell.m in Sources */,
 				B29660861AC49DE00070C7A5 /* DatePickerTableViewCell.m in Sources */,
 				B303F2501AC33233000879FA /* AppDelegate.m in Sources */,
+				F75A96D31ACB0A80007B2EDC /* ConfigTableViewController.m in Sources */,
+				F75A96D91ACB0C22007B2EDC /* DataAlertaTableViewCell.m in Sources */,
 				B296608C1AC49E080070C7A5 /* ImagemTableViewCell.m in Sources */,
 				B303F24D1AC33233000879FA /* main.m in Sources */,
 				B29660831AC4756F0070C7A5 /* addProdViewController.m in Sources */,
+				F75A96D61ACB0B0E007B2EDC /* AlertaTableViewCell.m in Sources */,
 				B296607D1AC3426D0070C7A5 /* Produto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
