@@ -49,7 +49,7 @@ static ProdutoSingleton *instancia = nil;
     [realm commitWriteTransaction];
 }
 
--(void)atualizarProduto:(NSString *)nomeProduto barCode:(NSString *)barCode dataValidade:(NSDate *)dataValidade dataInsercao:(NSDate *)dataInsercao
+-(void)atualizarProduto:(NSString *)nomeProduto barCode:(NSString *)barCode dataValidade:(NSString *)dataValidade dataInsercao:(NSDate *)dataInsercao
 {
     [realm beginWriteTransaction];
     _prod.nome = nomeProduto;

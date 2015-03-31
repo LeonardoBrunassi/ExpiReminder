@@ -18,8 +18,6 @@
     [super viewDidLoad];
     self.title = @"Calendário";
     self.navigationItem.title = @"Calendário";
-    UIBarButtonItem *add = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(adicionarProduto:)];
-    self.navigationItem.rightBarButtonItem = add;
 
     // Do any additional setup after loading the view.
 }

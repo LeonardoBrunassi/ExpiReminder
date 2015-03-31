@@ -20,7 +20,7 @@
 -(RLMResults*) retornoProd;
 -(void)removeProduto:(Produto *)produto;
 
-
+@property NSDate *data;
 @property RLMRealm *realm;
 @property RLMResults *results; //SELECT
 @property Produto *prod;

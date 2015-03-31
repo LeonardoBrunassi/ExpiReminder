@@ -46,12 +46,29 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    ListaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"produto" forIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.nome.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]nome];
     
-    cell.textLabel.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]nome];
-    
+//    NSUInteger unitFlags = NSDayCalendarUnit;
+//    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+//    NSDateComponents *components = [calendar components:unitFlags fromDate:[NSDate date] toDate:_singleton.data options:0];
+    cell.diasFaltando.text = [NSString stringWithFormat:@"%lf", [_singleton.data timeIntervalSinceNow]/ (60 * 60 * 24)];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        
+        //NAO ESTA FUNCIONANDO !!!!
+        [_singleton removeProduto:[[_singleton retornoProd]objectAtIndex:indexPath.row]];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
 }
 
 @end

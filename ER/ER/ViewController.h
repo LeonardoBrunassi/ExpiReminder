@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Produto.h"
 #import "ProdutoSingleton.h"
+#import "ListaTableViewCell.h"
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

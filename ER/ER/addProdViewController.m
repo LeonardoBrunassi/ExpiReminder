@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    produto = [[Produto alloc]init];
+    //produto = [[Produto alloc]init];
     self.navigationItem.title = @"Adicionar Produto";
     
     [self.tabBarController setHidesBottomBarWhenPushed:YES];
@@ -65,6 +65,8 @@
     
     if(indexPath.row == 1){
         _datePicker = [tableView dequeueReusableCellWithIdentifier:@"datePicker"];
+        NSDate *currentDate = [NSDate date];
+        [_datePicker.datePicker setMinimumDate:currentDate];
         return _datePicker;
     }
     
@@ -129,15 +131,20 @@
 
 -(void)done:(id)sender{
 
-    notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ vai expirar em breve.", nil), produto.nome];
-    notificacao.alertAction = NSLocalizedString(@"Ver Produto", nil);
-    notificacao.alertTitle = NSLocalizedString(@"Alerta de Validade", nil);
-
-    notificacao.timeZone = [NSTimeZone defaultTimeZone];
-    notificacao.fireDate = [produto.dataValidade dateByAddingTimeInterval:-(60*60*24)];
     
-    notificacao.soundName = UILocalNotificationDefaultSoundName;
-    notificacao.applicationIconBadgeNumber = 1;
+    ProdutoSingleton *singleton = [ProdutoSingleton instance];
+        
+    produto.nome = produtoCell.registroProdTF.text;
+    //[produto setDataValidade:_datePicker.datePicker];
+    NSLog(@"nome: %@", produto.nome);
+    singleton.data = _datePicker.datePicker.date;
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
+    
+    NSLog(@"%@", dateString);
+    produto.dataValidade = dateString;
+    NSLog(@"DATA: %@", dateString);
     
     [singleton adicionarProd:produto];
     NSLog(@"%@", [singleton retornoProd]);

@@ -25,10 +25,10 @@
 @property(nonatomic, strong) Produto *produto;
 @property (weak, nonatomic) UILocalNotification *notificacao;
 
-
-
 @property (nonatomic, weak) ProdutoTableViewCell *produtoCell;
 @property(nonatomic, weak) DataValidadeTableViewCell *dataValidade;
 @property(nonatomic,weak )ImagemTableViewCell *imagem;
 @property (nonatomic, weak) DatePickerTableViewCell *datePicker;
+
+
 @end
