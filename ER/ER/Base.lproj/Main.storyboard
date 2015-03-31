@@ -112,7 +112,7 @@
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="26" y="49" width="91" height="21"/>
+                                                        <rect key="frame" x="26" y="49" width="352" height="21"/>
                                                         <mask key="constraints">
                                                             <include reference="WKr-BJ-PiX"/>
                                                         </mask>
