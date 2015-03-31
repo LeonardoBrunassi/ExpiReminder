@@ -13,7 +13,6 @@
     [super viewDidLoad];
 
     self.navigationItem.title = @"Configurações";
-    
     self.tabBarController.tabBar.hidden = YES;
     
     UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
