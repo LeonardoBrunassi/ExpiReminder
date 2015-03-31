@@ -11,5 +11,6 @@
 @interface ListaTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nome;
 @property (weak, nonatomic) IBOutlet UILabel *diasFaltando;
+@property (weak, nonatomic) IBOutlet UILabel *data;
 
 @end

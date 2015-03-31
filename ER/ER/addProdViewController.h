@@ -18,12 +18,12 @@
 @class Produto;
 
 @interface addProdViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *cadastroTableView;
 
+@property (weak, nonatomic) IBOutlet UITableView *cadastroTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barCodeCam;
 @property (weak, nonatomic) IBOutlet UIToolbar *editToolBar;
 @property(nonatomic, strong) Produto *produto;
-@property (weak, nonatomic) UILocalNotification *notificacao;
+@property (strong, nonatomic) UILocalNotification *notificacao;
 
 @property (nonatomic, weak) ProdutoTableViewCell *produtoCell;
 @property(nonatomic, weak) DataValidadeTableViewCell *dataValidade;

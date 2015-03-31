@@ -19,11 +19,8 @@
     self.title = @"Produtos";
     self.navigationItem.title = @"Produtos";
     _singleton = [ProdutoSingleton instance];
-//    UIBarButtonItem *add = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(adicionarProduto:)];
-//    self.navigationItem.rightBarButtonItem = add;
     
-    
-    // Do any additional setup after loading the view, typically from a nib.
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -54,6 +51,7 @@
 //    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 //    NSDateComponents *components = [calendar components:unitFlags fromDate:[NSDate date] toDate:_singleton.data options:0];
     cell.diasFaltando.text = [NSString stringWithFormat:@"%lf", [_singleton.data timeIntervalSinceNow]/ (60 * 60 * 24)];
+    cell.data.text = _produto.dataValidade;
     
     return cell;
 }

@@ -27,6 +27,8 @@
     UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
     self.navigationItem.rightBarButtonItem = done;
     
+    notificacao = [[UILocalNotification alloc]init];
+    
     //self.tabBarController
 //    [self.datePicker addTarget:self action:@selector(dataPickerMudada:)forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view.
@@ -73,8 +75,6 @@
     if (indexPath.row == 2) {
         UITableViewCell *celula = [[UITableViewCell alloc] init];
         celula.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:0.5];
-        celula.contentView.layer.borderColor = [[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:0.0] CGColor];
-        //celula.contentView.layer.borderWidth = 0.0;
         return celula;
     }
     
@@ -130,49 +130,58 @@
 }
 
 -(void)done:(id)sender{
-
-    
     ProdutoSingleton *singleton = [ProdutoSingleton instance];
-        
-    produto.nome = produtoCell.registroProdTF.text;
-    //[produto setDataValidade:_datePicker.datePicker];
-    NSLog(@"nome: %@", produto.nome);
-    singleton.data = _datePicker.datePicker.date;
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"dd/MM/yyyy"];
-    NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
     
-    NSLog(@"%@", dateString);
-    produto.dataValidade = dateString;
-    NSLog(@"DATA: %@", dateString);
-    
-    [singleton adicionarProd:produto];
-    NSLog(@"%@", [singleton retornoProd]);
-    if(produto)
-        produto = [[Produto alloc]init];
-    
-//    if(produto){
-//        
-//        
-//    
-//        NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-//    
-//        notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ vai expirar em breve.", nil), produto.nome];
-//        notificacao.alertAction = NSLocalizedString(@"Ver Produto", nil);
-//        notificacao.alertTitle = NSLocalizedString(@"Alerta de Validade", nil);
-//
-//        notificacao.timeZone = [NSTimeZone defaultTimeZone];
-//        notificacao.fireDate = [produto.dataValidade dateByAddingTimeInterval:-(60*60*24)];
-//    
-//        notificacao.soundName = UILocalNotificationDefaultSoundName;
-//        notificacao.applicationIconBadgeNumber = 1;
-//    
-//    
-//        [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+//    if(produtoCell.registroProdTF.text == nil){
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nome inválido"
+//                                                        message:@"O nome do produto deve ser preenchido."
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles:nil];
+//        [alert show];
+//    }
+//    else{
+        [produto setNome: produtoCell.registroProdTF.text];
+         NSLog(@"nome: %@", produto.nome);
+          
+          singleton.data = _datePicker.datePicker.date;
+          NSDateFormatter *format = [[NSDateFormatter alloc] init];
+          [format setDateFormat:@"dd/MM/yyyy"];
+          NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
+          
+          [produto setDataValidade:dateString];
+          NSLog(@"DATA: %@", dateString);
+          
+          [singleton adicionarProd:produto];
+          NSLog(@"%@", [singleton retornoProd]);
+          if(produto)
+          produto = [[Produto alloc]init];
 //    }
     
+        
+       
     
-}
+ //       NSDateComponents *dateComps = [[NSDateComponents alloc] init];
+    
+        notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ vai expirar em breve.", nil), produto.nome];
+//        notificacao.alertAction = NSLocalizedString(@"Ver Produto", nil);
+//        notificacao.alertTitle = NSLocalizedString(@"Alerta de Validade", nil);
+    
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd'/'MM'/'yyyy"];
+        NSDate *data = [dateFormatter dateFromString:produto.dataValidade];
+        NSLog(@"%@", data);
+    
+        notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
+        notificacao.timeZone = [NSTimeZone defaultTimeZone];
+    
+        notificacao.soundName = UILocalNotificationDefaultSoundName;
+        notificacao.applicationIconBadgeNumber = 1;
+    
+    
+        [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+    }
+
 
 
 /*
