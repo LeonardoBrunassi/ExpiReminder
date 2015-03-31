@@ -68,8 +68,11 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         
+        Produto *auxProduto = [[_singleton retornoProd]objectAtIndex:indexPath.row];
+        NSLog(@"nomeProduto: %@", auxProduto.nome);
+        
         //NAO ESTA FUNCIONANDO !!!!
-        [_singleton removeProduto:[[_singleton retornoProd]objectAtIndex:indexPath.row]];
+        [_singleton removeProduto: auxProduto];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
