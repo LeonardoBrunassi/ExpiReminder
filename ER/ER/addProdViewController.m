@@ -146,7 +146,7 @@
         NSDate *data = _datePicker.datePicker.date;
     
     
-          singleton.data = _datePicker.datePicker.date;
+       //singleton.data = _datePicker.datePicker.date;
           NSDateFormatter *format = [[NSDateFormatter alloc] init];
           [format setDateFormat:@"dd/MM/yyyy"];
           NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
@@ -172,7 +172,7 @@
         NSLog(@"minha data: %@", data);
 
     
-        notificacao.fireDate = [singleton.data dateByAddingTimeInterval:-(60*60*24)];
+        //notificacao.fireDate = [singleton.data dateByAddingTimeInterval:-(60*60*24)];
         notificacao.timeZone = [NSTimeZone defaultTimeZone];
     
         notificacao.soundName = UILocalNotificationDefaultSoundName;
