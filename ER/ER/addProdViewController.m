@@ -141,18 +141,17 @@
 //        [alert show];
 //    }
 //    else{
-        [produto setNome: produtoCell.registroProdTF.text];
-         NSLog(@"nome: %@", produto.nome);
-        NSDate *data = _datePicker.datePicker.date;
+    [produto setNome: produtoCell.registroProdTF.text];
+
     
+    NSDate *data = _datePicker.datePicker.date;
     
-       //singleton.data = _datePicker.datePicker.date;
           NSDateFormatter *format = [[NSDateFormatter alloc] init];
           [format setDateFormat:@"dd/MM/yyyy"];
           NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
     
+    
           [produto setDataValidade:dateString];
-          NSLog(@"DATA vindo de produto: %@", [produto dataValidade] );
           
           [singleton adicionarProd:produto];
           NSLog(@"%@", [singleton retornoProd]);
@@ -162,21 +161,22 @@
     
         
        
-    
+        NSString *nome = (@"% vai expirar em breve.", produtoCell.registroProdTF.text);
  //       NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-    NSString *nome = produto.nome;
-        notificacao.alertBody = @"%@ vai expirar em breve.", nome;
+        notificacao.alertBody = nome;
+
 //        notificacao.alertAction = NSLocalizedString(@"Ver Produto", nil);
 //        notificacao.alertTitle = NSLocalizedString(@"Alerta de Validade", nil);
-
+    
         NSLog(@"minha data: %@", data);
 
     
-        //notificacao.fireDate = [singleton.data dateByAddingTimeInterval:-(60*60*24)];
+//        notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
+        notificacao.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
         notificacao.timeZone = [NSTimeZone defaultTimeZone];
     
         notificacao.soundName = UILocalNotificationDefaultSoundName;
-        notificacao.applicationIconBadgeNumber = 1;
+        notificacao.applicationIconBadgeNumber = 0;
     
     
         [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
@@ -194,4 +194,25 @@
 }
 */
 
+- (IBAction)tirarFoto:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+-(void) imagePickerController:(UIImagePickerController *) picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    [_imagem.imgProd setImage: image];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

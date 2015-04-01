@@ -25,6 +25,7 @@
 @property(nonatomic, strong) Produto *produto;
 @property (strong, nonatomic) UILocalNotification *notificacao;
 
+- (IBAction)tirarFoto:(id)sender;
 @property (nonatomic, weak) ProdutoTableViewCell *produtoCell;
 @property(nonatomic, weak) DataValidadeTableViewCell *dataValidade;
 @property(nonatomic,weak )ImagemTableViewCell *imagem;

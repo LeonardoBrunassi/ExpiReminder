@@ -260,14 +260,12 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Y9p-xq-fdH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="0.5618554161" blue="0.56927692799999996" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="0.5618554161" blue="0.56927692799999996" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="1" green="0.5618554161" blue="0.56927692799999996" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Apg-ZT-rzP" kind="relationship" relationship="viewControllers" id="iln-Wb-5Lx"/>
-                        <segue destination="Zcf-P2-bxR" kind="relationship" relationship="viewControllers" id="YDJ-zh-9vq"/>
-                        <segue destination="sO1-Is-LHD" kind="relationship" relationship="viewControllers" id="dvZ-eK-c49"/>
+                        <segue destination="Zcf-P2-bxR" kind="relationship" relationship="viewControllers" id="d9p-6Q-RpI"/>
+                        <segue destination="sO1-Is-LHD" kind="relationship" relationship="viewControllers" id="XKR-W9-gme"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VaP-OD-FmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -284,7 +282,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="znM-jJ-b2T" kind="show" id="u8p-NO-0uO"/>
+                        <segue destination="Hmc-QO-9aP" kind="relationship" relationship="rootViewController" id="28z-Cs-VQt"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wce-jA-lqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -292,26 +290,25 @@
             <point key="canvasLocation" x="235" y="1977"/>
         </scene>
         <!--Config Table View Controller-->
-        <scene sceneID="fXO-Tv-2PZ">
+        <scene sceneID="2we-AF-4ir">
             <objects>
-                <tableViewController id="znM-jJ-b2T" customClass="ConfigTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Tac-jN-k7h">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <tableViewController id="Hmc-QO-9aP" customClass="ConfigTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DWF-mG-PLY">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Gg1-3I-CPH" customClass="AlertaTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alerta" id="rxp-nM-STc" customClass="AlertaTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gg1-3I-CPH" id="FQM-jA-Jyb">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rxp-nM-STc" id="VYw-jn-iku">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alerta Ligado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bv2-CW-zt7">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alerta Ligado" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9b1-ia-37c">
                                             <rect key="frame" x="43" y="8" width="253" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bu0-Br-BaT">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BNH-Xg-QGh">
                                             <rect key="frame" x="340" y="8" width="51" height="31"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="304" y="6" width="51" height="31"/>
@@ -319,24 +316,27 @@
                                         </switch>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="interruptor" destination="BNH-Xg-QGh" id="usj-SR-MSM"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="k46-tW-AqF" customClass="DataAlertaTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataAlerta" id="g4h-oY-3SI" customClass="DataAlertaTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k46-tW-AqF" id="2ci-Wg-Thm">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g4h-oY-3SI" id="bbg-YQ-l8c">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="znM-jJ-b2T" id="Pxw-Zz-FOB"/>
-                            <outlet property="delegate" destination="znM-jJ-b2T" id="R18-uR-5kW"/>
+                            <outlet property="dataSource" destination="Hmc-QO-9aP" id="UFO-dH-drG"/>
+                            <outlet property="delegate" destination="Hmc-QO-9aP" id="jfo-7r-mlB"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Xfv-us-jKb"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YUK-uX-zxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Df4-Vm-8as" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1119" y="1977"/>
+            <point key="canvasLocation" x="997.5" y="1977"/>
         </scene>
         <!--Add Prod View Controller-->
         <scene sceneID="SL6-sc-egy">
@@ -350,7 +350,11 @@
                             <rect key="frame" x="0.0" y="629" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
-                                <barButtonItem systemItem="camera" id="2M8-8Q-8po"/>
+                                <barButtonItem systemItem="camera" id="2M8-8Q-8po">
+                                    <connections>
+                                        <action selector="tirarFoto:" destination="9TQ-Cg-wxH" id="3w2-T2-T54"/>
+                                    </connections>
+                                </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="LGn-o4-aTB"/>
                                 <barButtonItem image="barcode" id="s7x-iU-Fyu">
                                     <connections>
@@ -509,7 +513,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imgProd" destination="COm-ZS-qXG" id="p04-G8-6LT"/>
+                                    <outlet property="imgProd" destination="ill-XZ-arH" id="IiR-7q-xZX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
