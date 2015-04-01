@@ -10,6 +10,7 @@
 #import "Produto.h"
 #import "ProdutoSingleton.h"
 #import "ListaTableViewCell.h"
+#import "DetalhesViewController.h"
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
