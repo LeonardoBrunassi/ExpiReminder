@@ -28,10 +28,15 @@ static ProdutoSingleton *instancia = nil;
 }
 
 -(void) adicionarProd: (Produto *) produto {
-    realm = [RLMRealm defaultRealm];
+    
+    
     [realm beginWriteTransaction];
     [realm addObject:produto];
     [realm commitWriteTransaction];
+    
+    realm = [RLMRealm defaultRealm];
+    RLMResults *resultado = [Produto allObjects];
+    resultado = [resultado sortedResultsUsingProperty:@"dataValidade" ascending:YES];
 }
 
 //retornar todos produtos

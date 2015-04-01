@@ -180,6 +180,7 @@
                                             <outlet property="data" destination="2Be-9X-3lv" id="rX6-qV-U5n"/>
                                             <outlet property="diasFaltando" destination="wMz-xl-XGi" id="eA6-0w-fks"/>
                                             <outlet property="nome" destination="uvQ-qD-hZG" id="Yl2-W1-j7p"/>
+                                            <segue destination="VLM-z1-yFR" kind="show" id="hP5-m8-vGT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

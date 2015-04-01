@@ -46,6 +46,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ListaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"produto" forIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+    
     cell.nome.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]nome];
     
 //    NSUInteger unitFlags = NSDayCalendarUnit;
