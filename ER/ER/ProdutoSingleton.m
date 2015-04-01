@@ -27,7 +27,7 @@ static ProdutoSingleton *instancia = nil;
     return self;
 }
 
--(void) adicionarProd: (Produto*) produto {
+-(void) adicionarProd: (Produto *) produto {
     realm = [RLMRealm defaultRealm];
     [realm beginWriteTransaction];
     [realm addObject:produto];
@@ -37,7 +37,10 @@ static ProdutoSingleton *instancia = nil;
 //retornar todos produtos
 -(RLMResults*) retornoProd {
     RLMResults *resultado = [Produto allObjects];
+     resultado = [resultado sortedResultsUsingProperty:@"dataValidade" ascending:YES];
     return resultado;
+   
+
 }
 
 -(void)removeProduto:(Produto *)produto
@@ -59,7 +62,5 @@ static ProdutoSingleton *instancia = nil;
     [realm commitWriteTransaction];
     
 }
-
-
 
 @end

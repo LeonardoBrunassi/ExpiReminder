@@ -52,7 +52,6 @@
 //    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 //    NSDateComponents *components = [calendar components:unitFlags fromDate:[NSDate date] toDate:_singleton.data options:0];//
 
-    
     NSDate *date = [[NSDate alloc]init];
     cell.diasFaltando.text = [NSString stringWithFormat:@"%lf", [date timeIntervalSinceNow] * -(60 * 60 * 24)];
         
@@ -72,7 +71,6 @@
         Produto *auxProduto = [[_singleton retornoProd]objectAtIndex:indexPath.row];
         NSLog(@"nomeProduto: %@", auxProduto.nome);
         
-        //NAO ESTA FUNCIONANDO !!!!
         [_singleton removeProduto: auxProduto];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];

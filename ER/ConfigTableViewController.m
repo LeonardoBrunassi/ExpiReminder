@@ -14,8 +14,8 @@
 
     self.navigationItem.title = @"Configurações";
     
-    UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
-    self.navigationItem.rightBarButtonItem = done;
+    
+    
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
@@ -40,6 +40,9 @@
     
     if(indexPath.row == 1){
         _alerta = [tableView dequeueReusableCellWithIdentifier:@"alerta"];
+        //lembrar que temos chamar a target aqui.
+        [_alerta.interruptor addTarget:self action:@selector(mudarInterruptor:) forControlEvents:UIControlEventValueChanged];
+
         return _alerta;
     }
     
@@ -75,7 +78,10 @@
     else if (indexPath.row == 2)
         return 35;
     else if (indexPath.row == 3)
-        return 50;
+    {
+
+            return 50;
+    }
     else if (indexPath.row == 4)
         return 35;
  
@@ -83,7 +89,14 @@
         return 0;
 }
 
-- (void)done:(id)sender{
+- (void) mudarInterruptor: (id) sender{
+    if([_alerta.interruptor isOn]){
+        [self.dataAlerta.daysSlider setHidden:NO];
+    }
+    else{
+        _alerta.interruptor.on = NO;
+        [self.dataAlerta.daysSlider setHidden:YES];
+    }
     
 }
 

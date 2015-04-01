@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DataAlertaTableViewCell : UITableViewCell
-//@property (weak, nonatomic) 
+@property (weak, nonatomic) IBOutlet UILabel *daysReminderLabel;
+- (IBAction)daysSlider:(UISlider *)sender;
+@property (weak, nonatomic) IBOutlet UISlider *daysSlider;
+@property (weak, nonatomic) IBOutlet UILabel *dia;
+
 @end

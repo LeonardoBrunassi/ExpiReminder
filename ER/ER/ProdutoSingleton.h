@@ -19,6 +19,7 @@
 -(void) adicionarProd: (Produto*) produto;
 -(RLMResults*) retornoProd;
 -(void)removeProduto:(Produto *)produto;
+-(void)ordenarProdutos;
 
 //@property NSDate *data;
 @property RLMRealm *realm;

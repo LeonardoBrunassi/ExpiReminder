@@ -10,4 +10,13 @@
 
 @implementation DataAlertaTableViewCell
 
+- (IBAction)daysSlider:(UISlider *)sender {
+    if((int)sender.value == 1)
+        _dia.text = @"Dia:";
+    else
+        _dia.text = @"Dias: ";
+    
+        
+    _daysReminderLabel.text = [NSString stringWithFormat:@"%d", (int)sender.value];
+}
 @end
