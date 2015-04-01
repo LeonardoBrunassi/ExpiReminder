@@ -147,22 +147,25 @@
     [produto setNome: produtoCell.registroProdTF.text];
     
     
-    NSDate *data = _datePicker.datePicker.date;
+    //NSDate *data = _datePicker.datePicker.date;
+
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"dd/MM/yyyy"];
     NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
     
     
-    [produto setDataValidade:dateString];
-          
+    //[produto setDataValidade:dateString];
+    
+    [produto setDataValidade:(NSDate *)dateString];
     [singleton adicionarProd:produto];
-    if(produto)
+    
+        if(produto)
         produto = [[Produto alloc]init];
        
     NSString *nome = (@"% vai expirar em breve.", produtoCell.registroProdTF.text);
     notificacao.alertBody = nome;
 
-//  notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
+    //notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
     notificacao.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
     notificacao.timeZone = [NSTimeZone defaultTimeZone];
     
