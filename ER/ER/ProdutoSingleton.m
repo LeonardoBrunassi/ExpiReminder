@@ -60,6 +60,12 @@ static ProdutoSingleton *instancia = nil;
     
 }
 
+-(void)ordernarProdutos
+{
+    
+}
+
+
 
 
 @end

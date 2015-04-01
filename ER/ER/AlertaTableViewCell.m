@@ -10,4 +10,11 @@
 
 @implementation AlertaTableViewCell
 
+- (IBAction)alterarConfiguracoes:(UIButton *)sender {
+//    ConfigTableViewController *vc = [[ConfigTableViewController alloc]init];
+//    [_interruptor addTarget:vc action:@selector(mudarInterruptor:) forControlEvents:UIControlEventValueChanged];
+}
+
+
+
 @end
