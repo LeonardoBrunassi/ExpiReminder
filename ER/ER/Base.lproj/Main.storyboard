@@ -350,7 +350,11 @@
                             <rect key="frame" x="0.0" y="629" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
-                                <barButtonItem systemItem="camera" id="2M8-8Q-8po"/>
+                                <barButtonItem systemItem="camera" id="2M8-8Q-8po">
+                                    <connections>
+                                        <action selector="tirarFoto:" destination="9TQ-Cg-wxH" id="3w2-T2-T54"/>
+                                    </connections>
+                                </barButtonItem>
                                 <barButtonItem style="plain" systemItem="flexibleSpace" id="LGn-o4-aTB"/>
                                 <barButtonItem image="barcode" id="s7x-iU-Fyu">
                                     <connections>
@@ -509,7 +513,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imgProd" destination="COm-ZS-qXG" id="p04-G8-6LT"/>
+                                    <outlet property="imgProd" destination="ill-XZ-arH" id="IiR-7q-xZX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -194,4 +194,25 @@
 }
 */
 
+- (IBAction)tirarFoto:(id)sender {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+-(void) imagePickerController:(UIImagePickerController *) picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    [_imagem.imgProd setImage: image];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
