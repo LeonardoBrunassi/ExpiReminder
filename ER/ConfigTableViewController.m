@@ -13,7 +13,6 @@
     [super viewDidLoad];
 
     self.navigationItem.title = @"Configurações";
-    self.tabBarController.tabBar.hidden = YES;
     
     UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
     self.navigationItem.rightBarButtonItem = done;
@@ -25,7 +24,7 @@
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"Vai por favor");
-    return 3;
+    return 4;
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -33,17 +32,29 @@
     
     tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    if(indexPath.row == 0){
+    if (indexPath.row == 0) {
+        UITableViewCell *celula = [[UITableViewCell alloc] init];
+        celula.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:0.5];
+        return celula;
+    }
+    
+    if(indexPath.row == 1){
         _alerta = [tableView dequeueReusableCellWithIdentifier:@"alerta"];
         return _alerta;
     }
     
-    if(indexPath.row == 1){
+    if (indexPath.row == 2) {
+        UITableViewCell *celula = [[UITableViewCell alloc] init];
+        celula.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:0.5];
+        return celula;
+    }
+    
+    if(indexPath.row == 3){
         _dataAlerta = [tableView dequeueReusableCellWithIdentifier:@"dataAlerta"];
         return _dataAlerta;
     }
     
-    if (indexPath.row == 2) {
+    if (indexPath.row == 4) {
         UITableViewCell *celula = [[UITableViewCell alloc] init];
         celula.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:0.5];
         return celula;
@@ -58,11 +69,15 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row == 0)
-        return 200;
+        return 35;
     else if (indexPath.row == 1)
-        return 200;
+        return 50;
     else if (indexPath.row == 2)
-        return 400;
+        return 35;
+    else if (indexPath.row == 3)
+        return 50;
+    else if (indexPath.row == 4)
+        return 35;
  
     else
         return 0;
