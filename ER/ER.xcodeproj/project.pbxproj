@@ -17,6 +17,7 @@
 		B29660891AC49DF70070C7A5 /* ProdutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B29660881AC49DF70070C7A5 /* ProdutoTableViewCell.m */; };
 		B296608C1AC49E080070C7A5 /* ImagemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B296608B1AC49E080070C7A5 /* ImagemTableViewCell.m */; };
 		B296608F1AC49EF20070C7A5 /* DataValidadeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B296608E1AC49EF20070C7A5 /* DataValidadeTableViewCell.m */; };
+		B2D39C5C1ACC7343005201FB /* DetalhesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D39C5B1ACC7343005201FB /* DetalhesViewController.m */; };
 		B303F24D1AC33233000879FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F24C1AC33233000879FA /* main.m */; };
 		B303F2501AC33233000879FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F24F1AC33233000879FA /* AppDelegate.m */; };
 		B303F2531AC33233000879FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F2521AC33233000879FA /* ViewController.m */; };
@@ -65,6 +66,8 @@
 		B296608B1AC49E080070C7A5 /* ImagemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImagemTableViewCell.m; path = ../ImagemTableViewCell.m; sourceTree = "<group>"; };
 		B296608D1AC49EF20070C7A5 /* DataValidadeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataValidadeTableViewCell.h; sourceTree = "<group>"; };
 		B296608E1AC49EF20070C7A5 /* DataValidadeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataValidadeTableViewCell.m; sourceTree = "<group>"; };
+		B2D39C5A1ACC7343005201FB /* DetalhesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalhesViewController.h; sourceTree = "<group>"; };
+		B2D39C5B1ACC7343005201FB /* DetalhesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalhesViewController.m; sourceTree = "<group>"; };
 		B303F2471AC33233000879FA /* ER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B303F24B1AC33233000879FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B303F24C1AC33233000879FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -222,6 +225,8 @@
 				B29660821AC4756F0070C7A5 /* addProdViewController.m */,
 				B296607E1AC351270070C7A5 /* CalendarioViewController.h */,
 				B296607F1AC351270070C7A5 /* CalendarioViewController.m */,
+				B2D39C5A1ACC7343005201FB /* DetalhesViewController.h */,
+				B2D39C5B1ACC7343005201FB /* DetalhesViewController.m */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -229,8 +234,8 @@
 		E3E22C4E1AC756FA00EE3E8C /* model */ = {
 			isa = PBXGroup;
 			children = (
-				B296607B1AC3426D0070C7A5 /* Produto.h */,
 				B296607C1AC3426D0070C7A5 /* Produto.m */,
+				B296607B1AC3426D0070C7A5 /* Produto.h */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				B29660831AC4756F0070C7A5 /* addProdViewController.m in Sources */,
 				F75A96D61ACB0B0E007B2EDC /* AlertaTableViewCell.m in Sources */,
 				B296607D1AC3426D0070C7A5 /* Produto.m in Sources */,
+				B2D39C5C1ACC7343005201FB /* DetalhesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

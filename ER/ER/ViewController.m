@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController
-
+@synthesize tableView;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Produtos";
@@ -21,6 +21,7 @@
     _singleton = [ProdutoSingleton instance];
     
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -77,5 +78,17 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"detalhes"]){
+        NSIndexPath *indexPath = [self.tableView indexPathsForSelectedRows];
+        DetalhesViewController *detalheVC = segue.destinationViewController;
+        long row = [indexPath row];
+        NSLog(@"%lu:", row);
+        NSArray *aux = [NSArray arrayWithObjects:[[_singleton retornoProd] objectAtIndex:row], nil];
+        detalheVC.prod = aux;
+    }
+}
+
 
 @end

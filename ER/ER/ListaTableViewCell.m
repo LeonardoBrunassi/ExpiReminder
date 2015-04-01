@@ -20,4 +20,16 @@
     // Configure the view for the selected state
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([segue.identifier isEqualToString:@"detalhes"]){
+        NSIndexPath *indexPath = [self.tableView indexPathsForSelectedRows];
+        DetalhesViewController *detalheVC = segue.destinationViewController;
+        long row = [indexPath row];
+        NSLog(@"%lu:", row);
+        NSArray *aux = [NSArray arrayWithObjects:[[_singleton retornoProd] objectAtIndex:row], nil];
+        detalheVC.prod = aux;
+    }
+}
+
 @end
