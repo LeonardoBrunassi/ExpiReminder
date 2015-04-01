@@ -92,6 +92,7 @@
     
     if (indexPath.row == 5) {
         _imagem = [tableView dequeueReusableCellWithIdentifier:@"imagem"];
+        _imagem.imgProd.image = [UIImage imageNamed:@"default.png"];
         return _imagem;
     }
     
@@ -147,41 +148,30 @@
     
     
     NSDate *data = _datePicker.datePicker.date;
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"dd/MM/yyyy"];
+    NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
     
-          NSDateFormatter *format = [[NSDateFormatter alloc] init];
-          [format setDateFormat:@"dd/MM/yyyy"];
-          NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
     
-    
-          [produto setDataValidade:dateString];
+    [produto setDataValidade:dateString];
           
-          [singleton adicionarProd:produto];
-          NSLog(@"%@", [singleton retornoProd]);
-          if(produto)
-          produto = [[Produto alloc]init];
-//    }
-    
-        
+    [singleton adicionarProd:produto];
+    if(produto)
+        produto = [[Produto alloc]init];
        
-        NSString *nome = (@"% vai expirar em breve.", produtoCell.registroProdTF.text);
- //       NSDateComponents *dateComps = [[NSDateComponents alloc] init];
-        notificacao.alertBody = nome;
+    NSString *nome = (@"% vai expirar em breve.", produtoCell.registroProdTF.text);
+    notificacao.alertBody = nome;
 
-//        notificacao.alertAction = NSLocalizedString(@"Ver Produto", nil);
-//        notificacao.alertTitle = NSLocalizedString(@"Alerta de Validade", nil);
+//  notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
+    notificacao.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+    notificacao.timeZone = [NSTimeZone defaultTimeZone];
     
-        NSLog(@"minha data: %@", data);
-
-    
-//        notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
-        notificacao.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
-        notificacao.timeZone = [NSTimeZone defaultTimeZone];
-    
-        notificacao.soundName = UILocalNotificationDefaultSoundName;
-        notificacao.applicationIconBadgeNumber = 0;
+    notificacao.soundName = UILocalNotificationDefaultSoundName;
+    notificacao.applicationIconBadgeNumber = 0;
     
     
-        [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+    [self.navigationController popToRootViewControllerAnimated:YES];
     }
 
 }
@@ -212,6 +202,7 @@
 
 -(void) imagePickerController:(UIImagePickerController *) picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
     
     _imagem.imgProd.contentMode = UIViewContentModeScaleAspectFit;
     [_imagem.imgProd setImage: image];

@@ -377,19 +377,31 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="135" y="11" width="130" height="21"/>
-                                            </variation>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XAL-s8-6CS" firstAttribute="centerY" secondItem="6hH-5k-OCL" secondAttribute="centerY" id="IL1-OH-PeD"/>
+                                        <constraint firstItem="XAL-s8-6CS" firstAttribute="centerX" secondItem="6hH-5k-OCL" secondAttribute="centerX" id="XMT-8D-43z"/>
+                                        <constraint firstItem="XAL-s8-6CS" firstAttribute="top" secondItem="6hH-5k-OCL" secondAttribute="topMargin" constant="3" id="bdG-vH-jGZ"/>
+                                    </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="XAL-s8-6CS"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="IL1-OH-PeD"/>
+                                            <exclude reference="XMT-8D-43z"/>
+                                            <exclude reference="bdG-vH-jGZ"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="subviews">
                                             <include reference="XAL-s8-6CS"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="IL1-OH-PeD"/>
+                                            <include reference="XMT-8D-43z"/>
+                                            <include reference="bdG-vH-jGZ"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -500,10 +512,18 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ill-XZ-arH" firstAttribute="leading" secondItem="COm-ZS-qXG" secondAttribute="leadingMargin" constant="47" id="3eK-OZ-z5f"/>
-                                        <constraint firstItem="ill-XZ-arH" firstAttribute="top" secondItem="COm-ZS-qXG" secondAttribute="topMargin" id="C9R-Br-MoP"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ill-XZ-arH" secondAttribute="trailing" constant="44" id="lqN-8m-Ad7"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="ill-XZ-arH" secondAttribute="bottom" constant="-0.5" id="xm9-Gt-RsU"/>
+                                        <constraint firstItem="ill-XZ-arH" firstAttribute="leading" secondItem="COm-ZS-qXG" secondAttribute="leadingMargin" constant="47" id="3eK-OZ-z5f">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="85"/>
+                                        </constraint>
+                                        <constraint firstItem="ill-XZ-arH" firstAttribute="top" secondItem="COm-ZS-qXG" secondAttribute="topMargin" id="C9R-Br-MoP">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                        </constraint>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ill-XZ-arH" secondAttribute="trailing" constant="44" id="lqN-8m-Ad7">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="84"/>
+                                        </constraint>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ill-XZ-arH" secondAttribute="bottom" constant="-0.5" id="xm9-Gt-RsU">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                        </constraint>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
