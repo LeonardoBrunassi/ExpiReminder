@@ -132,17 +132,19 @@
 -(void)done:(id)sender{
     ProdutoSingleton *singleton = [ProdutoSingleton instance];
     
-//    if(produtoCell.registroProdTF.text == nil){
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Nome inválido"
-//                                                        message:@"O nome do produto deve ser preenchido."
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"OK"
-//                                              otherButtonTitles:nil];
-//        [alert show];
-//    }
-//    else{
+    
+    //UIALERTCONTROLLER
+    if ([produtoCell.registroProdTF.text  isEqual: @""]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Erro" message:@"Nome do produto obrigatório." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+        
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    else {
     [produto setNome: produtoCell.registroProdTF.text];
-
+    
     
     NSDate *data = _datePicker.datePicker.date;
     
@@ -182,7 +184,7 @@
         [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
     }
 
-
+}
 
 /*
 #pragma mark - Navigation
@@ -211,7 +213,9 @@
 -(void) imagePickerController:(UIImagePickerController *) picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
+    _imagem.imgProd.contentMode = UIViewContentModeScaleAspectFit;
     [_imagem.imgProd setImage: image];
+    
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }

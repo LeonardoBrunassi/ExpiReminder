@@ -294,6 +294,7 @@
             <objects>
                 <tableViewController id="Hmc-QO-9aP" customClass="ConfigTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DWF-mG-PLY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -496,19 +497,34 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ill-XZ-arH">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="84" y="26" width="233" height="172"/>
-                                            </variation>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ill-XZ-arH" firstAttribute="leading" secondItem="COm-ZS-qXG" secondAttribute="leadingMargin" constant="47" id="3eK-OZ-z5f"/>
+                                        <constraint firstItem="ill-XZ-arH" firstAttribute="top" secondItem="COm-ZS-qXG" secondAttribute="topMargin" id="C9R-Br-MoP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ill-XZ-arH" secondAttribute="trailing" constant="44" id="lqN-8m-Ad7"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ill-XZ-arH" secondAttribute="bottom" constant="-0.5" id="xm9-Gt-RsU"/>
+                                    </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
                                             <exclude reference="ill-XZ-arH"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <exclude reference="3eK-OZ-z5f"/>
+                                            <exclude reference="C9R-Br-MoP"/>
+                                            <exclude reference="lqN-8m-Ad7"/>
+                                            <exclude reference="xm9-Gt-RsU"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
                                         <mask key="subviews">
                                             <include reference="ill-XZ-arH"/>
+                                        </mask>
+                                        <mask key="constraints">
+                                            <include reference="3eK-OZ-z5f"/>
+                                            <include reference="C9R-Br-MoP"/>
+                                            <include reference="lqN-8m-Ad7"/>
+                                            <include reference="xm9-Gt-RsU"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -531,7 +547,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uh6-q1-mY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="449"/>
+            <point key="canvasLocation" x="1935" y="448.5"/>
         </scene>
         <!--Bar Code View Controller-->
         <scene sceneID="CgU-nX-CDI">

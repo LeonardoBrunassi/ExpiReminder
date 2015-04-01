@@ -17,7 +17,7 @@
 
 @class Produto;
 
-@interface addProdViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface addProdViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *cadastroTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barCodeCam;
