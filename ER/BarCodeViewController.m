@@ -150,10 +150,10 @@
 }
 
 
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-//    
-//    [self dismissViewControllerAnimated:YES completion:nil];
-//}
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 
