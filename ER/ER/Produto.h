@@ -12,9 +12,9 @@
 @interface Produto : RLMObject
 
 @property NSString *nome;
-//@property NSString *categoria;
-@property NSDate *dataValidade;
-//@property NSDate *dataCompraInsercao;
+
+@property NSString *dataValidade;
+
 @property NSString *numCodigoDeBarras;
 
 @end

@@ -145,11 +145,11 @@
     else{
         [produto setNumCodigoDeBarras:_aux];
     }
+    
     //UIALERTCONTROLLER
     if ([produtoCell.registroProdTF.text  isEqual: @""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Erro" message:@"Nome do produto obrigatório." preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
-        
         
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
@@ -162,27 +162,9 @@
     [format setDateFormat:@"dd/MM/yyyy"];
     NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
 
-//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-//        [dateFormatter setDateStyle:NSDateFormatterShortStyle];
-
+    [produto setDataValidade:dateString];
         
-//        NSDate *date = _datePicker.datePicker.date;
-        
-//        //ver o que é esses dateComponents e as obtions
-//        NSDateComponents *components = [[NSCalendar currentCalendar]components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:date];
-//        //[components setDay:-1];
-//        
-//        NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-//        
-//        NSDate *newDate = (NSDate *) [gregorian dateFromComponents:components];
-        NSDate *dataProduto = (NSDate *) dateString;
-        [produto setDataValidade:dataProduto];
-//        NSLog(@"date: %@", date.class);
-//        NSLog(@"new date: %@", newDate.class);
-//        NSLog(@" %@", produto.dataValidade.class);
-      //[produto setDataValidade:_datePicker.datePicker.date];
-        
-      [singleton adicionarProd:produto];
+    [singleton adicionarProd:produto];
     
        
 //    NSString *nome = (@"% vai expirar em breve.", produtoCell.registroProdTF.text);

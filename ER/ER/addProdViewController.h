@@ -22,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *cadastroTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barCodeCam;
 @property (weak, nonatomic) IBOutlet UIToolbar *editToolBar;
-@property(nonatomic, strong) Produto *produto;
+@property (strong, nonatomic) Produto *produto;
 @property (strong, nonatomic) UILocalNotification *notificacao;
 
 @property (strong,nonatomic) NSString *aux;
