@@ -26,6 +26,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self.tabBarController.tabBar setHidden:NO];
+    [tableView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {

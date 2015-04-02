@@ -132,9 +132,7 @@
 
 -(void)done:(id)sender{
     ProdutoSingleton *singleton = [ProdutoSingleton instance];
-    
-    
-    
+
     produto = [[Produto alloc]init];
     
     if(_aux == nil)
@@ -157,7 +155,8 @@
     else {
     [produto setNome: produtoCell.registroProdTF.text];
     
-
+        
+    
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"dd/MM/yyyy"];
     NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
@@ -166,20 +165,23 @@
         
     [singleton adicionarProd:produto];
     
-       
-//    NSString *nome = (@"% vai expirar em breve.", produtoCell.registroProdTF.text);
-//    notificacao.alertBody = nome;
-//
-//    //notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
-//    notificacao.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
-//    notificacao.timeZone = [NSTimeZone defaultTimeZone];
-//    
-//    notificacao.soundName = UILocalNotificationDefaultSoundName;
-//    notificacao.applicationIconBadgeNumber = 0;
-//    
-//    
-//    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
-//    [self.navigationController popToRootViewControllerAnimated:YES];
+    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"America/Sao_Paulo"];
+    notificacao.timeZone = timeZone;
+
+        notificacao.repeatInterval = NSCalendarUnitDay;
+    NSString *nome = (@"%@ vai expirar em breve.", produtoCell.registroProdTF.text);
+    notificacao.alertBody = nome;
+
+        NSDate *data = [format dateFromString:dateString];
+        notificacao.fireDate = data; //[data dateByAddingTimeInterval:-(60*60*24)];
+   //     notificacao.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+        
+    notificacao.soundName = UILocalNotificationDefaultSoundName;
+    notificacao.applicationIconBadgeNumber = 0;
+    
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+   [self.navigationController popToRootViewControllerAnimated:YES];
     }
 
 }

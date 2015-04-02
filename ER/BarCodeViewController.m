@@ -119,6 +119,9 @@
                 
                 addProdViewController *p = (addProdViewController*)[self backViewController];
                 [p setAux: _barCode];
+                
+                
+                
                 break;
                 
             }
@@ -135,6 +138,8 @@
     
     _highlightView.frame = highlightViewRect;
     
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 
 //metodo para buscar buscar uma view controller anterior
@@ -147,12 +152,6 @@
     } else {
         return nil;
     }
-}
-
-
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
