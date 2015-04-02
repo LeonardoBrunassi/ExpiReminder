@@ -17,13 +17,15 @@
 
 @class Produto;
 
-@interface addProdViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
+@interface addProdViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UIAlertViewDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *cadastroTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *barCodeCam;
 @property (weak, nonatomic) IBOutlet UIToolbar *editToolBar;
 @property(nonatomic, strong) Produto *produto;
 @property (strong, nonatomic) UILocalNotification *notificacao;
+
+@property (strong,nonatomic) NSString *aux;
 
 - (IBAction)tirarFoto:(id)sender;
 @property (nonatomic, weak) ProdutoTableViewCell *produtoCell;

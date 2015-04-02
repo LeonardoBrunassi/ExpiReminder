@@ -134,6 +134,17 @@
     ProdutoSingleton *singleton = [ProdutoSingleton instance];
     
     
+    
+    produto = [[Produto alloc]init];
+    
+    if(_aux == nil)
+    {
+        _aux = @" ";
+        [produto setNumCodigoDeBarras:_aux];
+    }
+    else{
+        [produto setNumCodigoDeBarras:_aux];
+    }
     //UIALERTCONTROLLER
     if ([produtoCell.registroProdTF.text  isEqual: @""]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Erro" message:@"Nome do produto obrigatório." preferredStyle:UIAlertControllerStyleAlert];
@@ -146,35 +157,47 @@
     else {
     [produto setNome: produtoCell.registroProdTF.text];
     
-    
-    //NSDate *data = _datePicker.datePicker.date;
 
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     [format setDateFormat:@"dd/MM/yyyy"];
     NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
-    
-    
-    //[produto setDataValidade:dateString];
-    
-    [produto setDataValidade:(NSDate *)dateString];
-    [singleton adicionarProd:produto];
-    
-        if(produto)
-        produto = [[Produto alloc]init];
-       
-    NSString *nome = (@"% vai expirar em breve.", produtoCell.registroProdTF.text);
-    notificacao.alertBody = nome;
 
-    //notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
-    notificacao.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
-    notificacao.timeZone = [NSTimeZone defaultTimeZone];
+//        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//        [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+
+        
+//        NSDate *date = _datePicker.datePicker.date;
+        
+//        //ver o que é esses dateComponents e as obtions
+//        NSDateComponents *components = [[NSCalendar currentCalendar]components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay fromDate:date];
+//        //[components setDay:-1];
+//        
+//        NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+//        
+//        NSDate *newDate = (NSDate *) [gregorian dateFromComponents:components];
+        NSDate *dataProduto = (NSDate *) dateString;
+        [produto setDataValidade:dataProduto];
+//        NSLog(@"date: %@", date.class);
+//        NSLog(@"new date: %@", newDate.class);
+//        NSLog(@" %@", produto.dataValidade.class);
+      //[produto setDataValidade:_datePicker.datePicker.date];
+        
+      [singleton adicionarProd:produto];
     
-    notificacao.soundName = UILocalNotificationDefaultSoundName;
-    notificacao.applicationIconBadgeNumber = 0;
-    
-    
-    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+       
+//    NSString *nome = (@"% vai expirar em breve.", produtoCell.registroProdTF.text);
+//    notificacao.alertBody = nome;
+//
+//    //notificacao.fireDate = [data dateByAddingTimeInterval:-(60*60*24)];
+//    notificacao.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+//    notificacao.timeZone = [NSTimeZone defaultTimeZone];
+//    
+//    notificacao.soundName = UILocalNotificationDefaultSoundName;
+//    notificacao.applicationIconBadgeNumber = 0;
+//    
+//    
+//    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+//    [self.navigationController popToRootViewControllerAnimated:YES];
     }
 
 }

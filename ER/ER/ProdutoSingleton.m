@@ -34,9 +34,9 @@ static ProdutoSingleton *instancia = nil;
     [realm addObject:produto];
     [realm commitWriteTransaction];
     
-    realm = [RLMRealm defaultRealm];
-    RLMResults *resultado = [Produto allObjects];
-    resultado = [resultado sortedResultsUsingProperty:@"dataValidade" ascending:YES];
+//    realm = [RLMRealm defaultRealm];
+//    RLMResults *resultado = [Produto allObjects];
+//    resultado = [resultado sortedResultsUsingProperty:@"dataValidade" ascending:YES];
 }
 
 //retornar todos produtos
