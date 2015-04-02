@@ -13,6 +13,6 @@
 @interface BarCodeViewController : UIViewController
 
 @property ProdutoSingleton *produtoSingleton;
-@property (weak, nonatomic) NSString *barCode;
-@property (nonatomic, strong) Produto *myProduct;
+@property (strong, nonatomic) NSString *barCode;
+//@property (nonatomic, strong) Produto *myProduct;
 @end

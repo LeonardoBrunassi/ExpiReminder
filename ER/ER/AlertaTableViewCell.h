@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConfigTableViewController.h"
 
 @interface AlertaTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UISwitch *interruptor;

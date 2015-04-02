@@ -52,7 +52,7 @@
 
 -(void)initialize
 {
-    _myProduct = [[Produto alloc]init];
+    
     self.tabBarController.tabBar.hidden =  YES;
     _highlightView = [[UIView alloc] init];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;
@@ -114,11 +114,11 @@
                 highlightViewRect = barCodeObject.bounds;
                 detectionString = [(AVMetadataMachineReadableCodeObject *)metadata stringValue];
                 
-                [_myProduct setNumCodigoDeBarras:detectionString];
+                _barCode = detectionString;
                 NSLog(@"detection string: %@", detectionString);
                 
                 addProdViewController *p = (addProdViewController*)[self backViewController];
-                [p setProduto:_myProduct];
+                [p setAux: _barCode];
                 break;
                 
             }
