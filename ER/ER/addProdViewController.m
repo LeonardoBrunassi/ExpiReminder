@@ -167,18 +167,19 @@
     UILocalNotification *notificacao = [[UILocalNotification alloc]init];
         
 //    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"America/Sao_Paulo"];
-    notificacao.timeZone = [NSTimeZone systemTimeZone];
-
+        notificacao.timeZone = [NSTimeZone systemTimeZone];
+        NSLog(@"%@", notificacao.timeZone);
 //        notificacao.repeatInterval = NSCalendarUnitDay;
-    NSString *nome =
-    notificacao.alertBody = (@"%@ vai expirar em breve.", produtoCell.registroProdTF.text);
+        notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ irá vencer em breve.", nil),
+                                 produto.nome];
+        notificacao.alertTitle = NSLocalizedString(@"Produto Vencendo!", nil);
 
         NSDate *data = [format dateFromString:dateString];
         notificacao.fireDate = data; //[data dateByAddingTimeInterval:-(60*60*24)];
    //     notificacao.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
         
     notificacao.soundName = UILocalNotificationDefaultSoundName;
-    notificacao.applicationIconBadgeNumber = 0;
+    notificacao.applicationIconBadgeNumber = -1;
     
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];

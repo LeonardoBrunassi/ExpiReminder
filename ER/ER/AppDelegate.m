@@ -48,7 +48,8 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    UIUserNotificationType types = UIUserNotificationTypeAlert;
+    UIUserNotificationType types = UIUserNotificationTypeBadge |
+    UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
     
     UIUserNotificationSettings *mySettings =
     [UIUserNotificationSettings settingsForTypes:types categories:nil];
