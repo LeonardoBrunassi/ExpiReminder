@@ -24,6 +24,6 @@
 //@property NSDate *data;
 @property RLMRealm *realm;
 @property RLMResults *results; //SELECT
-@property Produto *prod;
+//@property Produto *prod;
 
 @end

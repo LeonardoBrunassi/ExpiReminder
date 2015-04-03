@@ -166,7 +166,6 @@
     
     UILocalNotification *notificacao = [[UILocalNotification alloc]init];
         
-//    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"America/Sao_Paulo"];
         notificacao.timeZone = [NSTimeZone systemTimeZone];
         NSLog(@"%@", notificacao.timeZone);
 //        notificacao.repeatInterval = NSCalendarUnitDay;
@@ -174,11 +173,11 @@
                                  produto.nome];
         notificacao.alertTitle = NSLocalizedString(@"Produto Vencendo!", nil);
 
-        NSDate *data = [format dateFromString:dateString];
-        notificacao.fireDate = data; //[data dateByAddingTimeInterval:-(60*60*24)];
-   //     notificacao.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
+        notificacao.fireDate = [_datePicker.datePicker.date dateByAddingTimeInterval:-(3*60*60)];
+        NSLog(@"%@", notificacao.fireDate);
         
     notificacao.soundName = UILocalNotificationDefaultSoundName;
+        
     notificacao.applicationIconBadgeNumber = -1;
     
     
