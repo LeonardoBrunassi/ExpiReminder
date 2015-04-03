@@ -67,6 +67,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //ao selecionar set nas properties do produto
     [_produto setNome: [[[_singleton retornoProd]objectAtIndex:indexPath.row]nome]];
     
     [_produto setNumCodigoDeBarras:[[[_singleton retornoProd]objectAtIndex:indexPath.row]numCodigoDeBarras]];
@@ -95,6 +96,8 @@
     
     if([sender isKindOfClass: [ListaTableViewCell class]])
     {
+        //a property produto da proxima view controller recebe objeto produto
+        //lembrar de tratar memory leak! obs: ambos objetos tem que ser Strong
         DetalhesViewController *detalhesVC = [segue destinationViewController];
         [detalhesVC setProduto:_produto];
     }

@@ -14,20 +14,13 @@
 
 @implementation addProdViewController
 @synthesize cadastroTableView, produto, produtoCell;
+
+#pragma mark metodos delegate
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //produto = [[Produto alloc]init];
-    self.navigationItem.title = @"Adicionar Produto";
-    
-    [self.tabBarController setHidesBottomBarWhenPushed:YES];
-    self.tabBarController.tabBar.hidden = YES;
-    
-    
-    UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
-    self.navigationItem.rightBarButtonItem = done;
-    
-    
+    [self initialize];
     //self.tabBarController
 //    [self.datePicker addTarget:self action:@selector(dataPickerMudada:)forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view.
@@ -130,12 +123,39 @@
 }
 
 /*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+#pragma mark implementações do grupo
+/*
+ *
+ */
+-(void)initialize
+{
+    self.navigationItem.title = @"Adicionar Produto";
+    
+    [self.tabBarController setHidesBottomBarWhenPushed:YES];
+    self.tabBarController.tabBar.hidden = YES;
+    
+    UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+    self.navigationItem.rightBarButtonItem = done;
+
+}
+
+
+/*
  * Metodo que cria uma instancia e persiste um objeto do tipo produto
  * e que cria um UILocalNotification na memória.
  */
 -(void)done:(id)sender{
     ProdutoSingleton *singleton = [ProdutoSingleton instance];
-
+    
     produto = [[Produto alloc]init];
     
     if(_aux == nil)
@@ -157,7 +177,7 @@
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"dd/MM/yyyy"];
         NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
-
+        
         [produto setDataValidade:dateString];
         
         [singleton adicionarProd:produto];
@@ -166,23 +186,13 @@
         
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
-
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-#pragma mark implementações do grupo
 
 /*
  * Mostra a mensagem de erro ao tentar adicionar um produto sem nome
+ * Vivi, pode documentar isto aqui, por favor ?
  */
 -(void)alertViewShowMessageView
 {
@@ -194,7 +204,10 @@
 
 }
 
-
+/*
+ *Cria uma local notification
+ *
+ */
 -(void)createLocalNotification
 {
     UILocalNotification *notificacao = [[UILocalNotification alloc]init];
@@ -206,8 +219,17 @@
                              produto.nome];
     notificacao.alertTitle = NSLocalizedString(@"Produto Vencendo!", nil);
     
-    notificacao.fireDate = [_datePicker.datePicker.date dateByAddingTimeInterval:-(3*60*60)];
+    
+    /*
+     *Criei um metodo que permite adicionar ou reduzir tempo do fire date em dias, comparando com a data de validade dele.
+     */
+    
+    NSLog(@"%@", _datePicker.datePicker.date);
+    [notificacao setFireDate:[self setCustomFireDate:_datePicker.datePicker.date]];
+    //    notificacao.fireDate = [_datePicker.datePicker.date dateByAddingTimeInterval:-(3*60*60)];
     NSLog(@"%@", notificacao.fireDate);
+    
+    
     
     notificacao.soundName = UILocalNotificationDefaultSoundName;
     
@@ -217,7 +239,10 @@
     [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
 }
 
-
+/*Metodo de tirar foto, temos que aprender a persistir estas fotos.
+ *
+ *
+ */
 - (IBAction)tirarFoto:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
@@ -242,4 +267,16 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+/*
+ *Metodo que controla a fire date
+ */
+-(NSDate *)setCustomFireDate:(NSDate *)changeDate
+{
+    
+    NSDate *newDate = [changeDate dateByAddingTimeInterval:-(3600 *24)];
+
+    return newDate;
+}
+
+
 @end
