@@ -21,21 +21,10 @@
     [super viewDidLoad];
     
     [self initialize];
-    //self.tabBarController
-//    [self.datePicker addTarget:self action:@selector(dataPickerMudada:)forControlEvents:UIControlEventValueChanged];
-    // Do any additional setup after loading the view.
 }
-//
-//-(void) dataPickerMudada: (UIDatePicker*) datePicker {
-//    NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
-//    [dateFormater setDateFormat:@"dd-MM-yyyy HH:mm"];
-//    NSString *strDate = [dateFormater stringFromDate:datePicker.date];
-//    //self.selectedDate.text = strDate;
-//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
@@ -111,11 +100,6 @@
         return 0;
 }
 
--(void)viewWillDisappear:(BOOL)animated
-{
-    
-}
-
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.tabBarController.tabBar setHidden: YES];
@@ -133,9 +117,9 @@
 */
 
 #pragma mark implementações do grupo
-/*
- *
- */
+
+
+
 -(void)initialize
 {
     self.navigationItem.title = @"Adicionar Produto";
@@ -149,15 +133,13 @@
 }
 
 
-/*
- * Metodo que cria uma instancia e persiste um objeto do tipo produto
- * e que cria um UILocalNotification na memória.
- */
+//----------------------------------------- METODO QUE SALVA O PRODUTO NO BANCO E CRIA A NOTIFICATION PARA ESSE PRODUTO
 -(void)done:(id)sender{
     ProdutoSingleton *singleton = [ProdutoSingleton instance];
     
     produto = [[Produto alloc]init];
-    
+
+// CONDIÇAO DO CODIGO DE BARRAS
     if(_aux == nil)
     {
         _aux = @" ";
@@ -167,7 +149,9 @@
         [produto setNumCodigoDeBarras:_aux];
     }
     
-    //UIALERTCONTROLLER
+
+    
+// CONDIÇAO DA CAIXA DE TEXTO
     if ([produtoCell.registroProdTF.text  isEqual: @""]) {
         [self alertViewShowMessageView];
     }
@@ -190,10 +174,7 @@
 }
 
 
-/*
- * Mostra a mensagem de erro ao tentar adicionar um produto sem nome
- * Vivi, pode documentar isto aqui, por favor ?
- */
+//-------------------------------------- METODO QUE ENCAPSULA A CRIAÇAO DO ALERTCONTROLLER
 -(void)alertViewShowMessageView
 {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Erro" message:@"Nome do produto obrigatório." preferredStyle:UIAlertControllerStyleAlert];
@@ -204,10 +185,8 @@
 
 }
 
-/*
- *Cria uma local notification
- *
- */
+
+//------------------------------------------- METODO QUE ENCAPSULA A CRIAÇAO DA LOCALNOTIFICATION
 -(void)createLocalNotification
 {
     UILocalNotification *notificacao = [[UILocalNotification alloc]init];
@@ -233,16 +212,15 @@
     
     notificacao.soundName = UILocalNotificationDefaultSoundName;
     
-    notificacao.applicationIconBadgeNumber = 1;
+    notificacao.applicationIconBadgeNumber=0;
     
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
 }
 
-/*Metodo de tirar foto, temos que aprender a persistir estas fotos.
- *
- *
- */
+//--------------------------------------------------------------------
+
+//-------------------------------------------- METODOS PARA TIRAR FOTO
 - (IBAction)tirarFoto:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     
@@ -267,11 +245,12 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-/*
- *Metodo que controla a fire date
- */
--(NSDate *)setCustomFireDate:(NSDate *)changeDate
-{
+
+//---------------------------------------------------------------------
+
+
+//----------------------------------------------- ARRUMANDO A DATA PARA A NOTIFICATION
+-(NSDate *)setCustomFireDate:(NSDate *)changeDate{
     
     NSDate *newDate = [changeDate dateByAddingTimeInterval:-(3600 *24)];
 
