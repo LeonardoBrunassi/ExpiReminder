@@ -129,6 +129,10 @@
     NSLog(@"will appear: %@", produto.numCodigoDeBarras);
 }
 
+/*
+ * Metodo que cria uma instancia e persiste um objeto do tipo produto
+ * e que cria um UILocalNotification na memória.
+ */
 -(void)done:(id)sender{
     ProdutoSingleton *singleton = [ProdutoSingleton instance];
 
@@ -145,44 +149,22 @@
     
     //UIALERTCONTROLLER
     if ([produtoCell.registroProdTF.text  isEqual: @""]) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Erro" message:@"Nome do produto obrigatório." preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
-        
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
+        [self alertViewShowMessageView];
     }
-    else {
-    [produto setNome: produtoCell.registroProdTF.text];
-    
-        
-    
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    [format setDateFormat:@"dd/MM/yyyy"];
-    NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
+    else
+    {
+        [produto setNome: produtoCell.registroProdTF.text];
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        [format setDateFormat:@"dd/MM/yyyy"];
+        NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
 
-    [produto setDataValidade:dateString];
+        [produto setDataValidade:dateString];
         
-    [singleton adicionarProd:produto];
-    
-    UILocalNotification *notificacao = [[UILocalNotification alloc]init];
+        [singleton adicionarProd:produto];
         
-        notificacao.timeZone = [NSTimeZone systemTimeZone];
-        NSLog(@"%@", notificacao.timeZone);
-//        notificacao.repeatInterval = NSCalendarUnitDay;
-        notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ irá vencer em breve.", nil),
-                                 produto.nome];
-        notificacao.alertTitle = NSLocalizedString(@"Produto Vencendo!", nil);
-
-        notificacao.fireDate = [_datePicker.datePicker.date dateByAddingTimeInterval:-(3*60*60)];
-        NSLog(@"%@", notificacao.fireDate);
+        [self createLocalNotification];
         
-    notificacao.soundName = UILocalNotificationDefaultSoundName;
-        
-    notificacao.applicationIconBadgeNumber = -1;
-    
-    
-    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
-   [self.navigationController popToRootViewControllerAnimated:YES];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
 
 }
@@ -196,6 +178,45 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark implementações do grupo
+
+/*
+ * Mostra a mensagem de erro ao tentar adicionar um produto sem nome
+ */
+-(void)alertViewShowMessageView
+{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Erro" message:@"Nome do produto obrigatório." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+
+}
+
+
+-(void)createLocalNotification
+{
+    UILocalNotification *notificacao = [[UILocalNotification alloc]init];
+    
+    notificacao.timeZone = [NSTimeZone systemTimeZone];
+    NSLog(@"%@", notificacao.timeZone);
+    //        notificacao.repeatInterval = NSCalendarUnitDay;
+    notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ irá vencer em breve.", nil),
+                             produto.nome];
+    notificacao.alertTitle = NSLocalizedString(@"Produto Vencendo!", nil);
+    
+    notificacao.fireDate = [_datePicker.datePicker.date dateByAddingTimeInterval:-(3*60*60)];
+    NSLog(@"%@", notificacao.fireDate);
+    
+    notificacao.soundName = UILocalNotificationDefaultSoundName;
+    
+    notificacao.applicationIconBadgeNumber = -1;
+    
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+}
+
 
 - (IBAction)tirarFoto:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];

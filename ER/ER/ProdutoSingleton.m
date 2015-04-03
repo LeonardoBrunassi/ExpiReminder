@@ -59,12 +59,12 @@ static ProdutoSingleton *instancia = nil;
 
 -(void)atualizarProduto:(NSString *)nomeProduto barCode:(NSString *)barCode dataValidade:(NSString *)dataValidade dataInsercao:(NSDate *)dataInsercao
 {
-    [realm beginWriteTransaction];
-    _prod.nome = nomeProduto;
-    _prod.numCodigoDeBarras = barCode;
-//    _prod.dataCompraInsercao = dataInsercao;
-    _prod.dataValidade = dataValidade;
-    [realm commitWriteTransaction];
+//    [realm beginWriteTransaction];
+//    _prod.nome = nomeProduto;
+//    _prod.numCodigoDeBarras = barCode;
+////    _prod.dataCompraInsercao = dataInsercao;
+//    _prod.dataValidade = dataValidade;
+//    [realm commitWriteTransaction];
     
 }
 
