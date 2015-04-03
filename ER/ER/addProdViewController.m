@@ -251,8 +251,8 @@
 
 //----------------------------------------------- ARRUMANDO A DATA PARA A NOTIFICATION
 -(NSDate *)setCustomFireDate:(NSDate *)changeDate{
-    
-    NSDate *newDate = [changeDate dateByAddingTimeInterval:-(3600 *24)];
+    // PENSANDO NA LOGICA AINDA
+    NSDate *newDate = [changeDate dateByAddingTimeInterval:((3600*24)-((3600*24)-(3*3600)))];
 
     return newDate;
 }
