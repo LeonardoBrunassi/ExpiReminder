@@ -12,11 +12,10 @@
 #import "ListaTableViewCell.h"
 #import "DetalhesViewController.h"
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addProdutos;
-@property (weak, nonatomic) Produto *produto;
+@property (strong, nonatomic) Produto *produto;
 @property (weak, nonatomic) ProdutoSingleton *singleton;
 @end
 

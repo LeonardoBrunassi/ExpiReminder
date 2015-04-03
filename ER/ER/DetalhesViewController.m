@@ -13,24 +13,19 @@
 @end
 
 @implementation DetalhesViewController
-@synthesize ps, prod, imagemProd, nomeProd, dataValida, diasFaltando, produto;
+@synthesize ps, imagemProd, nomeProd, dataValida, diasFaltando, produto;
 - (void)viewDidLoad {
     [super viewDidLoad];
-  //  nomeProd.text = produto.nome;
+//    nomeProd.text = produto.nome;
+    [self.tabBarController setHidesBottomBarWhenPushed:YES];
+    self.tabBarController.tabBar.hidden = YES;
+
+    
     // Do any additional setup after loading the view.
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-//    id objeto = [[ps retornoProd] objectAtIndex:row];
-//    
-    //produto = ps;
-    //imagemProd.image = [UIImage imageNamed:produto];
-    
-    nomeProd.text = produto.nome;
-  //  dataValida.text = produto.dataValidade;
-    //DIASFALTANTO.TEXT = ......;
-    
-    
+ //   nomeProd.text = produto.nome;
     
     
 }

@@ -15,8 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *nomeProd;
 @property (weak, nonatomic) IBOutlet UILabel *dataValida;
 @property (weak, nonatomic) IBOutlet UILabel *diasFaltando;
-@property (weak, nonatomic)Produto *produto;
+@property (strong, nonatomic)NSArray *produto;
 @property ProdutoSingleton *ps;
-@property NSArray *prod;
 
 @end

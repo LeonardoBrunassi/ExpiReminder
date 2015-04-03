@@ -13,7 +13,7 @@
 @end
 
 @implementation addProdViewController
-@synthesize cadastroTableView, notificacao, produto, produtoCell;
+@synthesize cadastroTableView, produto, produtoCell;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -27,7 +27,6 @@
     UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
     self.navigationItem.rightBarButtonItem = done;
     
-    notificacao = [[UILocalNotification alloc]init];
     
     //self.tabBarController
 //    [self.datePicker addTarget:self action:@selector(dataPickerMudada:)forControlEvents:UIControlEventValueChanged];
@@ -165,12 +164,14 @@
         
     [singleton adicionarProd:produto];
     
-    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"America/Sao_Paulo"];
-    notificacao.timeZone = timeZone;
+    UILocalNotification *notificacao = [[UILocalNotification alloc]init];
+        
+//    NSTimeZone *timeZone = [NSTimeZone timeZoneWithName:@"America/Sao_Paulo"];
+    notificacao.timeZone = [NSTimeZone systemTimeZone];
 
-        notificacao.repeatInterval = NSCalendarUnitDay;
-    NSString *nome = (@"%@ vai expirar em breve.", produtoCell.registroProdTF.text);
-    notificacao.alertBody = nome;
+//        notificacao.repeatInterval = NSCalendarUnitDay;
+    NSString *nome =
+    notificacao.alertBody = (@"%@ vai expirar em breve.", produtoCell.registroProdTF.text);
 
         NSDate *data = [format dateFromString:dateString];
         notificacao.fireDate = data; //[data dateByAddingTimeInterval:-(60*60*24)];

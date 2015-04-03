@@ -52,9 +52,7 @@
     
     cell.nome.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]nome];
     
-//    NSUInteger unitFlags = NSDayCalendarUnit;
-//    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-//    NSDateComponents *components = [calendar components:unitFlags fromDate:[NSDate date] toDate:_singleton.data options:0];//
+
 
     NSDate *date = [[NSDate alloc]init];
     cell.diasFaltando.text = [NSString stringWithFormat:@"%lf", [date timeIntervalSinceNow] * -(60 * 60 * 24)];
@@ -77,7 +75,7 @@
         
         [_singleton removeProduto: auxProduto];
         
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
@@ -85,12 +83,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"detalhes"]){
-        NSIndexPath *indexPath = [self.tableView indexPathsForSelectedRows];
+        NSIndexPath *indexPath = [tableView indexPathForSelectedRow];
         DetalhesViewController *detalheVC = segue.destinationViewController;
         long row = [indexPath row];
-        NSLog(@"%lu:", row);
-        NSArray *aux = [NSArray arrayWithObjects:[[_singleton retornoProd] objectAtIndex:row], nil];
-        detalheVC.prod = aux;
+        detalheVC.produto = [NSArray arrayWithObjects: [[[_singleton retornoProd] objectAtIndex:row] nome], [[[_singleton retornoProd] objectAtIndex:row] dataValidade], nil ];
+        
     }
 }
 
