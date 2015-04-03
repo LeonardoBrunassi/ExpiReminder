@@ -13,13 +13,12 @@
 @end
 
 @implementation addProdViewController
-@synthesize cadastroTableView, produto, produtoCell;
+@synthesize cadastroTableView, produto, produtoCell, notificacao;
 
 #pragma mark metodos delegate
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self initialize];
 }
 
@@ -103,6 +102,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.tabBarController.tabBar setHidden: YES];
+    notificacao.applicationIconBadgeNumber=0;
     
 }
 
@@ -187,10 +187,11 @@
 
 
 //------------------------------------------- METODO QUE ENCAPSULA A CRIAÇAO DA LOCALNOTIFICATION
--(void)createLocalNotification
-{
-    UILocalNotification *notificacao = [[UILocalNotification alloc]init];
-    
+-(void)createLocalNotification{
+    notificacao = [[UILocalNotification alloc]init];
+    NSLog(@"%@", _datePicker.datePicker.date);
+    notificacao.fireDate = [self setCustomFireDate:_datePicker.datePicker.date];
+    NSLog(@"%@", notificacao.fireDate);
     notificacao.timeZone = [NSTimeZone systemTimeZone];
     NSLog(@"%@", notificacao.timeZone);
     //        notificacao.repeatInterval = NSCalendarUnitDay;
@@ -198,23 +199,11 @@
                              produto.nome];
     notificacao.alertTitle = NSLocalizedString(@"Produto Vencendo!", nil);
     
-    
     /*
      *Criei um metodo que permite adicionar ou reduzir tempo do fire date em dias, comparando com a data de validade dele.
      */
-    
-    NSLog(@"%@", _datePicker.datePicker.date);
-    notificacao.fireDate = [self setCustomFireDate:_datePicker.datePicker.date];
-    //    notificacao.fireDate = [_datePicker.datePicker.date dateByAddingTimeInterval:-(3*60*60)];
-    NSLog(@"%@", notificacao.fireDate);
-    
-    
-    
     notificacao.soundName = UILocalNotificationDefaultSoundName;
-    
-    notificacao.applicationIconBadgeNumber=0;
-    
-    
+    notificacao.applicationIconBadgeNumber= [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
     [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
 }
 
@@ -251,8 +240,8 @@
 
 //----------------------------------------------- ARRUMANDO A DATA PARA A NOTIFICATION
 -(NSDate *)setCustomFireDate:(NSDate *)changeDate{
-    // PENSANDO NA LOGICA AINDA
-    NSDate *newDate = [changeDate dateByAddingTimeInterval:((3600*24)-((3600*24)-(3*3600)))];
+    // AGORA FUNCIONA !!!!
+    NSDate *newDate =[changeDate dateByAddingTimeInterval:-(3600*3)];
 
     return newDate;
 }

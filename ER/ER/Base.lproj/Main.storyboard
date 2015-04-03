@@ -614,11 +614,12 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pu2-9N-K5O" id="wHx-LT-0CQ">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mxV-Aa-0Fr">
+                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mxV-Aa-0Fr">
                                             <rect key="frame" x="-160" y="-81" width="320" height="162"/>
                                             <date key="date" timeIntervalSinceReferenceDate="449093941.21690202">
                                                 <!--2015-03-26 20:19:01 +0000-->
                                             </date>
+                                            <locale key="locale" localeIdentifier="pt_BR"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="0.0" y="11" width="400" height="162"/>
                                             </variation>

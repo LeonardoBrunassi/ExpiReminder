@@ -54,8 +54,10 @@
     
     cell.nome.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]nome];
     
-    NSDate *date = [[NSDate alloc]init];
-    cell.diasFaltando.text = [NSString stringWithFormat:@"%lf", [date timeIntervalSinceNow] * -(60 * 60 * 24)];
+    NSDate *dateNow = [NSDate date];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    NSDate *dateValidade = [format dateFromString:[[[_singleton retornoProd] objectAtIndex:indexPath.row] dataValidade]];
+    cell.diasFaltando.text = [NSString stringWithFormat:@"%lf", [dateNow timeIntervalSinceDate:dateValidade]];
         
     cell.data.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]
                       dataValidade];
