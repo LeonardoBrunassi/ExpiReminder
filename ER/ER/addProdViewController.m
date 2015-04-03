@@ -126,7 +126,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.tabBarController.tabBar setHidden: YES];
-    NSLog(@"will appear: %@", produto.numCodigoDeBarras);
+    
 }
 
 /*

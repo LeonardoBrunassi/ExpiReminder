@@ -19,7 +19,7 @@
     self.title = @"Produtos";
     self.navigationItem.title = @"Produtos";
     _singleton = [ProdutoSingleton instance];
-    
+    _produto = [[Produto alloc]init];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
 
 }
@@ -29,6 +29,7 @@
     [tableView reloadData];
     
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -46,14 +47,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ListaTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"produto" forIndexPath:indexPath];
+    ListaTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"produto" forIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
+    //adicionando produto para passar pela segue
     
     cell.nome.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]nome];
     
-
-
     NSDate *date = [[NSDate alloc]init];
     cell.diasFaltando.text = [NSString stringWithFormat:@"%lf", [date timeIntervalSinceNow] * -(60 * 60 * 24)];
         
@@ -62,8 +62,18 @@
     
     
     
-    
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_produto setNome: [[[_singleton retornoProd]objectAtIndex:indexPath.row]nome]];
+    
+    [_produto setNumCodigoDeBarras:[[[_singleton retornoProd]objectAtIndex:indexPath.row]numCodigoDeBarras]];
+    
+    [_produto setDataValidade:[[[_singleton retornoProd]objectAtIndex:indexPath.row]dataValidade]];
+    
+    //falta implementar dias faltando.
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -82,12 +92,11 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"detalhes"]){
-        NSIndexPath *indexPath = [tableView indexPathForSelectedRow];
-        DetalhesViewController *detalheVC = segue.destinationViewController;
-        long row = [indexPath row];
-        detalheVC.produto = [NSArray arrayWithObjects: [[[_singleton retornoProd] objectAtIndex:row] nome], [[[_singleton retornoProd] objectAtIndex:row] dataValidade], nil ];
-        
+    
+    if([sender isKindOfClass: [ListaTableViewCell class]])
+    {
+        DetalhesViewController *detalhesVC = [segue destinationViewController];
+        [detalhesVC setProduto:_produto];
     }
 }
 

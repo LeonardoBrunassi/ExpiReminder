@@ -25,7 +25,9 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
- //   nomeProd.text = produto.nome;
+   
+    nomeProd.text = produto.nome;
+    dataValida.text = produto.dataValidade;
     
     
 }
@@ -34,6 +36,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    //talvez quebre o memory leak pela ligação de 2 properties Strong
+    produto = nil;
+}
 /*
 #pragma mark - Navigation
 
