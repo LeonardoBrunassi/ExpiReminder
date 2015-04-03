@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="h5I-of-wwO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="h5I-of-wwO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="0.5618554161" blue="0.56927692799999996" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="textShadowColor" red="1" green="0.5618554161" blue="0.56927692799999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textShadowColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -241,9 +241,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mxy-Bm-k3d">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="0.5618554161" blue="0.56927692799999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="0.5618554161" blue="0.56927692799999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.090196078431372548" green="0.29803921568627451" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -283,6 +283,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mcx-8b-S8b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="Hmc-QO-9aP" kind="relationship" relationship="rootViewController" id="28z-Cs-VQt"/>
@@ -334,9 +335,9 @@
                                     <subviews>
                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="ojo-HG-Kh8">
                                             <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
-                                            <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="maximumTrackTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="thumbTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="minimumTrackTintColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="maximumTrackTintColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="thumbTintColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                 <rect key="frame" x="187" y="7" width="181" height="31"/>
                                             </variation>
@@ -557,7 +558,7 @@
                                     </connections>
                                 </barButtonItem>
                             </items>
-                            <color key="tintColor" red="0.46130457918642087" green="0.67080307367708181" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="validade" id="FR0-Q2-SbQ" customClass="DataValidadeTableViewCell">

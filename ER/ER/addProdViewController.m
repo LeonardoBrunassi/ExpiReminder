@@ -225,7 +225,7 @@
      */
     
     NSLog(@"%@", _datePicker.datePicker.date);
-    [notificacao setFireDate:[self setCustomFireDate:_datePicker.datePicker.date]];
+    notificacao.fireDate = [self setCustomFireDate:_datePicker.datePicker.date];
     //    notificacao.fireDate = [_datePicker.datePicker.date dateByAddingTimeInterval:-(3*60*60)];
     NSLog(@"%@", notificacao.fireDate);
     
@@ -233,7 +233,7 @@
     
     notificacao.soundName = UILocalNotificationDefaultSoundName;
     
-    notificacao.applicationIconBadgeNumber = -1;
+    notificacao.applicationIconBadgeNumber = 1;
     
     
     [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
