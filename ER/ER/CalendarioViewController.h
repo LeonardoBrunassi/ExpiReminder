@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CalendarioViewController : UIViewController
+@interface CalendarioViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UIView *calendario;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

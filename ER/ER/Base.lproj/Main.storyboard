@@ -44,7 +44,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Onw-qZ-60U">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="produtoCalendario" id="Onw-qZ-60U" customClass="CalendarioTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Onw-qZ-60U" id="tcM-fI-B8A">
@@ -73,6 +73,7 @@
                     <navigationItem key="navigationItem" id="CnA-kT-R8U"/>
                     <connections>
                         <outlet property="calendario" destination="sF8-hb-uIb" id="M7d-ho-yXe"/>
+                        <outlet property="tableView" destination="1At-hZ-A3W" id="Z6r-Wi-gXp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wby-fV-kPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
