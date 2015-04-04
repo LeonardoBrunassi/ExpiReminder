@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B22E850E1AD063C1001E11B2 /* CalendarioTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B22E850D1AD063C1001E11B2 /* CalendarioTableViewCell.m */; };
 		B29660761AC33D2B0070C7A5 /* ProdutoSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = B29660751AC33D2B0070C7A5 /* ProdutoSingleton.m */; };
 		B29660781AC341EA0070C7A5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B29660771AC341EA0070C7A5 /* Realm.framework */; };
 		B296607A1AC342110070C7A5 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B29660791AC342110070C7A5 /* libc++.dylib */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B22E850C1AD063C1001E11B2 /* CalendarioTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarioTableViewCell.h; sourceTree = "<group>"; };
+		B22E850D1AD063C1001E11B2 /* CalendarioTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarioTableViewCell.m; sourceTree = "<group>"; };
 		B29660741AC33D2B0070C7A5 /* ProdutoSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProdutoSingleton.h; sourceTree = "<group>"; };
 		B29660751AC33D2B0070C7A5 /* ProdutoSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProdutoSingleton.m; sourceTree = "<group>"; };
 		B29660771AC341EA0070C7A5 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				B29660851AC49DE00070C7A5 /* DatePickerTableViewCell.m */,
 				B303F2991ACA034D000879FA /* ListaTableViewCell.h */,
 				B303F29A1ACA034D000879FA /* ListaTableViewCell.m */,
+				B22E850C1AD063C1001E11B2 /* CalendarioTableViewCell.h */,
+				B22E850D1AD063C1001E11B2 /* CalendarioTableViewCell.m */,
 			);
 			name = "custom cells";
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				B303F24D1AC33233000879FA /* main.m in Sources */,
 				B29660831AC4756F0070C7A5 /* addProdViewController.m in Sources */,
 				F75A96D61ACB0B0E007B2EDC /* AlertaTableViewCell.m in Sources */,
+				B22E850E1AD063C1001E11B2 /* CalendarioTableViewCell.m in Sources */,
 				B296607D1AC3426D0070C7A5 /* Produto.m in Sources */,
 				B2D39C5C1ACC7343005201FB /* DetalhesViewController.m in Sources */,
 			);
