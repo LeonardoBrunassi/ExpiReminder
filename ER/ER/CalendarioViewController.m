@@ -31,11 +31,42 @@
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    
+    return 7;
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [[Produto allObjects]count];
+}
+
+-(NSString *) tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return @"Segunda-Feira";
+            break;
+        case 1:
+            return @"Terça-Feira";
+            break;
+        case 2:
+            return @"Quarta-Feira";
+            break;
+        case 3:
+            return @"Quinta-Feira";
+            break;
+        case 4:
+            return @"Sexta-Feira";
+            break;
+        case 5:
+            return @"Sábado";
+            break;
+        case 6:
+            return @"Domingo";
+            break;
+        default:
+            return nil;
+            break;
+            
+    }
 }
 
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
