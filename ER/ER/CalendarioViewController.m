@@ -20,6 +20,7 @@
     [super viewDidLoad];
     self.title = @"Calendário";
     self.navigationItem.title = @"Calendário";
+    _singleton = [ProdutoSingleton instance];
 
     // Do any additional setup after loading the view.
 }
@@ -29,6 +30,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CalendarioTableViewCell *cal = [self.tableView dequeueReusableCellWithIdentifier:@"produtoCalendario" forIndexPath:indexPath];
+    cal.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    cal.produtoCalend.text = [[[_singleton retornoProd] objectAtIndex:indexPath.row]nome];
+    return cal;
+}
 /*
 #pragma mark - Navigation
 

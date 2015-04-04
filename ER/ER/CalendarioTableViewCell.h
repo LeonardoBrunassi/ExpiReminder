@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CalendarioTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *produtoCalend;
 
 @end
