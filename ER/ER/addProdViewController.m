@@ -128,6 +128,7 @@
     
     UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
     self.navigationItem.rightBarButtonItem = done;
+    _usuarioSingleton = [UsuarioSingleton sharedInstance];
 
 }
 
@@ -189,7 +190,11 @@
 -(void)createLocalNotification{
     notificacao = [[UILocalNotification alloc]init];
     NSLog(@"%@", _datePicker.datePicker.date);
-    notificacao.fireDate = [self setCustomFireDate:_datePicker.datePicker.date];
+    //notificacao.fireDate = [self setCustomFireDate:_datePicker.datePicker.date];
+    
+    _user = [[_usuarioSingleton loadUsuario]objectAtIndex:0];
+    notificacao.fireDate = [_datePicker.datePicker.date dateByAddingTimeInterval:[_user daysInSeconds]];
+    
     NSLog(@"%@", notificacao.fireDate);
     notificacao.timeZone = [NSTimeZone systemTimeZone];
     NSLog(@"%@", notificacao.timeZone);

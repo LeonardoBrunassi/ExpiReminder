@@ -13,6 +13,8 @@
 #import "ProdutoTableViewCell.h"
 #import "Produto.h"
 #import "ProdutoSingleton.h"
+#import "Usuario.h"
+#import "UsuarioSingleton.h"
 
 
 @class Produto;
@@ -31,6 +33,7 @@
 @property(nonatomic, weak) DataValidadeTableViewCell *dataValidade;
 @property(nonatomic,weak )ImagemTableViewCell *imagem;
 @property (nonatomic, weak) DatePickerTableViewCell *datePicker;
-
+@property Usuario *user;
+@property UsuarioSingleton *usuarioSingleton;
 
 @end

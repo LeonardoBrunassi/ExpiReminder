@@ -15,5 +15,7 @@
 @property long daysConverted;
 @property int key;
 
--(NSString *)primaryKey;
+-(long)daysInSeconds;
+
+
 @end

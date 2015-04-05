@@ -18,5 +18,23 @@
     
         
     _daysReminderLabel.text = [NSString stringWithFormat:@"%d", (int)sender.value];
+//    Usuario *usuario = [[Usuario alloc]init];
+//    [usuario setKey:0];
+
+    Usuario *userUpdate = [[Usuario alloc]init];
+    //[userUpdate setKey:0];
+    [userUpdate setDays:(int)sender.value];
+    [userUpdate daysInSeconds];
+    
+    UsuarioSingleton *mySingleton = [UsuarioSingleton sharedInstance];
+    NSLog(@" %lu ", [[mySingleton results]count]);
+    
+
+//    [mySingleton createUsuario];
+   
+    
+    [mySingleton updateUsuario:userUpdate];
+     NSLog(@" %lu ", [[mySingleton results]count]);
+    
 }
 @end

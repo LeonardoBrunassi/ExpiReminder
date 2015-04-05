@@ -12,9 +12,17 @@
 @synthesize  realm, results;
 static UsuarioSingleton *singleton;
 
--(id)sharedInstance
+-(id)init
 {
-    if([singleton isEqual:nil])
+    self = [super init];
+    if(self)
+        realm = [RLMRealm defaultRealm];
+    return self;
+}
+
++(id)sharedInstance
+{
+    if(!singleton)
          singleton = [[UsuarioSingleton alloc]init];
     return singleton;
 }
@@ -24,6 +32,7 @@ static UsuarioSingleton *singleton;
     Usuario *newUser = [[Usuario alloc]init];
     [newUser setDays:1];
     [newUser setDaysConverted:0];
+    //[newUser setKey:0];
     [realm beginWriteTransaction];
     [realm addObject:newUser];
     [realm commitWriteTransaction];
@@ -38,7 +47,8 @@ static UsuarioSingleton *singleton;
 -(void)updateUsuario:(Usuario *)updateUsuario
 {
     [realm beginWriteTransaction];
-    [realm addOrUpdateObject:updateUsuario];
+    //[realm addOrUpdateObject:updateUsuario];
+    [Usuario createOrUpdateInDefaultRealmWithObject:updateUsuario];
     [realm commitWriteTransaction];
 }
 

@@ -9,6 +9,7 @@
 #import "Usuario.h"
 
 @implementation Usuario
+@synthesize days, daysConverted, key;
 
 
 -(id)init
@@ -20,10 +21,10 @@
 
 -(long)daysInSeconds
 {
-    return [self days] * (3600 * 24);
+    return ([self days] * (60));
 }
 
--(NSString *)primaryKey
++ (NSString *)primaryKey
 {
     return @"key";
 }

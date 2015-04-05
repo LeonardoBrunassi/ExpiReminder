@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Usuario.h"
+#import "UsuarioSingleton.h"
+
 
 @interface DataAlertaTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *daysReminderLabel;
