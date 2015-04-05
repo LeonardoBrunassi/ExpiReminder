@@ -20,6 +20,8 @@
 -(RLMResults*) retornoProd;
 -(void)removeProduto:(Produto *)produto;
 -(void)ordenarProdutos;
+-(void)salvarFoto:(UIImage *)foto comNome:(NSString *)nome;
+-(UIImage *)recuperarFotoComNome:(NSString *)nome;
 
 //@property NSDate *data;
 @property RLMRealm *realm;

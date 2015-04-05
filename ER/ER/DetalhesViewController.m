@@ -28,6 +28,7 @@
    
     nomeProd.text = produto.nome;
     dataValida.text = produto.dataValidade;
+   // imagemProd.image = [ps recuperarFotoComNome:[produto nome]];
     
     
 }

@@ -17,4 +17,6 @@
 
 @property NSString *numCodigoDeBarras;
 
+//@property UIImage *foto;
+
 @end
