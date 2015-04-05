@@ -27,6 +27,7 @@
 		B303F25B1AC33233000879FA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B303F2591AC33233000879FA /* LaunchScreen.xib */; };
 		B303F2671AC33233000879FA /* ERTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F2661AC33233000879FA /* ERTests.m */; };
 		B303F29B1ACA034D000879FA /* ListaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B303F29A1ACA034D000879FA /* ListaTableViewCell.m */; };
+		B3634EC01AD1C2ED006C59D2 /* FotoSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = B3634EBF1AD1C2ED006C59D2 /* FotoSingleton.m */; };
 		E3461D231AD17D4300BBDC08 /* Usuario.m in Sources */ = {isa = PBXBuildFile; fileRef = E3461D221AD17D4300BBDC08 /* Usuario.m */; };
 		E3461D261AD1807500BBDC08 /* UsuarioSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = E3461D251AD1807500BBDC08 /* UsuarioSingleton.m */; };
 		E39F42821AC480760010195E /* BarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E39F42811AC480760010195E /* BarCodeViewController.m */; };
@@ -88,6 +89,8 @@
 		B303F2661AC33233000879FA /* ERTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ERTests.m; sourceTree = "<group>"; };
 		B303F2991ACA034D000879FA /* ListaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListaTableViewCell.h; sourceTree = "<group>"; };
 		B303F29A1ACA034D000879FA /* ListaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListaTableViewCell.m; sourceTree = "<group>"; };
+		B3634EBE1AD1C2ED006C59D2 /* FotoSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FotoSingleton.h; sourceTree = "<group>"; };
+		B3634EBF1AD1C2ED006C59D2 /* FotoSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FotoSingleton.m; sourceTree = "<group>"; };
 		E3461D211AD17D4300BBDC08 /* Usuario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Usuario.h; sourceTree = "<group>"; };
 		E3461D221AD17D4300BBDC08 /* Usuario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Usuario.m; sourceTree = "<group>"; };
 		E3461D241AD1807500BBDC08 /* UsuarioSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsuarioSingleton.h; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 				B29660741AC33D2B0070C7A5 /* ProdutoSingleton.h */,
 				E3461D241AD1807500BBDC08 /* UsuarioSingleton.h */,
 				E3461D251AD1807500BBDC08 /* UsuarioSingleton.m */,
+				B3634EBE1AD1C2ED006C59D2 /* FotoSingleton.h */,
+				B3634EBF1AD1C2ED006C59D2 /* FotoSingleton.m */,
 			);
 			name = singleton;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				B296608F1AC49EF20070C7A5 /* DataValidadeTableViewCell.m in Sources */,
 				B29660861AC49DE00070C7A5 /* DatePickerTableViewCell.m in Sources */,
 				E3461D231AD17D4300BBDC08 /* Usuario.m in Sources */,
+				B3634EC01AD1C2ED006C59D2 /* FotoSingleton.m in Sources */,
 				B303F2501AC33233000879FA /* AppDelegate.m in Sources */,
 				F75A96D31ACB0A80007B2EDC /* ConfigTableViewController.m in Sources */,
 				F75A96D91ACB0C22007B2EDC /* DataAlertaTableViewCell.m in Sources */,

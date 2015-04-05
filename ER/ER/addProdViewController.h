@@ -15,6 +15,7 @@
 #import "ProdutoSingleton.h"
 #import "Usuario.h"
 #import "UsuarioSingleton.h"
+#import "FotoSingleton.h"
 
 
 @class Produto;
@@ -27,13 +28,13 @@
 @property (strong, nonatomic) Produto *produto;
 @property UILocalNotification *notificacao;
 @property (strong,nonatomic) NSString *aux;
-
-- (IBAction)tirarFoto:(id)sender;
 @property (nonatomic, weak) ProdutoTableViewCell *produtoCell;
 @property(nonatomic, weak) DataValidadeTableViewCell *dataValidade;
 @property(nonatomic,weak )ImagemTableViewCell *imagem;
 @property (nonatomic, weak) DatePickerTableViewCell *datePicker;
 @property Usuario *user;
 @property UsuarioSingleton *usuarioSingleton;
+
+- (IBAction)tirarFoto:(id)sender;
 
 @end

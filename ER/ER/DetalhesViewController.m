@@ -13,7 +13,7 @@
 @end
 
 @implementation DetalhesViewController
-@synthesize ps, imagemProd, nomeProd, dataValida, diasFaltando, produto;
+@synthesize ps, fs, imagemProd, nomeProd, dataValida, diasFaltando, produto;
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    nomeProd.text = produto.nome;
@@ -28,7 +28,7 @@
    
     nomeProd.text = produto.nome;
     dataValida.text = produto.dataValidade;
-   // imagemProd.image = [ps recuperarFotoComNome:[produto nome]];
+    imagemProd.image = [fs recuperarFotoComNome:[produto nome]];
     
     
 }

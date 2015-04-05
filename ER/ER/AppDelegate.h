@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Produto.h"
+#import "ViewController.h"
+#import "UsuarioSingleton.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

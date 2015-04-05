@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Produto.h"
 #import "ProdutoSingleton.h"
+#import "FotoSingleton.h"
 
 @interface DetalhesViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *imagemProd;
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *diasFaltando;
 
 @property ProdutoSingleton *ps;
+@property FotoSingleton *fs;
 
 
 //rafa

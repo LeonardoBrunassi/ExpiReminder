@@ -57,28 +57,6 @@ static ProdutoSingleton *instancia = nil;
     [realm commitWriteTransaction];
 }
 
-
-//-------------------- SALVAR FOTO NAO ESTA FUNCIONANDO
-//-(void)salvarFoto:(UIImage *)foto comNome:(NSString *)nome {
-//    // Criando caminho
-//    NSString *fileName = [NSString stringWithFormat:@"%@.png", nome];
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
-//    
-//    // Salvando a imagem no formato PNG
-//    [UIImagePNGRepresentation(foto) writeToFile:filePath atomically:YES];
-//}
-//
-//-(UIImage *)recuperarFotoComNome:(NSString *)nome {
-//    // Criando caminho
-//    NSString *fileName = [NSString stringWithFormat:@"%@.png", nome];
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
-//    
-//    // Recuperando foto
-//    return [UIImage imageWithContentsOfFile:filePath];
-//}
-
 -(void)atualizarProduto:(NSString *)nomeProduto barCode:(NSString *)barCode dataValidade:(NSString *)dataValidade dataInsercao:(NSDate *)dataInsercao
 {
 //    [realm beginWriteTransaction];
