@@ -28,6 +28,7 @@
    
     nomeProd.text = produto.nome;
     dataValida.text = produto.dataValidade;
+    
     imagemProd.image = [fs recuperarFotoComNome:[produto nome]];
     
     
