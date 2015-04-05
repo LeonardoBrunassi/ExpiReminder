@@ -40,27 +40,47 @@
 }
 
 -(NSString *) tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger)section {
+    NSDate *now = [NSDate date];
+    NSDateComponents* components = [[NSDateComponents alloc] init];
+    components.day=1;
+    NSDate *newDate;
+    NSDateFormatter *weekday = [[NSDateFormatter alloc] init];
+    [weekday setDateFormat: @"EEEE"];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSLog(@"The day of the week is: %@", [weekday stringFromDate:now]);
     switch (section) {
         case 0:
-            return @"Segunda-Feira";
+            return [[weekday stringFromDate:now] uppercaseString];
             break;
         case 1:
-            return @"Terça-Feira";
+            newDate = [calendar dateByAddingComponents:components toDate:now options:0];
+            components.day=2;
+            return [[weekday stringFromDate:newDate ] uppercaseString];
             break;
         case 2:
-            return @"Quarta-Feira";
+            components.day=2;
+            newDate = [calendar dateByAddingComponents:components toDate:now options:0];
+            return [[weekday stringFromDate:newDate ] uppercaseString];
             break;
         case 3:
-            return @"Quinta-Feira";
+            components.day=3;
+            newDate = [calendar dateByAddingComponents:components toDate:now options:0];
+            return [[weekday stringFromDate:newDate ] uppercaseString];
             break;
         case 4:
-            return @"Sexta-Feira";
+            components.day=4;
+            newDate = [calendar dateByAddingComponents:components toDate:now options:0];
+            return [[weekday stringFromDate:newDate ] uppercaseString];
             break;
         case 5:
-            return @"Sábado";
+            components.day=5;
+            newDate = [calendar dateByAddingComponents:components toDate:now options:0];
+            return [[weekday stringFromDate:newDate ] uppercaseString];
             break;
         case 6:
-            return @"Domingo";
+            components.day=6;
+            newDate = [calendar dateByAddingComponents:components toDate:now options:0];
+            return [[weekday stringFromDate:newDate ] uppercaseString];
             break;
         default:
             return nil;

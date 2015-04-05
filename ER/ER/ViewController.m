@@ -26,8 +26,9 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [self.tabBarController.tabBar setHidden:NO];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     [tableView reloadData];
-    
 }
 
 
@@ -89,8 +90,8 @@
         [_singleton removeProduto: auxProduto];
         
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
     }
 }
 
