@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
+
 @interface AppDelegate ()
 
 @end
@@ -21,6 +22,7 @@
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
+    
     return YES;
 }
 

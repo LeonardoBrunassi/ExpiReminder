@@ -14,5 +14,5 @@
 
 @property AlertaTableViewCell *alerta;
 @property DataAlertaTableViewCell *dataAlerta;
-
+@property UsuarioSingleton *singleton;
 @end

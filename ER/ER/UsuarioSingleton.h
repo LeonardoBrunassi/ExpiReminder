@@ -12,7 +12,6 @@
 @interface UsuarioSingleton : NSObject
 @property RLMRealm *realm;
 @property RLMResults *results;
--(id)sharedInstance;
 -(void)createUsuario;
 -(RLMResults *)loadUsuario;
 -(void)updateUsuario:(Usuario *)updateUsuario;

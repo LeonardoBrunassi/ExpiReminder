@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Produto.h"
+#import "UsuarioSingleton.h"
+#import "DataAlertaTableViewCell.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
