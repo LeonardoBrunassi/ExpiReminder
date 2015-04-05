@@ -19,6 +19,7 @@
 //    nomeProd.text = produto.nome;
     [self.tabBarController setHidesBottomBarWhenPushed:YES];
     self.tabBarController.tabBar.hidden = YES;
+    fs = [FotoSingleton instance];
 
     
     // Do any additional setup after loading the view.
