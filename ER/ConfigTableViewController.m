@@ -13,6 +13,7 @@
     [super viewDidLoad];
 
     self.navigationItem.title = @"Configurações";
+    _singleton = [UsuarioSingleton sharedInstance];
     
     
     
@@ -54,6 +55,17 @@
     
     if(indexPath.row == 3){
         _dataAlerta = [tableView dequeueReusableCellWithIdentifier:@"dataAlerta"];
+        
+        //Aqui inicia a data que foi escolhida antes de abrir o app
+        
+        if([[[_singleton loadUsuario]objectAtIndex:0]days] == 1)
+            _dataAlerta.dia.text = @"Dia:";
+            else
+            _dataAlerta.dia.text = @"Dias:";     
+        
+        [self.dataAlerta.daysSlider setValue: [[[_singleton loadUsuario]objectAtIndex:0]days]];
+        self.dataAlerta.daysReminderLabel.text =[NSString stringWithFormat:@"%d",[[[_singleton loadUsuario]objectAtIndex:0]days]];
+        
         return _dataAlerta;
     }
     
@@ -92,10 +104,15 @@
 - (void) mudarInterruptor: (id) sender{
     if([_alerta.interruptor isOn]){
         [self.dataAlerta.daysSlider setHidden:NO];
+        [self.dataAlerta.dia setHidden:NO];
+        [self.dataAlerta.daysReminderLabel setHidden: NO];
     }
     else{
         _alerta.interruptor.on = NO;
         [self.dataAlerta.daysSlider setHidden:YES];
+        [self.dataAlerta.dia setHidden:YES];
+        [self.dataAlerta.daysReminderLabel setHidden: YES];
+        
     }
     
 }
