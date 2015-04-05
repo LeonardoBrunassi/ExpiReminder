@@ -20,7 +20,7 @@
     self.navigationItem.title = @"Produtos";
     _singleton = [ProdutoSingleton instance];
     _produto = [[Produto alloc]init];
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:0.5]];
 
 }
 
@@ -58,8 +58,8 @@
     NSDate *dateNow = [NSDate date];
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
     NSDate *dateValidade = [format dateFromString:[[[_singleton retornoProd] objectAtIndex:indexPath.row] dataValidade]];
-    cell.diasFaltando.text = [NSString stringWithFormat:@"%lf", [dateNow timeIntervalSinceDate:dateValidade]];
-        
+    cell.diasFaltando.text = [NSString stringWithFormat:@"%f", [dateNow timeIntervalSinceDate:dateValidade]*(60*60*24)];
+    NSLog(@"%f", [dateNow timeIntervalSinceDate:dateValidade]*(60*60*24));
     cell.data.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]
                       dataValidade];
     
