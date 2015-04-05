@@ -32,7 +32,7 @@ static UsuarioSingleton *singleton;
     Usuario *newUser = [[Usuario alloc]init];
     [newUser setDays:1];
     [newUser setDaysConverted:0];
-    //[newUser setKey:0];
+    [newUser setKey:1];
     [realm beginWriteTransaction];
     [realm addObject:newUser];
     [realm commitWriteTransaction];
@@ -40,6 +40,8 @@ static UsuarioSingleton *singleton;
 
 -(RLMResults *)loadUsuario
 {
+    if([[Usuario allObjects]count] == 0)
+        [self createUsuario];
     results = [Usuario allObjects];
     return results;
 }
