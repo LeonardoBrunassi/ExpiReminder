@@ -166,6 +166,7 @@
         [produto setDataValidade:dateString];
         
         [fotoSingleton salvarFoto:_imagem.imgProd.image comNome:[produto nome]];
+
         [singleton adicionarProd:produto];
         
         [self createLocalNotification];
