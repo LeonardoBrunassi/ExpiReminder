@@ -136,6 +136,7 @@
 //----------------------------------------- METODO QUE SALVA O PRODUTO NO BANCO E CRIA A NOTIFICATION PARA ESSE PRODUTO
 -(void)done:(id)sender{
     ProdutoSingleton *singleton = [ProdutoSingleton instance];
+    FotoSingleton *fotoSingleton = [FotoSingleton instance];
     
     produto = [[Produto alloc]init];
 
@@ -164,7 +165,7 @@
         
         [produto setDataValidade:dateString];
         
-       // [singleton salvarFoto:_imagem.imgProd.image comNome:[produto nome]];
+        [fotoSingleton salvarFoto:_imagem.imgProd.image comNome:[produto nome]];
         [singleton adicionarProd:produto];
         
         [self createLocalNotification];
