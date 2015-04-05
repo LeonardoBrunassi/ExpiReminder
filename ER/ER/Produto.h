@@ -12,11 +12,8 @@
 @interface Produto : RLMObject
 
 @property NSString *nome;
-
 @property NSString *dataValidade;
-
 @property NSString *numCodigoDeBarras;
 
-//@property UIImage *foto;
 
 @end

@@ -15,6 +15,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Flr-cv-Jm8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.86856058599999997" green="0.91941529129999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="textShadowColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -301,6 +302,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.86856058599999997" green="0.91941529129999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.090196078431372548" green="0.29803921568627451" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
@@ -322,7 +324,10 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Y9p-xq-fdH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.86856058599999997" green="0.91941529129999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.86856058599999997" green="0.91941529129999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="Apg-ZT-rzP" kind="relationship" relationship="viewControllers" id="iln-Wb-5Lx"/>
@@ -343,6 +348,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.86856058599999997" green="0.91941529129999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
@@ -520,7 +526,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.86856058599999997" green="0.91941529129999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZiI-LQ-1D7" firstAttribute="centerX" secondItem="JqX-22-nRU" secondAttribute="centerX" id="0pH-hx-pSe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XCQ-A2-PKv" secondAttribute="trailing" constant="80" id="6ei-Ce-Y3W"/>
@@ -609,6 +615,7 @@
                         <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="s3N-ju-cdN">
                             <rect key="frame" x="0.0" y="629" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <color key="backgroundColor" red="0.86856058599999997" green="0.91941529129999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <items>
                                 <barButtonItem systemItem="camera" id="2M8-8Q-8po">
                                     <connections>
@@ -623,6 +630,7 @@
                                 </barButtonItem>
                             </items>
                             <color key="tintColor" red="0.090196078430000007" green="0.29803921570000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="barTintColor" red="0.86856058599999997" green="0.91941529129999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </toolbar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="validade" id="FR0-Q2-SbQ" customClass="DataValidadeTableViewCell">
