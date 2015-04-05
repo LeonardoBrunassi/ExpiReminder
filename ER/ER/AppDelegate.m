@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 
 
-
 @interface AppDelegate ()
 
 @end
@@ -22,7 +21,8 @@
         [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
     }
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
-    
+    UsuarioSingleton *user = [UsuarioSingleton sharedInstance];
+    [user loadUsuario];
     return YES;
 }
 
