@@ -15,6 +15,14 @@
 @property (strong, nonatomic) IBOutlet UIView *calendario;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) ProdutoSingleton *singleton;
+@property int day0;
+@property int day1;
+@property int day2;
+@property int day3;
+@property int day4;
+@property int day5;
+@property int day6;
+@property NSArray* dayArray;
 
 @end
 
