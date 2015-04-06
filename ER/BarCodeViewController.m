@@ -31,6 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialize];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -99,6 +100,8 @@
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
+    _produtoSingleton = [ProdutoSingleton instance];
+    _fotoSingleton = [FotoSingleton instance];
     CGRect highlightViewRect = CGRectZero;
     AVMetadataMachineReadableCodeObject *barCodeObject;
     NSString *detectionString = nil;
@@ -118,12 +121,21 @@
                 NSLog(@"detection string: %@", detectionString);
                 
                 addProdViewController *p = (addProdViewController*)[self backViewController];
-                [p setAux: _barCode];
+              //  NSLog(@"%@", [[[_produtoSingleton retornoProd] objectAtIndex:0]numCodigoDeBarras]);
                 
-                
-                
+                for (int i = 0; i<[[Produto allObjects] count]; i++) {
+                    if ([_barCode isEqualToString:[[[_produtoSingleton retornoProd] objectAtIndex:i] numCodigoDeBarras]]) {
+                        p.aux = [[[_produtoSingleton retornoProd] objectAtIndex:i] numCodigoDeBarras];
+                        NSLog(@"%@", p.aux);
+                        p.produtoCell.registroProdTF.text =[[[_produtoSingleton retornoProd] objectAtIndex:i] nome];
+                        NSLog(@"%@", p.produtoCell.registroProdTF.text);
+                        p.imagem.imgProd.image = [_fotoSingleton recuperarFotoComNome:[[[_produtoSingleton retornoProd] objectAtIndex:i] nome]];
+                    }
+                }
+                if (![p aux]) {
+                    [p setAux: _barCode];
+                }
                 break;
-                
             }
         }
         
