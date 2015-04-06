@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *nomeProd;
 @property (weak, nonatomic) IBOutlet UILabel *dataValida;
 @property (weak, nonatomic) IBOutlet UILabel *diasFaltando;
+@property (weak, nonatomic) IBOutlet UILabel *produtoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dataValidadeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *diasRestantesLabel;
 
 @property ProdutoSingleton *ps;
 @property FotoSingleton *fs;
