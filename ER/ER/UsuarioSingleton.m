@@ -30,9 +30,9 @@ static UsuarioSingleton *singleton;
 -(void)createUsuario
 {
     Usuario *newUser = [[Usuario alloc]init];
-    [newUser setDays:1];
+    [newUser setDays:5];
     [newUser setDaysConverted:0];
-    [newUser setKey:1];
+    [newUser setKey:0];
     [realm beginWriteTransaction];
     [realm addObject:newUser];
     [realm commitWriteTransaction];
