@@ -20,7 +20,7 @@
     self.navigationItem.title = @"Produtos";
     _singleton = [ProdutoSingleton instance];
     _produto = [[Produto alloc]init];
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:0.5]];
+    
 
 }
 

@@ -23,6 +23,8 @@
     [[UIApplication sharedApplication] setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     UsuarioSingleton *user = [UsuarioSingleton sharedInstance];
     [user loadUsuario];
+    
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.2 green:0.3 blue:1 alpha:1.0]];
     return YES;
 }
 
