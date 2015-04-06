@@ -21,9 +21,15 @@
     self.title = @"Calendário";
     self.navigationItem.title = @"Calendário";
     _singleton = [ProdutoSingleton instance];
-    // self.tableView.allowsSelection = NO;
-    
+     self.tableView.allowsSelection = NO;
     // Do any additional setup after loading the view.
+    _day0 = 0;
+    _day1 = 0;
+    _day2 = 0;
+    _day3 = 0;
+    _day4 = 0;
+    _day5 = 0;
+    _day6 = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +43,7 @@
 }
 
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return [[Produto allObjects]count];
 }
 
@@ -93,8 +100,12 @@
 -(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CalendarioTableViewCell *cal = [self.tableView dequeueReusableCellWithIdentifier:@"produtoCalendario" forIndexPath:indexPath];
     cal.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    cal.produtoCalend.text = [[[_singleton retornoProd] objectAtIndex:indexPath.row]nome];
+        cal.produtoCalend.text = nil;
+        if([[[[_singleton retornoProd] objectAtIndex:indexPath.row]diasFaltando] isEqualToString:[NSString stringWithFormat:@"%lu",indexPath.section]])
+        {
+            cal.produtoCalend.text = [[[_singleton retornoProd] objectAtIndex:indexPath.row]nome];
+        }
+
     return cal;
 }
 /*
@@ -106,5 +117,27 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)produtoPorDia
+{
+    for(int i = 0; i < [[_singleton retornoProd]count]; i++)
+    {
+       if([[[_singleton retornoProd]objectAtIndex:i]diasFaltando] == [NSString stringWithFormat:@"%d",0])
+           _day0++;
+        if([[[_singleton retornoProd]objectAtIndex:i]diasFaltando] == [NSString stringWithFormat:@"%d",1])
+            _day1++;
+        if([[[_singleton retornoProd]objectAtIndex:i]diasFaltando] == [NSString stringWithFormat:@"%d",2])
+            _day2++;
+        if([[[_singleton retornoProd]objectAtIndex:i]diasFaltando] == [NSString stringWithFormat:@"%d",3])
+            _day3++;
+        if([[[_singleton retornoProd]objectAtIndex:i]diasFaltando] == [NSString stringWithFormat:@"%d",4])
+            _day4++;
+        if([[[_singleton retornoProd]objectAtIndex:i]diasFaltando] == [NSString stringWithFormat:@"%d",5])
+            _day5++;
+        if([[[_singleton retornoProd]objectAtIndex:i]diasFaltando] == [NSString stringWithFormat:@"%d",6])
+            _day6++;
+    }
+    
+}
 
 @end
