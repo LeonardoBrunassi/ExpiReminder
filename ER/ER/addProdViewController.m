@@ -257,6 +257,7 @@
     
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0.2 green:0.3 blue:1 alpha:1.0]];
 }
 
 //---------------------------------------------------------------------
