@@ -21,7 +21,8 @@
     _singleton = [ProdutoSingleton instance];
     _produto = [[Produto alloc]init];
    // self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
+   //[[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:FALSE];
+ 
 
 }
 
@@ -55,40 +56,17 @@
     //adicionando produto para passar pela segue
     
     cell.nome.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]nome];
-    
-    NSDateFormatter *format = [[NSDateFormatter alloc]init];
-
-   [format setDateFormat:@"dd/MM/yyyy"];
-    
-    NSDate *dateNow = [NSDate date];
-    
-    NSDate *dateValidade = [format dateFromString:[[[_singleton retornoProd] objectAtIndex:indexPath.row] dataValidade]];
-    
-    NSString *dateNowString = [format stringFromDate:dateNow];
-
-    dateNow = [format dateFromString:dateNowString];
-    NSLog(@"%@", dateNowString);
-    
-    NSString *dateValidadeString = [format stringFromDate:dateValidade];
-    
-    dateValidade = [format dateFromString:dateValidadeString];
-    NSLog(@"%@", dateValidadeString);
-    
-    int diasFaltandoInt = (int) -[dateNow timeIntervalSinceDate:dateValidade]/86400;;
-                           
-    NSLog(@"%i", diasFaltandoInt);
-    
-    if (diasFaltandoInt == 1) {
-        cell.diasFaltando.text = [NSString stringWithFormat:@"%i dia", diasFaltandoInt];
-    } else {
-        cell.diasFaltando.text = [NSString stringWithFormat:@"%i dias", diasFaltandoInt];
-    }
-
-    NSLog(@"%i dia(s)", diasFaltandoInt);
+ 
     
     cell.data.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]
                       dataValidade];
     
+    if ([[[[_singleton retornoProd]objectAtIndex:indexPath.row]diasFaltando] isEqualToString:@"1"]) {
+        cell.diasFaltando.text = [NSString stringWithFormat:@"%@ dia", [[[_singleton retornoProd]objectAtIndex:indexPath.row]diasFaltando]];
+
+    } else {
+        cell.diasFaltando.text = [NSString stringWithFormat:@"%@ dias", [[[_singleton retornoProd]objectAtIndex:indexPath.row]diasFaltando]];
+    }
     
     
     return cell;
@@ -103,7 +81,7 @@
     
     [_produto setDataValidade:[[[_singleton retornoProd]objectAtIndex:indexPath.row]dataValidade]];
     
-    //falta implementar dias faltando.
+    [_produto setDiasFaltando:[[[_singleton retornoProd]objectAtIndex:indexPath.row]diasFaltando]];
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -132,18 +110,18 @@
     }
 }
 
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-    [super setEditing:editing animated:animated];
-    [tableView setEditing:editing animated:YES];
-    if (editing) {
-        _addProdutos.enabled = NO;
-    } else {
-        _addProdutos.enabled = YES;
-    }
-}
-
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return UITableViewCellEditingStyleDelete;
-}
+//- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+//    [super setEditing:editing animated:animated];
+//    [tableView setEditing:editing animated:YES];
+//    if (editing) {
+//        _addProdutos.enabled = NO;
+//    } else {
+//        _addProdutos.enabled = YES;
+//    }
+//}
+//
+//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return UITableViewCellEditingStyleDelete;
+//}
 
 @end

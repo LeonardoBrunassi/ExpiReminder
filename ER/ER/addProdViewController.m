@@ -139,7 +139,6 @@
     FotoSingleton *fotoSingleton = [FotoSingleton instance];
     
     produto = [[Produto alloc]init];
-
 // CONDIÇAO DO CODIGO DE BARRAS
     if(_aux == nil)
     {
@@ -161,8 +160,26 @@
         [produto setNome: produtoCell.registroProdTF.text];
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"dd/MM/yyyy"];
+        
         NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
         NSLog(@"%@", dateString);
+        
+        NSDate *dateNow = [NSDate date];
+        
+        NSString *dateNowString = [format stringFromDate:dateNow];
+        
+        dateNow = [format dateFromString:dateNowString];
+        NSLog(@"%@", dateNowString);
+        
+        NSDate *dateValidade = [format dateFromString:dateString];
+        NSLog(@"%@", dateString);
+        
+        int diasFaltandoInt = (int) -[dateNow timeIntervalSinceDate:dateValidade]/86400;;
+        
+        NSLog(@"%i dia(s)", diasFaltandoInt);
+        
+        [produto setDiasFaltando:[NSString stringWithFormat:@"%i", diasFaltandoInt]];
+        NSLog(@"%@", produto.diasFaltando);
         [produto setDataValidade:dateString];
         
         [fotoSingleton salvarFoto:_imagem.imgProd.image comNome:[produto nome]];

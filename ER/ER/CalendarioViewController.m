@@ -21,7 +21,8 @@
     self.title = @"Calendário";
     self.navigationItem.title = @"Calendário";
     _singleton = [ProdutoSingleton instance];
-
+    // self.tableView.allowsSelection = NO;
+    
     // Do any additional setup after loading the view.
 }
 

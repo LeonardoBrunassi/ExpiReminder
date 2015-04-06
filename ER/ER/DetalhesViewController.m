@@ -28,8 +28,12 @@
    
     nomeProd.text = produto.nome;
     dataValida.text = produto.dataValidade;
-    //diasFaltando.text = produto.diasFaltando;
     imagemProd.image = [fs recuperarFotoComNome:[produto nome]];
+    if ([produto.diasFaltando isEqualToString:@"1"]) {
+        diasFaltando.text = [NSString stringWithFormat:@"%@ dia", produto.diasFaltando];
+    } else {
+        diasFaltando.text = [NSString stringWithFormat:@"%@ dias", produto.diasFaltando];
+    }
     
     
 }

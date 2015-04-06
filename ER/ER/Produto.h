@@ -14,6 +14,6 @@
 @property NSString *nome;
 @property NSString *dataValidade;
 @property NSString *numCodigoDeBarras;
-//@property NSString *diasFaltando;
+@property NSString *diasFaltando;
 
 @end
