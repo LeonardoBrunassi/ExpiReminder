@@ -19,7 +19,10 @@
     [self.tabBarController setHidesBottomBarWhenPushed:YES];
     self.tabBarController.tabBar.hidden = YES;
     fs = [FotoSingleton instance];
-    [imagemProd setTransform:CGAffineTransformMakeRotation(+M_PI / 2)];
+    //[imagemProd setTransform:CGAffineTransformMakeRotation(+M_PI / 2)];
+    if (![fs recuperarFotoComNome:@"default"]) {
+        [imagemProd setTransform:CGAffineTransformMakeRotation(+M_PI / 2)];
+    }
     // Do any additional setup after loading the view.
 }
 

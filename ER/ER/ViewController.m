@@ -21,7 +21,7 @@
     _singleton = [ProdutoSingleton instance];
     _produto = [[Produto alloc]init];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-   [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:FALSE];
+   //[[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:FALSE];
  
 
 }

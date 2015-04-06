@@ -46,7 +46,7 @@
     components.day=1;
     NSDate *newDate;
     NSDateFormatter *weekday = [[NSDateFormatter alloc] init];
-    [weekday setDateFormat: @"EEEE"];
+    [weekday setDateFormat: @"EEEE, dd/MM/yyyy"];
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSLog(@"The day of the week is: %@", [weekday stringFromDate:now]);
     switch (section) {
