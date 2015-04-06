@@ -15,7 +15,7 @@
     self.navigationItem.title = @"Configurações";
     _singleton = [UsuarioSingleton sharedInstance];
     
-    
+    self.tableView.allowsSelection = NO;
     
 }
 
