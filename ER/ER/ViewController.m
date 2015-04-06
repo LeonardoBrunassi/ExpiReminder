@@ -20,7 +20,7 @@
     self.navigationItem.title = @"Produtos";
     _singleton = [ProdutoSingleton instance];
     _produto = [[Produto alloc]init];
-   // self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
    [[[[self.tabBarController tabBar]items]objectAtIndex:1]setEnabled:FALSE];
  
 
@@ -110,18 +110,18 @@
     }
 }
 
-//- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-//    [super setEditing:editing animated:animated];
-//    [tableView setEditing:editing animated:YES];
-//    if (editing) {
-//        _addProdutos.enabled = NO;
-//    } else {
-//        _addProdutos.enabled = YES;
-//    }
-//}
-//
-//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewCellEditingStyleDelete;
-//}
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    [tableView setEditing:editing animated:YES];
+    if (editing) {
+        _addProdutos.enabled = NO;
+    } else {
+        _addProdutos.enabled = YES;
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
 
 @end
