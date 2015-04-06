@@ -61,9 +61,16 @@
     cell.data.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]
                       dataValidade];
     
-    if ([[[[_singleton retornoProd]objectAtIndex:indexPath.row]diasFaltando] isEqualToString:@"1"]) {
-        cell.diasFaltando.text = [NSString stringWithFormat:@"%@ dia", [[[_singleton retornoProd]objectAtIndex:indexPath.row]diasFaltando]];
+    if ([[[[_singleton retornoProd]objectAtIndex:indexPath.row]diasFaltando] isEqualToString:@"-1"]) {
+        Produto *auxProduto = [[_singleton retornoProd]objectAtIndex:indexPath.row];
+        NSLog(@"nomeProduto: %@", auxProduto.nome);
+        
+        [_singleton removeProduto: auxProduto];
 
+    } else if ([[[[_singleton retornoProd]objectAtIndex:indexPath.row]diasFaltando] isEqualToString:@"0"]) {
+        cell.diasFaltando.text = @"Hoje";
+    } else if ([[[[_singleton retornoProd]objectAtIndex:indexPath.row]diasFaltando] isEqualToString:@"1"]) {
+        cell.diasFaltando.text = @"Amanhã";
     } else {
         cell.diasFaltando.text = [NSString stringWithFormat:@"%@ dias", [[[_singleton retornoProd]objectAtIndex:indexPath.row]diasFaltando]];
     }
