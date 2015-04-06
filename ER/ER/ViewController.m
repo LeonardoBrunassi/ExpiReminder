@@ -20,6 +20,7 @@
     self.navigationItem.title = @"Produtos";
     _singleton = [ProdutoSingleton instance];
     _produto = [[Produto alloc]init];
+   // self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
 
 }
@@ -55,11 +56,36 @@
     
     cell.nome.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]nome];
     
+    NSDateFormatter *format = [[NSDateFormatter alloc]init];
+
+   [format setDateFormat:@"dd/MM/yyyy"];
+    
     NSDate *dateNow = [NSDate date];
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    
     NSDate *dateValidade = [format dateFromString:[[[_singleton retornoProd] objectAtIndex:indexPath.row] dataValidade]];
-    cell.diasFaltando.text = [NSString stringWithFormat:@"%f", [dateNow timeIntervalSinceDate:dateValidade]*(60*60*24)];
-    NSLog(@"%f", [dateNow timeIntervalSinceDate:dateValidade]*(60*60*24));
+    
+    NSString *dateNowString = [format stringFromDate:dateNow];
+
+    dateNow = [format dateFromString:dateNowString];
+    NSLog(@"%@", dateNowString);
+    
+    NSString *dateValidadeString = [format stringFromDate:dateValidade];
+    
+    dateValidade = [format dateFromString:dateValidadeString];
+    NSLog(@"%@", dateValidadeString);
+    
+    int diasFaltandoInt = (int) -[dateNow timeIntervalSinceDate:dateValidade]/86400;;
+                           
+    NSLog(@"%i", diasFaltandoInt);
+    
+    if (diasFaltandoInt == 1) {
+        cell.diasFaltando.text = [NSString stringWithFormat:@"%i dia", diasFaltandoInt];
+    } else {
+        cell.diasFaltando.text = [NSString stringWithFormat:@"%i dias", diasFaltandoInt];
+    }
+
+    NSLog(@"%i dia(s)", diasFaltandoInt);
+    
     cell.data.text = [[[_singleton retornoProd]objectAtIndex:indexPath.row]
                       dataValidade];
     
@@ -83,7 +109,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        
+
         Produto *auxProduto = [[_singleton retornoProd]objectAtIndex:indexPath.row];
         NSLog(@"nomeProduto: %@", auxProduto.nome);
         
@@ -106,5 +132,18 @@
     }
 }
 
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    [tableView setEditing:editing animated:YES];
+    if (editing) {
+        _addProdutos.enabled = NO;
+    } else {
+        _addProdutos.enabled = YES;
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleDelete;
+}
 
 @end

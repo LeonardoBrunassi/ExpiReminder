@@ -162,7 +162,7 @@
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"dd/MM/yyyy"];
         NSString *dateString = [format stringFromDate:_datePicker.datePicker.date];
-        
+        NSLog(@"%@", dateString);
         [produto setDataValidade:dateString];
         
         [fotoSingleton salvarFoto:_imagem.imgProd.image comNome:[produto nome]];

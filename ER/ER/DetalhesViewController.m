@@ -16,7 +16,6 @@
 @synthesize ps, fs, imagemProd, nomeProd, dataValida, diasFaltando, produto;
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    nomeProd.text = produto.nome;
     [self.tabBarController setHidesBottomBarWhenPushed:YES];
     self.tabBarController.tabBar.hidden = YES;
     fs = [FotoSingleton instance];
@@ -29,7 +28,7 @@
    
     nomeProd.text = produto.nome;
     dataValida.text = produto.dataValidade;
-    
+    //diasFaltando.text = produto.diasFaltando;
     imagemProd.image = [fs recuperarFotoComNome:[produto nome]];
     
     
