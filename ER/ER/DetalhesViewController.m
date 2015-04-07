@@ -19,11 +19,8 @@
     [self.tabBarController setHidesBottomBarWhenPushed:YES];
     self.tabBarController.tabBar.hidden = YES;
     fs = [FotoSingleton instance];
-    //[imagemProd setTransform:CGAffineTransformMakeRotation(+M_PI / 2)];
-    if (!imagemProd.image) {
-        [imagemProd setTransform:CGAffineTransformMakeRotation(+M_PI / 2)];
-    }
-    // Do any additional setup after loading the view.
+
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -31,6 +28,12 @@
     nomeProd.text = produto.nome;
     dataValida.text = produto.dataValidade;
     imagemProd.image = [fs recuperarFotoComNome:[produto nome]];
+    
+    if ([[imagemProd.image accessibilityIdentifier] isEqualToString:@"default"]) {
+        [imagemProd setTransform:CGAffineTransformMakeRotation(+M_PI / 2)];
+    }
+    
+    
     if ([produto.diasFaltando isEqualToString:@"1"]) {
         diasFaltando.text = [NSString stringWithFormat:@"%@ dia", produto.diasFaltando];
     } else {

@@ -182,7 +182,15 @@
         NSLog(@"%@", produto.diasFaltando);
         [produto setDataValidade:dateString];
         
-        [fotoSingleton salvarFoto:_imagem.imgProd.image comNome:[produto nome]];
+        if ([_imagem.imgProd.image isEqual:[UIImage imageNamed:@"default.png"]]) {
+            [_imagem.imgProd.image setAccessibilityIdentifier:@"default"];
+            [fotoSingleton salvarFoto:_imagem.imgProd.image comNome:[produto nome]];
+        }
+        else{
+            [_imagem.imgProd.image setAccessibilityIdentifier:[produto nome]];
+            [fotoSingleton salvarFoto:_imagem.imgProd.image comNome:[produto nome]];
+        }
+        
 
         [singleton adicionarProd:produto];
         
