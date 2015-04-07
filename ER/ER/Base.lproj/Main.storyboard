@@ -480,7 +480,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZiI-LQ-1D7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="ZiI-LQ-1D7">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="264" id="9dT-jz-jax"/>
@@ -645,7 +645,7 @@
                                 <include reference="tlR-7S-hxE"/>
                                 <include reference="F5V-yH-mcE"/>
                                 <include reference="urN-OL-aqs"/>
-                                <include reference="4Ac-fz-vEC"/>
+                                <exclude reference="4Ac-fz-vEC"/>
                                 <exclude reference="6Zk-fa-Vm9"/>
                                 <exclude reference="P2t-fq-TWk"/>
                                 <include reference="icl-Yc-9aG"/>
@@ -925,6 +925,7 @@
         <image name="barcode" width="32" height="32"/>
         <image name="calendario" width="32" height="32"/>
         <image name="config" width="32" height="32"/>
+        <image name="default" width="460" height="287"/>
         <image name="lista" width="32" height="32"/>
     </resources>
 </document>
