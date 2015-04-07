@@ -22,7 +22,14 @@
 @property int day4;
 @property int day5;
 @property int day6;
-@property NSArray* dayArray;
+@property int aux;
 
+@property NSMutableArray *array0;
+@property NSMutableArray *array1;
+@property NSMutableArray *array2;
+@property NSMutableArray *array3;
+@property NSMutableArray *array4;
+@property NSMutableArray *array5;
+@property NSMutableArray *array6;
 @end
 
