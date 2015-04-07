@@ -234,6 +234,22 @@
     /*
      *Criei um metodo que permite adicionar ou reduzir tempo do fire date em dias, comparando com a data de validade dele.
      */
+//ADICIONANDO EVENTO NO CALENDARIO iOS
+    
+    EKEventStore *store = [EKEventStore new];
+    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+        if (!granted) { return; }
+        EKEvent *event = [EKEvent eventWithEventStore:store];
+        event.title = @"%@ vencendo", [produto nome];
+        event.notes = @"Produto %@ esta vencendo hoje.", [produto nome];
+        event.startDate = notificacao.fireDate;
+        event.endDate = [event.startDate dateByAddingTimeInterval:60*60];
+        event.calendar = [store defaultCalendarForNewEvents];
+        NSError *err = nil;
+        [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
+    }];
+    
+    
     notificacao.soundName = UILocalNotificationDefaultSoundName;
     notificacao.applicationIconBadgeNumber= [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
     [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
