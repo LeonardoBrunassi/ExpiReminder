@@ -28,11 +28,11 @@
     nomeProd.text = produto.nome;
     dataValida.text = produto.dataValidade;
     imagemProd.image = [fs recuperarFotoComNome:[produto nome]];
-    [imagemProd setTransform:CGAffineTransformMakeRotation(+M_PI / 2)];
-    
-    if ([[imagemProd.image accessibilityIdentifier] isEqual:nil]) {
-        [imagemProd setTransform:CGAffineTransformMakeRotation(+M_PI / 2)];
-            }
+//    [imagemProd setTransform:CGAffineTransformMakeRotation(+M_PI / 2)];
+//    
+//    if ([[imagemProd.image accessibilityIdentifier] isEqual:nil]) {
+//        [imagemProd setTransform:CGAffineTransformMakeRotation(+M_PI / 2)];
+//            }
     
     
     if ([produto.diasFaltando isEqualToString:@"1"]) {

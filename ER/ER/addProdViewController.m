@@ -273,7 +273,7 @@
 }
 
 -(void) imagePickerController:(UIImagePickerController *) picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     
     
     _imagem.imgProd.contentMode = UIViewContentModeScaleAspectFit;
