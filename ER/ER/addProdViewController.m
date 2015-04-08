@@ -240,8 +240,8 @@
     [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
         if (!granted) { return; }
         EKEvent *event = [EKEvent eventWithEventStore:store];
-        event.title = @"%@ vencendo", [produto nome];
-        event.notes = @"Produto %@ esta vencendo hoje.", [produto nome];
+        event.title = [NSString stringWithFormat:@"%@ vencendo", produtoCell.registroProdTF.text];
+        event.notes = [NSString stringWithFormat:@"%@ esta vencendo hj", produtoCell.registroProdTF.text];
         event.startDate = notificacao.fireDate;
         event.endDate = [event.startDate dateByAddingTimeInterval:60*60];
         event.calendar = [store defaultCalendarForNewEvents];
