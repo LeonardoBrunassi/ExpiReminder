@@ -14,6 +14,7 @@
 @property int days;
 @property long daysConverted;
 @property int key;
+@property bool fireNotification;
 
 -(long)daysInSeconds;
 

@@ -177,8 +177,7 @@ static int i = 0;
             [_array0 removeObject:0];
             i++;
             
-            if(i >= _array0.count)
-                i = 0;
+           
         }
     
     i = 0;
@@ -189,8 +188,7 @@ static int i = 0;
         [_array1 removeObject:0];
         i++;
         
-        if(i >= _array1.count)
-            i = 0;
+       
     }
     
     i = 0;

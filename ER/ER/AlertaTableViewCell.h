@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UsuarioSingleton.h"
 
 @interface AlertaTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UISwitch *interruptor;

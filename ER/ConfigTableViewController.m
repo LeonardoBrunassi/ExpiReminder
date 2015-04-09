@@ -11,11 +11,8 @@
 @implementation ConfigTableViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialize];
 
-    self.navigationItem.title = @"Configurações";
-    _singleton = [UsuarioSingleton sharedInstance];
-    
-    self.tableView.allowsSelection = NO;
     
 }
 
@@ -41,7 +38,15 @@
     
     if(indexPath.row == 1){
         _alerta = [tableView dequeueReusableCellWithIdentifier:@"alerta"];
-        //lembrar que temos chamar a target aqui.
+        
+        if([[[_singleton loadUsuario]objectAtIndex:0]fireNotification])
+        {
+            [_alerta.interruptor setOn:YES];
+        }
+        else
+           [_alerta.interruptor setOn:NO];
+        
+        
         [_alerta.interruptor addTarget:self action:@selector(mudarInterruptor:) forControlEvents:UIControlEventValueChanged];
 
         return _alerta;
@@ -57,14 +62,36 @@
         _dataAlerta = [tableView dequeueReusableCellWithIdentifier:@"dataAlerta"];
         
         //Aqui inicia a data que foi escolhida antes de abrir o app
+        if([[[_singleton loadUsuario]objectAtIndex:0]fireNotification]){
+            [self.dataAlerta.daysSlider setHidden:NO];
+            [self.dataAlerta.dia setHidden:NO];
+            [self.dataAlerta.daysReminderLabel setHidden: NO];
         
-        if([[[_singleton loadUsuario]objectAtIndex:0]days] == 1)
-            _dataAlerta.dia.text = @"Dia:";
+            if([[[_singleton loadUsuario]objectAtIndex:0]days] == 1)
+                _dataAlerta.dia.text = @"Dia:";
             else
-            _dataAlerta.dia.text = @"Dias:";     
+                _dataAlerta.dia.text = @"Dias:";
+            
+            [self.dataAlerta.daysSlider setValue: [[[_singleton loadUsuario]objectAtIndex:0]days]];
+            self.dataAlerta.daysReminderLabel.text =[NSString stringWithFormat:@"%d",[[[_singleton loadUsuario]objectAtIndex:0]days]];
+        }
+        else{
+            //_alerta.interruptor.on = NO;
+            [self.dataAlerta.daysSlider setHidden:YES];
+            [self.dataAlerta.dia setHidden:YES];
+            [self.dataAlerta.daysReminderLabel setHidden: YES];
+            
+            if([[[_singleton loadUsuario]objectAtIndex:0]days] == 1)
+                _dataAlerta.dia.text = @"Dia:";
+            else
+                _dataAlerta.dia.text = @"Dias:";
+            
+            [self.dataAlerta.daysSlider setValue: [[[_singleton loadUsuario]objectAtIndex:0]days]];
+            self.dataAlerta.daysReminderLabel.text =[NSString stringWithFormat:@"%d",[[[_singleton loadUsuario]objectAtIndex:0]days]];
+
+            
+        }
         
-        [self.dataAlerta.daysSlider setValue: [[[_singleton loadUsuario]objectAtIndex:0]days]];
-        self.dataAlerta.daysReminderLabel.text =[NSString stringWithFormat:@"%d",[[[_singleton loadUsuario]objectAtIndex:0]days]];
         
         return _dataAlerta;
     }
@@ -104,20 +131,27 @@
 }
 
 - (void) mudarInterruptor: (id) sender{
-    if([_alerta.interruptor isOn]){
+    if([[[_singleton loadUsuario]objectAtIndex:0]fireNotification]){
         [self.dataAlerta.daysSlider setHidden:NO];
         [self.dataAlerta.dia setHidden:NO];
         [self.dataAlerta.daysReminderLabel setHidden: NO];
     }
     else{
-        _alerta.interruptor.on = NO;
+        //_alerta.interruptor.on = NO;
         [self.dataAlerta.daysSlider setHidden:YES];
         [self.dataAlerta.dia setHidden:YES];
         [self.dataAlerta.daysReminderLabel setHidden: YES];
         
     }
-    
+
 }
 
+-(void)initialize
+{
+    self.navigationItem.title = @"Configurações";
+    _singleton = [UsuarioSingleton sharedInstance];
+    self.tableView.allowsSelection = NO;
+
+}
 
 @end

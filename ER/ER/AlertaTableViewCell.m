@@ -8,11 +8,26 @@
 
 #import "AlertaTableViewCell.h"
 
+
 @implementation AlertaTableViewCell
 
-- (IBAction)alterarConfiguracoes:(UIButton *)sender {
-//    ConfigTableViewController *vc = [[ConfigTableViewController alloc]init];
-//    [_interruptor addTarget:vc action:@selector(mudarInterruptor:) forControlEvents:UIControlEventValueChanged];
+- (IBAction)alterarConfiguracoes:(id)sender {
+    //atribuir um objeto diretamente a sua instancia, significa que estou passando o endereço da instancia também. esse método abaixo, faz que isso Não ocorra, ou seja, só recebe o conteúdo das
+    //properties dela.
+    Usuario *user = [[Usuario alloc]initWithObject: [[[UsuarioSingleton sharedInstance]loadUsuario]objectAtIndex:0]];
+    if([sender isOn])
+    {
+        [user setFireNotification:YES];
+        UsuarioSingleton *userSingleton = [UsuarioSingleton sharedInstance];
+        [userSingleton updateUsuario:user];
+    }
+    else
+    {
+        [user setFireNotification: NO];
+        UsuarioSingleton *userSingleton = [UsuarioSingleton sharedInstance];
+        [userSingleton updateUsuario:user];
+    }
+    
 }
 
 

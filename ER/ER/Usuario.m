@@ -9,7 +9,7 @@
 #import "Usuario.h"
 
 @implementation Usuario
-@synthesize days, daysConverted, key;
+@synthesize days, daysConverted, key, fireNotification;
 
 
 -(id)init

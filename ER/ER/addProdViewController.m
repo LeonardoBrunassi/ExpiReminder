@@ -129,6 +129,8 @@
     UIBarButtonItem *done = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
     self.navigationItem.rightBarButtonItem = done;
     _usuarioSingleton = [UsuarioSingleton sharedInstance];
+     _user = [[_usuarioSingleton loadUsuario]objectAtIndex:0];
+    
 
 }
 
@@ -194,7 +196,11 @@
 
         [singleton adicionarProd:produto];
         
-        [self createLocalNotification];
+        //verifica se a notificação vai ser disparada aqui
+        if([_user fireNotification])
+            [self createLocalNotification];
+        
+        [self createEvent];
         
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
@@ -220,7 +226,7 @@
     NSLog(@"%@", _datePicker.datePicker.date);
     //notificacao.fireDate = [self setCustomFireDate:_datePicker.datePicker.date];
     
-    _user = [[_usuarioSingleton loadUsuario]objectAtIndex:0];
+   
     notificacao.fireDate = [_datePicker.datePicker.date dateByAddingTimeInterval:[_user daysInSeconds]];
     
     NSLog(@"%@", notificacao.fireDate);
@@ -230,12 +236,15 @@
     notificacao.alertBody = [NSString stringWithFormat:NSLocalizedString(@"%@ irá vencer em breve.", nil),
                              produto.nome];
     notificacao.alertTitle = NSLocalizedString(@"Produto Vencendo!", nil);
+   
+    notificacao.soundName = UILocalNotificationDefaultSoundName;
+    notificacao.applicationIconBadgeNumber= [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
     
-    /*
-     *Criei um metodo que permite adicionar ou reduzir tempo do fire date em dias, comparando com a data de validade dele.
-     */
-//ADICIONANDO EVENTO NO CALENDARIO iOS
-    
+}
+
+-(void)createEvent
+{
     EKEventStore *store = [EKEventStore new];
     [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
         if (!granted) { return; }
@@ -248,11 +257,7 @@
         NSError *err = nil;
         [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
     }];
-    
-    
-    notificacao.soundName = UILocalNotificationDefaultSoundName;
-    notificacao.applicationIconBadgeNumber= [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
-    [[UIApplication sharedApplication] scheduleLocalNotification:notificacao];
+
 }
 
 //--------------------------------------------------------------------
@@ -286,14 +291,6 @@
 
 //---------------------------------------------------------------------
 
-
-//----------------------------------------------- ARRUMANDO A DATA PARA A NOTIFICATION
--(NSDate *)setCustomFireDate:(NSDate *)changeDate{
-    // AGORA FUNCIONA !!!!
-    NSDate *newDate =[changeDate dateByAddingTimeInterval:-(3600*3)];
-
-    return newDate;
-}
 
 
 @end
